@@ -237,7 +237,7 @@
                         <div class="relative flex flex-col md:flex-row items-center md:justify-between gap-8 group" data-aos="fade-up">
                             <div class="w-full md:w-[45%] pl-20 md:pl-0 order-2 md:order-1 md:text-right">
                                 <h3 class="text-xl font-semibold text-neutral-900 dark:text-white mb-2">Konsultasi</h3>
-                                <p class="text-sm text-neutral-500 dark:text-neutral-400">Ceritakan kebutuhan, ide, dan referensi yang Anda inginkan. Kami akan mendengarkan dengan seksama.</p>
+                                <p class="text-sm text-neutral-500 dark:text-neutral-400 text-justify md:text-right">Ceritakan kebutuhan, ide, dan referensi yang Anda inginkan. Kami akan mendengarkan dengan seksama.</p>
                             </div>
                             <div class="absolute left-8 md:left-1/2 -translate-x-1/2 w-10 h-10 bg-white dark:bg-neutral-950 border-4 border-neutral-200 dark:border-neutral-800 group-hover:border-red-600 transition-colors rounded-full flex items-center justify-center z-20 order-1 md:order-2 shadow-lg">
                                 <span class="text-xs font-bold text-neutral-500 group-hover:text-red-600">1</span>
@@ -253,7 +253,7 @@
                             </div>
                             <div class="w-full md:w-[45%] pl-20 md:pl-0 order-2 md:order-3 md:text-left">
                                 <h3 class="text-xl font-semibold text-neutral-900 dark:text-white mb-2">Konsep</h3>
-                                <p class="text-sm text-neutral-500 dark:text-neutral-400">Kami buatkan moodboard, sketsa, atau rencana produksi untuk disepakati bersama sebelum eksekusi.</p>
+                                <p class="text-sm text-neutral-500 dark:text-neutral-400 text-justify md:text-left">Kami buatkan moodboard, sketsa, atau rencana produksi untuk disepakati bersama sebelum eksekusi.</p>
                             </div>
                         </div>
 
@@ -261,7 +261,7 @@
                         <div class="relative flex flex-col md:flex-row items-center md:justify-between gap-8 group" data-aos="fade-up">
                             <div class="w-full md:w-[45%] pl-20 md:pl-0 order-2 md:order-1 md:text-right">
                                 <h3 class="text-xl font-semibold text-neutral-900 dark:text-white mb-2">Produksi</h3>
-                                <p class="text-sm text-neutral-500 dark:text-neutral-400">Eksekusi pemotretan, syuting, atau proses desain grafis dilakukan oleh tim profesional kami.</p>
+                                <p class="text-sm text-neutral-500 dark:text-neutral-400 text-justify md:text-right">Eksekusi pemotretan, syuting, atau proses desain grafis dilakukan oleh tim profesional kami.</p>
                             </div>
                             <div class="absolute left-8 md:left-1/2 -translate-x-1/2 w-10 h-10 bg-white dark:bg-neutral-950 border-4 border-neutral-200 dark:border-neutral-800 group-hover:border-red-600 transition-colors rounded-full flex items-center justify-center z-20 order-1 md:order-2 shadow-lg">
                                 <span class="text-xs font-bold text-neutral-500 group-hover:text-red-600">3</span>
@@ -277,7 +277,7 @@
                             </div>
                             <div class="w-full md:w-[45%] pl-20 md:pl-0 order-2 md:order-3 md:text-left">
                                 <h3 class="text-xl font-semibold text-neutral-900 dark:text-white mb-2">Revisi & Final</h3>
-                                <p class="text-sm text-neutral-500 dark:text-neutral-400">Review hasil, revisi jika diperlukan, dan penyerahan file final dengan kualitas terbaik.</p>
+                                <p class="text-sm text-neutral-500 dark:text-neutral-400 text-justify md:text-left">Review hasil, revisi jika diperlukan, dan penyerahan file final dengan kualitas terbaik.</p>
                             </div>
                         </div>
                     </div>
@@ -495,18 +495,23 @@
         faqToggles.forEach(toggle => {
             toggle.addEventListener('click', () => {
                 const content = toggle.nextElementSibling;
-                const icon = toggle.querySelector('i');
+                // Lucide replaces <i> with <svg>, so we target the svg
+                const icon = toggle.querySelector('svg');
                 const isClosed = content.classList.contains('grid-rows-[0fr]');
                 
                 // Close all other FAQs (Accordion behavior)
                 faqToggles.forEach(otherToggle => {
                     if (otherToggle !== toggle) {
                         const otherContent = otherToggle.nextElementSibling;
-                        const otherIcon = otherToggle.querySelector('i');
+                        const otherIcon = otherToggle.querySelector('svg');
                         
-                        otherContent.classList.remove('grid-rows-[1fr]');
-                        otherContent.classList.add('grid-rows-[0fr]');
-                        otherIcon.classList.remove('rotate-180');
+                        if(otherContent) {
+                            otherContent.classList.remove('grid-rows-[1fr]');
+                            otherContent.classList.add('grid-rows-[0fr]');
+                        }
+                        if(otherIcon) {
+                            otherIcon.classList.remove('rotate-180');
+                        }
                         otherToggle.parentElement.classList.remove('border-red-200', 'dark:border-red-900', 'ring-1', 'ring-red-600/20');
                     }
                 });
@@ -515,13 +520,13 @@
                 if (isClosed) {
                     content.classList.remove('grid-rows-[0fr]');
                     content.classList.add('grid-rows-[1fr]');
-                    icon.classList.add('rotate-180');
+                    if(icon) icon.classList.add('rotate-180');
                     // Add active styling
                     toggle.parentElement.classList.add('border-red-200', 'dark:border-red-900', 'ring-1', 'ring-red-600/20');
                 } else {
                     content.classList.remove('grid-rows-[1fr]');
                     content.classList.add('grid-rows-[0fr]');
-                    icon.classList.remove('rotate-180');
+                    if(icon) icon.classList.remove('rotate-180');
                     // Remove active styling
                     toggle.parentElement.classList.remove('border-red-200', 'dark:border-red-900', 'ring-1', 'ring-red-600/20');
                 }
