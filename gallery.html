@@ -141,10 +141,27 @@
 
         <!-- Gallery Grid -->
         <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-24">
+            
+            <!-- Filter Buttons -->
+            <div class="flex flex-wrap justify-center gap-4 mb-12" id="gallery-filters">
+                <button class="filter-btn active px-6 py-2 rounded-full border border-red-600 bg-red-600 text-white text-sm font-medium transition-all" data-filter="all">
+                    Semua
+                </button>
+                <button class="filter-btn px-6 py-2 rounded-full border border-neutral-200 dark:border-neutral-800 text-neutral-600 dark:text-neutral-400 hover:border-red-600 hover:text-red-600 text-sm font-medium transition-all" data-filter="fotografi">
+                    Fotografi
+                </button>
+                <button class="filter-btn px-6 py-2 rounded-full border border-neutral-200 dark:border-neutral-800 text-neutral-600 dark:text-neutral-400 hover:border-red-600 hover:text-red-600 text-sm font-medium transition-all" data-filter="videografi">
+                    Videografi
+                </button>
+                <button class="filter-btn px-6 py-2 rounded-full border border-neutral-200 dark:border-neutral-800 text-neutral-600 dark:text-neutral-400 hover:border-red-600 hover:text-red-600 text-sm font-medium transition-all" data-filter="logo">
+                    Desain Logo
+                </button>
+            </div>
+
             <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6" id="gallery-grid">
                 
                 <!-- Foto 1 -->
-                <a href="assets/gallery/timelessgallery (1).jpg" class="gallery-item group relative aspect-square overflow-hidden rounded-xl bg-neutral-100 dark:bg-neutral-800 reveal block cursor-zoom-in" data-type="image">
+                <a href="assets/gallery/timelessgallery (1).jpg" class="gallery-item group relative aspect-square overflow-hidden rounded-xl bg-neutral-100 dark:bg-neutral-800 reveal block cursor-zoom-in" data-type="image" data-category="fotografi">
                     <img src="assets/gallery/timelessgallery (1).jpg" alt="Karya 1" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" loading="lazy" />
                     <div class="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors duration-300 flex items-center justify-center opacity-0 group-hover:opacity-100">
                         <div class="bg-white/90 dark:bg-neutral-900/90 backdrop-blur px-4 py-2 rounded-full text-sm font-medium text-neutral-900 dark:text-white shadow-lg transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300">
@@ -154,7 +171,7 @@
                 </a>
 
                 <!-- Foto 2 -->
-                <a href="assets/gallery/timelessgallery (2).jpg" class="gallery-item group relative aspect-square overflow-hidden rounded-xl bg-neutral-100 dark:bg-neutral-800 reveal block cursor-zoom-in" data-type="image">
+                <a href="assets/gallery/timelessgallery (2).jpg" class="gallery-item group relative aspect-square overflow-hidden rounded-xl bg-neutral-100 dark:bg-neutral-800 reveal block cursor-zoom-in" data-type="image" data-category="fotografi">
                     <img src="assets/gallery/timelessgallery (2).jpg" alt="Karya 2" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" loading="lazy" />
                     <div class="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors duration-300 flex items-center justify-center opacity-0 group-hover:opacity-100">
                         <div class="bg-white/90 dark:bg-neutral-900/90 backdrop-blur px-4 py-2 rounded-full text-sm font-medium text-neutral-900 dark:text-white shadow-lg transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300">
@@ -164,7 +181,7 @@
                 </a>
 
                 <!-- Foto 3 -->
-                <a href="assets/gallery/timelessgallery(7).png" class="gallery-item group relative aspect-square overflow-hidden rounded-xl bg-neutral-100 dark:bg-neutral-800 reveal block cursor-zoom-in" data-type="image">
+                <a href="assets/gallery/timelessgallery(7).png" class="gallery-item group relative aspect-square overflow-hidden rounded-xl bg-neutral-100 dark:bg-neutral-800 reveal block cursor-zoom-in" data-type="image" data-category="logo">
                     <img src="assets/gallery/timelessgallery(7).png" alt="Karya 3" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" loading="lazy" />
                     <div class="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors duration-300 flex items-center justify-center opacity-0 group-hover:opacity-100">
                         <div class="bg-white/90 dark:bg-neutral-900/90 backdrop-blur px-4 py-2 rounded-full text-sm font-medium text-neutral-900 dark:text-white shadow-lg transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300">
@@ -174,7 +191,7 @@
                 </a>
 
                 <!-- Foto 4 -->
-                <a href="assets/gallery/timelessgallery (4).jpg" class="gallery-item group relative aspect-square overflow-hidden rounded-xl bg-neutral-100 dark:bg-neutral-800 reveal block cursor-zoom-in" data-type="image">
+                <a href="assets/gallery/timelessgallery (4).jpg" class="gallery-item group relative aspect-square overflow-hidden rounded-xl bg-neutral-100 dark:bg-neutral-800 reveal block cursor-zoom-in" data-type="image" data-category="fotografi">
                     <img src="assets/gallery/timelessgallery (4).jpg" alt="Karya 4" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" loading="lazy" />
                     <div class="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors duration-300 flex items-center justify-center opacity-0 group-hover:opacity-100">
                         <div class="bg-white/90 dark:bg-neutral-900/90 backdrop-blur px-4 py-2 rounded-full text-sm font-medium text-neutral-900 dark:text-white shadow-lg transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300">
@@ -184,7 +201,7 @@
                 </a>
 
                 <!-- Foto 5 -->
-                <a href="assets/gallery/timelessgallery (5).jpg" class="gallery-item group relative aspect-square overflow-hidden rounded-xl bg-neutral-100 dark:bg-neutral-800 reveal block cursor-zoom-in" data-type="image">
+                <a href="assets/gallery/timelessgallery (5).jpg" class="gallery-item group relative aspect-square overflow-hidden rounded-xl bg-neutral-100 dark:bg-neutral-800 reveal block cursor-zoom-in" data-type="image" data-category="fotografi">
                     <img src="assets/gallery/timelessgallery (5).jpg" alt="Karya 5" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" loading="lazy" />
                     <div class="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors duration-300 flex items-center justify-center opacity-0 group-hover:opacity-100">
                         <div class="bg-white/90 dark:bg-neutral-900/90 backdrop-blur px-4 py-2 rounded-full text-sm font-medium text-neutral-900 dark:text-white shadow-lg transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300">
@@ -194,7 +211,7 @@
                 </a>
 
                 <!-- Foto 6 -->
-                <a href="assets/gallery/timelessgallery (6).jpg" class="gallery-item group relative aspect-square overflow-hidden rounded-xl bg-neutral-100 dark:bg-neutral-800 reveal block cursor-zoom-in" data-type="image">
+                <a href="assets/gallery/timelessgallery (6).jpg" class="gallery-item group relative aspect-square overflow-hidden rounded-xl bg-neutral-100 dark:bg-neutral-800 reveal block cursor-zoom-in" data-type="image" data-category="fotografi">
                     <img src="assets/gallery/timelessgallery (6).jpg" alt="Karya 6" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" loading="lazy" />
                     <div class="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors duration-300 flex items-center justify-center opacity-0 group-hover:opacity-100">
                         <div class="bg-white/90 dark:bg-neutral-900/90 backdrop-blur px-4 py-2 rounded-full text-sm font-medium text-neutral-900 dark:text-white shadow-lg transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300">
@@ -204,7 +221,7 @@
                 </a>
 
                 <!-- Video 1 -->
-                <a href="assets/gallery/timelessvideo (2).mp4" class="gallery-item group relative aspect-square overflow-hidden rounded-xl bg-neutral-100 dark:bg-neutral-800 reveal block cursor-zoom-in" data-type="video">
+                <a href="assets/gallery/timelessvideo (2).mp4" class="gallery-item group relative aspect-square overflow-hidden rounded-xl bg-neutral-100 dark:bg-neutral-800 reveal block cursor-zoom-in" data-type="video" data-category="videografi">
                     <video src="assets/gallery/timelessvideo (2).mp4" muted playsinline loop class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"></video>
                     <div class="absolute inset-0 bg-black/20 group-hover:bg-black/40 transition-colors duration-300 flex items-center justify-center">
                         <div class="w-12 h-12 bg-white/30 backdrop-blur rounded-full flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
@@ -214,7 +231,7 @@
                 </a>
 
                 <!-- Video 2 -->
-                <a href="assets/gallery/timelessvideo.mp4" class="gallery-item group relative aspect-square overflow-hidden rounded-xl bg-neutral-100 dark:bg-neutral-800 reveal block cursor-zoom-in" data-type="video">
+                <a href="assets/gallery/timelessvideo.mp4" class="gallery-item group relative aspect-square overflow-hidden rounded-xl bg-neutral-100 dark:bg-neutral-800 reveal block cursor-zoom-in" data-type="video" data-category="videografi">
                     <video src="assets/gallery/timelessvideo.mp4" muted playsinline loop class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"></video>
                     <div class="absolute inset-0 bg-black/20 group-hover:bg-black/40 transition-colors duration-300 flex items-center justify-center">
                         <div class="w-12 h-12 bg-white/30 backdrop-blur rounded-full flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
@@ -420,6 +437,35 @@
             if (e.key === 'Escape') closeLightbox();
             if (e.key === 'ArrowRight') showNext();
             if (e.key === 'ArrowLeft') showPrev();
+        });
+
+        // --- Filter Logic ---
+        const filterBtns = document.querySelectorAll('.filter-btn');
+        const galleryItems = document.querySelectorAll('.gallery-item');
+
+        filterBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                // Remove active class from all
+                filterBtns.forEach(b => {
+                    b.classList.remove('bg-red-600', 'text-white', 'border-red-600');
+                    b.classList.add('text-neutral-600', 'dark:text-neutral-400', 'border-neutral-200', 'dark:border-neutral-800');
+                });
+                // Add active class to clicked
+                btn.classList.remove('text-neutral-600', 'dark:text-neutral-400', 'border-neutral-200', 'dark:border-neutral-800');
+                btn.classList.add('bg-red-600', 'text-white', 'border-red-600');
+
+                const filterValue = btn.getAttribute('data-filter');
+
+                galleryItems.forEach(item => {
+                    if (filterValue === 'all' || item.getAttribute('data-category') === filterValue) {
+                        item.classList.remove('hidden');
+                        item.classList.add('block', 'animate-fade-in');
+                    } else {
+                        item.classList.add('hidden');
+                        item.classList.remove('block', 'animate-fade-in');
+                    }
+                });
+            });
         });
 
     </script>
