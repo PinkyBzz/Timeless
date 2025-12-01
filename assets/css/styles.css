@@ -437,3 +437,36 @@ textarea{min-height:120px}
 [data-theme="dark"] .hero-preview video,
 [data-theme="dark"] .gallery-preview .placeholder img,
 [data-theme="dark"] .gallery-preview .placeholder video{filter:brightness(0.9) contrast(1.1)}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--bg);
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--border);
+    border-radius: 5px;
+    border: 2px solid var(--bg);
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--muted);
+}
+
+/* Dark mode scrollbar adjustments */
+[data-theme="dark"] ::-webkit-scrollbar-track {
+    background: var(--bg);
+}
+
+[data-theme="dark"] ::-webkit-scrollbar-thumb {
+    background: var(--border);
+    border: 2px solid var(--bg);
+}
+
+[data-theme="dark"] ::-webkit-scrollbar-thumb:hover {
+    background: var(--muted);
+}
