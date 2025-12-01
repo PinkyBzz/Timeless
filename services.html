@@ -219,40 +219,67 @@
         </section>
 
         <!-- Process Section -->
-        <section class="bg-neutral-50 dark:bg-neutral-900/50 py-24">
+        <section class="bg-neutral-50 dark:bg-neutral-900/50 py-24 overflow-hidden" id="process-section">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div class="text-center mb-16" data-aos="fade-up">
                     <h2 class="text-3xl font-bold text-neutral-900 dark:text-white mb-4">Proses Kerja</h2>
                     <p class="text-neutral-500 dark:text-neutral-400">Bagaimana kami mewujudkan ide Anda menjadi kenyataan.</p>
                 </div>
 
-                <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
-                    <!-- Step 1 -->
-                    <div class="relative p-6 bg-white dark:bg-neutral-950 rounded-xl border border-neutral-200 dark:border-neutral-800" data-aos="fade-up" data-aos-delay="100">
-                        <div class="absolute -top-4 -left-4 w-10 h-10 bg-red-600 text-white rounded-full flex items-center justify-center font-bold text-lg shadow-lg">1</div>
-                        <h3 class="text-xl font-semibold text-neutral-900 dark:text-white mb-2 mt-2">Konsultasi</h3>
-                        <p class="text-sm text-neutral-500 dark:text-neutral-400">Ceritakan kebutuhan, ide, dan referensi yang Anda inginkan.</p>
-                    </div>
+                <div class="relative max-w-4xl mx-auto">
+                    <!-- Vertical Line Base -->
+                    <div class="absolute left-8 md:left-1/2 top-0 bottom-0 w-0.5 bg-neutral-200 dark:bg-neutral-800 md:-translate-x-1/2"></div>
+                    <!-- Vertical Line Progress -->
+                    <div id="process-line" class="absolute left-8 md:left-1/2 top-0 w-0.5 bg-red-600 md:-translate-x-1/2 h-0 transition-all duration-100 ease-linear shadow-[0_0_10px_rgba(220,38,38,0.5)]"></div>
 
-                    <!-- Step 2 -->
-                    <div class="relative p-6 bg-white dark:bg-neutral-950 rounded-xl border border-neutral-200 dark:border-neutral-800" data-aos="fade-up" data-aos-delay="200">
-                        <div class="absolute -top-4 -left-4 w-10 h-10 bg-red-600 text-white rounded-full flex items-center justify-center font-bold text-lg shadow-lg">2</div>
-                        <h3 class="text-xl font-semibold text-neutral-900 dark:text-white mb-2 mt-2">Konsep</h3>
-                        <p class="text-sm text-neutral-500 dark:text-neutral-400">Kami buatkan moodboard, sketsa, atau rencana produksi untuk disepakati.</p>
-                    </div>
+                    <div class="space-y-12 relative z-10" id="process-steps">
+                        <!-- Step 1 -->
+                        <div class="relative flex flex-col md:flex-row items-center md:justify-between gap-8 group" data-aos="fade-up">
+                            <div class="w-full md:w-[45%] pl-20 md:pl-0 order-2 md:order-1 md:text-right">
+                                <h3 class="text-xl font-semibold text-neutral-900 dark:text-white mb-2">Konsultasi</h3>
+                                <p class="text-sm text-neutral-500 dark:text-neutral-400">Ceritakan kebutuhan, ide, dan referensi yang Anda inginkan. Kami akan mendengarkan dengan seksama.</p>
+                            </div>
+                            <div class="absolute left-8 md:left-1/2 -translate-x-1/2 w-10 h-10 bg-white dark:bg-neutral-950 border-4 border-neutral-200 dark:border-neutral-800 group-hover:border-red-600 transition-colors rounded-full flex items-center justify-center z-20 order-1 md:order-2 shadow-lg">
+                                <span class="text-xs font-bold text-neutral-500 group-hover:text-red-600">1</span>
+                            </div>
+                            <div class="hidden md:block md:w-[45%] order-3 md:order-3"></div>
+                        </div>
 
-                    <!-- Step 3 -->
-                    <div class="relative p-6 bg-white dark:bg-neutral-950 rounded-xl border border-neutral-200 dark:border-neutral-800" data-aos="fade-up" data-aos-delay="300">
-                        <div class="absolute -top-4 -left-4 w-10 h-10 bg-red-600 text-white rounded-full flex items-center justify-center font-bold text-lg shadow-lg">3</div>
-                        <h3 class="text-xl font-semibold text-neutral-900 dark:text-white mb-2 mt-2">Produksi</h3>
-                        <p class="text-sm text-neutral-500 dark:text-neutral-400">Eksekusi pemotretan, syuting, atau proses desain grafis.</p>
-                    </div>
+                        <!-- Step 2 -->
+                        <div class="relative flex flex-col md:flex-row items-center md:justify-between gap-8 group" data-aos="fade-up">
+                            <div class="hidden md:block md:w-[45%] order-3 md:order-1"></div>
+                            <div class="absolute left-8 md:left-1/2 -translate-x-1/2 w-10 h-10 bg-white dark:bg-neutral-950 border-4 border-neutral-200 dark:border-neutral-800 group-hover:border-red-600 transition-colors rounded-full flex items-center justify-center z-20 order-1 md:order-2 shadow-lg">
+                                <span class="text-xs font-bold text-neutral-500 group-hover:text-red-600">2</span>
+                            </div>
+                            <div class="w-full md:w-[45%] pl-20 md:pl-0 order-2 md:order-3 md:text-left">
+                                <h3 class="text-xl font-semibold text-neutral-900 dark:text-white mb-2">Konsep</h3>
+                                <p class="text-sm text-neutral-500 dark:text-neutral-400">Kami buatkan moodboard, sketsa, atau rencana produksi untuk disepakati bersama sebelum eksekusi.</p>
+                            </div>
+                        </div>
 
-                    <!-- Step 4 -->
-                    <div class="relative p-6 bg-white dark:bg-neutral-950 rounded-xl border border-neutral-200 dark:border-neutral-800" data-aos="fade-up" data-aos-delay="400">
-                        <div class="absolute -top-4 -left-4 w-10 h-10 bg-red-600 text-white rounded-full flex items-center justify-center font-bold text-lg shadow-lg">4</div>
-                        <h3 class="text-xl font-semibold text-neutral-900 dark:text-white mb-2 mt-2">Revisi & Final</h3>
-                        <p class="text-sm text-neutral-500 dark:text-neutral-400">Review hasil, revisi jika diperlukan, dan penyerahan file final.</p>
+                        <!-- Step 3 -->
+                        <div class="relative flex flex-col md:flex-row items-center md:justify-between gap-8 group" data-aos="fade-up">
+                            <div class="w-full md:w-[45%] pl-20 md:pl-0 order-2 md:order-1 md:text-right">
+                                <h3 class="text-xl font-semibold text-neutral-900 dark:text-white mb-2">Produksi</h3>
+                                <p class="text-sm text-neutral-500 dark:text-neutral-400">Eksekusi pemotretan, syuting, atau proses desain grafis dilakukan oleh tim profesional kami.</p>
+                            </div>
+                            <div class="absolute left-8 md:left-1/2 -translate-x-1/2 w-10 h-10 bg-white dark:bg-neutral-950 border-4 border-neutral-200 dark:border-neutral-800 group-hover:border-red-600 transition-colors rounded-full flex items-center justify-center z-20 order-1 md:order-2 shadow-lg">
+                                <span class="text-xs font-bold text-neutral-500 group-hover:text-red-600">3</span>
+                            </div>
+                            <div class="hidden md:block md:w-[45%] order-3 md:order-3"></div>
+                        </div>
+
+                        <!-- Step 4 -->
+                        <div class="relative flex flex-col md:flex-row items-center md:justify-between gap-8 group" data-aos="fade-up">
+                            <div class="hidden md:block md:w-[45%] order-3 md:order-1"></div>
+                            <div class="absolute left-8 md:left-1/2 -translate-x-1/2 w-10 h-10 bg-white dark:bg-neutral-950 border-4 border-neutral-200 dark:border-neutral-800 group-hover:border-red-600 transition-colors rounded-full flex items-center justify-center z-20 order-1 md:order-2 shadow-lg">
+                                <span class="text-xs font-bold text-neutral-500 group-hover:text-red-600">4</span>
+                            </div>
+                            <div class="w-full md:w-[45%] pl-20 md:pl-0 order-2 md:order-3 md:text-left">
+                                <h3 class="text-xl font-semibold text-neutral-900 dark:text-white mb-2">Revisi & Final</h3>
+                                <p class="text-sm text-neutral-500 dark:text-neutral-400">Review hasil, revisi jika diperlukan, dan penyerahan file final dengan kualitas terbaik.</p>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -267,56 +294,64 @@
 
             <div class="space-y-4" data-aos="fade-up" data-aos-delay="100">
                 <!-- FAQ 1 -->
-                <details class="group bg-white dark:bg-neutral-950 border border-neutral-200 dark:border-neutral-800 rounded-xl overflow-hidden transition-all duration-300 open:ring-1 open:ring-red-600/20">
-                    <summary class="flex items-center justify-between p-6 cursor-pointer font-medium text-neutral-900 dark:text-white hover:bg-neutral-50 dark:hover:bg-neutral-900 transition-colors">
+                <div class="faq-item bg-white dark:bg-neutral-950 border border-neutral-200 dark:border-neutral-800 rounded-xl overflow-hidden transition-all duration-300 hover:border-red-200 dark:hover:border-red-900">
+                    <button class="faq-toggle w-full flex items-center justify-between p-6 text-left font-medium text-neutral-900 dark:text-white hover:bg-neutral-50 dark:hover:bg-neutral-900 transition-colors focus:outline-none">
                         <span>Berapa lama proses pengerjaan project?</span>
-                        <span class="transition-transform duration-300 group-open:rotate-180">
-                            <i data-lucide="chevron-down" class="w-5 h-5 text-neutral-500"></i>
-                        </span>
-                    </summary>
-                    <div class="px-6 pb-6 text-neutral-500 dark:text-neutral-400 leading-relaxed border-t border-neutral-100 dark:border-neutral-800 pt-4">
-                        Waktu pengerjaan bervariasi tergantung kompleksitas. Untuk desain logo biasanya 3-7 hari kerja. Untuk fotografi dan videografi, proses editing memakan waktu 3-10 hari kerja setelah sesi pemotretan/syuting.
+                        <i data-lucide="chevron-down" class="w-5 h-5 text-neutral-500 transition-transform duration-300"></i>
+                    </button>
+                    <div class="faq-content grid grid-rows-[0fr] transition-[grid-template-rows] duration-300 ease-out">
+                        <div class="overflow-hidden">
+                            <div class="px-6 pb-6 text-neutral-500 dark:text-neutral-400 leading-relaxed border-t border-neutral-100 dark:border-neutral-800 pt-4">
+                                Waktu pengerjaan bervariasi tergantung kompleksitas. Untuk desain logo biasanya 3-7 hari kerja. Untuk fotografi dan videografi, proses editing memakan waktu 3-10 hari kerja setelah sesi pemotretan/syuting.
+                            </div>
+                        </div>
                     </div>
-                </details>
+                </div>
 
                 <!-- FAQ 2 -->
-                <details class="group bg-white dark:bg-neutral-950 border border-neutral-200 dark:border-neutral-800 rounded-xl overflow-hidden transition-all duration-300 open:ring-1 open:ring-red-600/20">
-                    <summary class="flex items-center justify-between p-6 cursor-pointer font-medium text-neutral-900 dark:text-white hover:bg-neutral-50 dark:hover:bg-neutral-900 transition-colors">
+                <div class="faq-item bg-white dark:bg-neutral-950 border border-neutral-200 dark:border-neutral-800 rounded-xl overflow-hidden transition-all duration-300 hover:border-red-200 dark:hover:border-red-900">
+                    <button class="faq-toggle w-full flex items-center justify-between p-6 text-left font-medium text-neutral-900 dark:text-white hover:bg-neutral-50 dark:hover:bg-neutral-900 transition-colors focus:outline-none">
                         <span>Apakah saya mendapatkan file mentah (RAW)?</span>
-                        <span class="transition-transform duration-300 group-open:rotate-180">
-                            <i data-lucide="chevron-down" class="w-5 h-5 text-neutral-500"></i>
-                        </span>
-                    </summary>
-                    <div class="px-6 pb-6 text-neutral-500 dark:text-neutral-400 leading-relaxed border-t border-neutral-100 dark:border-neutral-800 pt-4">
-                        Secara standar, kami memberikan file final yang sudah diedit (High Resolution JPEG/PNG/MP4). File mentah (RAW/Project File) dapat diberikan dengan kesepakatan khusus atau biaya tambahan.
+                        <i data-lucide="chevron-down" class="w-5 h-5 text-neutral-500 transition-transform duration-300"></i>
+                    </button>
+                    <div class="faq-content grid grid-rows-[0fr] transition-[grid-template-rows] duration-300 ease-out">
+                        <div class="overflow-hidden">
+                            <div class="px-6 pb-6 text-neutral-500 dark:text-neutral-400 leading-relaxed border-t border-neutral-100 dark:border-neutral-800 pt-4">
+                                Secara standar, kami memberikan file final yang sudah diedit (High Resolution JPEG/PNG/MP4). File mentah (RAW/Project File) dapat diberikan dengan kesepakatan khusus atau biaya tambahan.
+                            </div>
+                        </div>
                     </div>
-                </details>
+                </div>
 
                 <!-- FAQ 3 -->
-                <details class="group bg-white dark:bg-neutral-950 border border-neutral-200 dark:border-neutral-800 rounded-xl overflow-hidden transition-all duration-300 open:ring-1 open:ring-red-600/20">
-                    <summary class="flex items-center justify-between p-6 cursor-pointer font-medium text-neutral-900 dark:text-white hover:bg-neutral-50 dark:hover:bg-neutral-900 transition-colors">
+                <div class="faq-item bg-white dark:bg-neutral-950 border border-neutral-200 dark:border-neutral-800 rounded-xl overflow-hidden transition-all duration-300 hover:border-red-200 dark:hover:border-red-900">
+                    <button class="faq-toggle w-full flex items-center justify-between p-6 text-left font-medium text-neutral-900 dark:text-white hover:bg-neutral-50 dark:hover:bg-neutral-900 transition-colors focus:outline-none">
                         <span>Bagaimana sistem pembayarannya?</span>
-                        <span class="transition-transform duration-300 group-open:rotate-180">
-                            <i data-lucide="chevron-down" class="w-5 h-5 text-neutral-500"></i>
-                        </span>
-                    </summary>
-                    <div class="px-6 pb-6 text-neutral-500 dark:text-neutral-400 leading-relaxed border-t border-neutral-100 dark:border-neutral-800 pt-4">
-                        Kami menerapkan sistem DP (Down Payment) sebesar 50% di awal sebelum project dimulai, dan pelunasan 50% setelah project selesai dan file preview disetujui, sebelum pengiriman file final.
+                        <i data-lucide="chevron-down" class="w-5 h-5 text-neutral-500 transition-transform duration-300"></i>
+                    </button>
+                    <div class="faq-content grid grid-rows-[0fr] transition-[grid-template-rows] duration-300 ease-out">
+                        <div class="overflow-hidden">
+                            <div class="px-6 pb-6 text-neutral-500 dark:text-neutral-400 leading-relaxed border-t border-neutral-100 dark:border-neutral-800 pt-4">
+                                Kami menerapkan sistem DP (Down Payment) sebesar 50% di awal sebelum project dimulai, dan pelunasan 50% setelah project selesai dan file preview disetujui, sebelum pengiriman file final.
+                            </div>
+                        </div>
                     </div>
-                </details>
+                </div>
 
                 <!-- FAQ 4 -->
-                <details class="group bg-white dark:bg-neutral-950 border border-neutral-200 dark:border-neutral-800 rounded-xl overflow-hidden transition-all duration-300 open:ring-1 open:ring-red-600/20">
-                    <summary class="flex items-center justify-between p-6 cursor-pointer font-medium text-neutral-900 dark:text-white hover:bg-neutral-50 dark:hover:bg-neutral-900 transition-colors">
+                <div class="faq-item bg-white dark:bg-neutral-950 border border-neutral-200 dark:border-neutral-800 rounded-xl overflow-hidden transition-all duration-300 hover:border-red-200 dark:hover:border-red-900">
+                    <button class="faq-toggle w-full flex items-center justify-between p-6 text-left font-medium text-neutral-900 dark:text-white hover:bg-neutral-50 dark:hover:bg-neutral-900 transition-colors focus:outline-none">
                         <span>Apakah bisa request konsep custom?</span>
-                        <span class="transition-transform duration-300 group-open:rotate-180">
-                            <i data-lucide="chevron-down" class="w-5 h-5 text-neutral-500"></i>
-                        </span>
-                    </summary>
-                    <div class="px-6 pb-6 text-neutral-500 dark:text-neutral-400 leading-relaxed border-t border-neutral-100 dark:border-neutral-800 pt-4">
-                        Tentu saja! Kami sangat terbuka dengan ide-ide unik Anda. Silakan konsultasikan konsep yang Anda inginkan, dan kami akan membantu merealisasikannya.
+                        <i data-lucide="chevron-down" class="w-5 h-5 text-neutral-500 transition-transform duration-300"></i>
+                    </button>
+                    <div class="faq-content grid grid-rows-[0fr] transition-[grid-template-rows] duration-300 ease-out">
+                        <div class="overflow-hidden">
+                            <div class="px-6 pb-6 text-neutral-500 dark:text-neutral-400 leading-relaxed border-t border-neutral-100 dark:border-neutral-800 pt-4">
+                                Tentu saja! Kami sangat terbuka dengan ide-ide unik Anda. Silakan konsultasikan konsep yang Anda inginkan, dan kami akan membantu merealisasikannya.
+                            </div>
+                        </div>
                     </div>
-                </details>
+                </div>
             </div>
         </section>
 
@@ -425,6 +460,73 @@
             });
         }
 
+        // --- Process Line Animation ---
+        const processSection = document.getElementById('process-section');
+        const processLine = document.getElementById('process-line');
+        const processSteps = document.getElementById('process-steps');
+
+        if(processSection && processLine && processSteps) {
+            window.addEventListener('scroll', () => {
+                const rect = processSteps.getBoundingClientRect();
+                const windowHeight = window.innerHeight;
+                const center = windowHeight / 2;
+                
+                // Calculate percentage based on how much of the steps container has passed the center of the screen
+                // We want 0% when the top of the container hits the center
+                // We want 100% when the bottom of the container hits the center
+                
+                const top = rect.top;
+                const height = rect.height;
+                
+                // Formula: (Center - Top) / Height
+                let percentage = (center - top) / height;
+                
+                // Clamp between 0 and 1
+                if (percentage < 0) percentage = 0;
+                if (percentage > 1) percentage = 1;
+                
+                processLine.style.height = `${percentage * 100}%`;
+            });
+        }
+
+        // --- FAQ Accordion Logic ---
+        const faqToggles = document.querySelectorAll('.faq-toggle');
+        
+        faqToggles.forEach(toggle => {
+            toggle.addEventListener('click', () => {
+                const content = toggle.nextElementSibling;
+                const icon = toggle.querySelector('i');
+                const isClosed = content.classList.contains('grid-rows-[0fr]');
+                
+                // Close all other FAQs (Accordion behavior)
+                faqToggles.forEach(otherToggle => {
+                    if (otherToggle !== toggle) {
+                        const otherContent = otherToggle.nextElementSibling;
+                        const otherIcon = otherToggle.querySelector('i');
+                        
+                        otherContent.classList.remove('grid-rows-[1fr]');
+                        otherContent.classList.add('grid-rows-[0fr]');
+                        otherIcon.classList.remove('rotate-180');
+                        otherToggle.parentElement.classList.remove('border-red-200', 'dark:border-red-900', 'ring-1', 'ring-red-600/20');
+                    }
+                });
+
+                // Toggle current
+                if (isClosed) {
+                    content.classList.remove('grid-rows-[0fr]');
+                    content.classList.add('grid-rows-[1fr]');
+                    icon.classList.add('rotate-180');
+                    // Add active styling
+                    toggle.parentElement.classList.add('border-red-200', 'dark:border-red-900', 'ring-1', 'ring-red-600/20');
+                } else {
+                    content.classList.remove('grid-rows-[1fr]');
+                    content.classList.add('grid-rows-[0fr]');
+                    icon.classList.remove('rotate-180');
+                    // Remove active styling
+                    toggle.parentElement.classList.remove('border-red-200', 'dark:border-red-900', 'ring-1', 'ring-red-600/20');
+                }
+            });
+        });
 
     </script>
 </body>
