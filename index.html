@@ -455,33 +455,23 @@
                 minWidth: 200.00,
                 scale: 1.00,
                 scaleMobile: 1.00,
-                color: isDark ? 0x171717 : 0xffffff, // Base color
-                shininess: 30.00,
-                waveHeight: 15.00,
-                waveSpeed: 0.75,
-                zoom: 0.8,
-                // Custom colors for waves
-                color: isDark ? 0x330000 : 0xf5f5f5, // Dark Redish or Light Gray
             });
-            
-            // Manual color override because Vanta config is tricky with single color property
-            // We want: 
-            // Dark Mode: Dark background with Red waves
-            // Light Mode: White background with subtle Gray waves
             
             if(isDark) {
                 vantaEffect.setOptions({
-                    color: 0x0a0a0a, // Background
-                    shininess: 10,
-                    waveHeight: 20,
-                    zoom: 1,
+                    color: 0x2a0a0a, // Deep Red/Black for visibility
+                    shininess: 60.00, // More shiny
+                    waveHeight: 30.00, // Higher waves
+                    waveSpeed: 1.0, // Faster
+                    zoom: 0.8,
                 });
             } else {
                 vantaEffect.setOptions({
-                    color: 0xffffff,
-                    shininess: 10,
-                    waveHeight: 20,
-                    zoom: 1,
+                    color: 0xe5e5e5, // Light Gray (not white) so shadows appear
+                    shininess: 50.00,
+                    waveHeight: 30.00,
+                    waveSpeed: 1.0,
+                    zoom: 0.8,
                 });
             }
         };
