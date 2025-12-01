@@ -511,9 +511,53 @@
             if (e.key === 'ArrowLeft') showPrev();
         });
 
-        // --- Filter Logic ---
+        // --- Filter Logic & Parallax Effect ---
         const filterBtns = document.querySelectorAll('.filter-btn');
         const galleryItems = document.querySelectorAll('.gallery-item');
+
+        // Parallax Function
+        function updateParallax() {
+            const scrollY = window.scrollY;
+            const windowWidth = window.innerWidth;
+            
+            // Determine columns (match Tailwind breakpoints)
+            let columns = 1;
+            if (windowWidth >= 1024) columns = 3; // lg
+            else if (windowWidth >= 640) columns = 2; // sm
+            
+            // Disable on mobile for better performance/UX
+            if (windowWidth < 640) {
+                galleryItems.forEach(item => item.style.transform = 'none');
+                return;
+            }
+
+            // Get visible items
+            const visibleItems = Array.from(galleryItems).filter(item => !item.classList.contains('hidden'));
+
+            visibleItems.forEach((item, index) => {
+                const colIndex = index % columns;
+                
+                // Apply parallax to even columns (visually the 2nd, 4th...)
+                if (colIndex % 2 !== 0) {
+                    // Move 2nd column slightly faster/slower to create depth
+                    const speed = 0.08; 
+                    item.style.transform = `translateY(${scrollY * speed}px)`;
+                } else {
+                    // Odd columns stay natural
+                    item.style.transform = 'none';
+                }
+            });
+        }
+
+        // Hook into Lenis for smooth updates
+        if (typeof lenis !== 'undefined') {
+            lenis.on('scroll', updateParallax);
+        } else {
+            window.addEventListener('scroll', updateParallax);
+        }
+        
+        // Initial call
+        updateParallax();
 
         filterBtns.forEach(btn => {
             btn.addEventListener('click', () => {
@@ -535,8 +579,12 @@
                     } else {
                         item.classList.add('hidden');
                         item.classList.remove('block', 'animate-fade-in');
+                        item.style.transform = 'none'; // Reset transform
                     }
                 });
+
+                // Recalculate parallax after layout update
+                setTimeout(updateParallax, 50);
             });
         });
 
