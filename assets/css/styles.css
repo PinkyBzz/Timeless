@@ -425,12 +425,6 @@ textarea{min-height:120px}
 [data-theme="dark"] .input, [data-theme="dark"] textarea{background:#171717; border:1px solid var(--border); color:var(--text)}
 [data-theme="dark"] :focus-visible{outline-color:#aaa}
 /* Subtle asset contrast adjustments on dark even without JS */
-[data-theme="dark"] .brand-type{filter:brightness(1.08) contrast(1.06)}
-/* Make wordmark readable in dark header while keeping red accents close to original */
-[data-theme="dark"] .site-header .brand-type{
-  /* Invert black glyphs to white, rotate hue back to preserve reds, then nudge saturation/brightness */
-  filter: invert(1) hue-rotate(180deg) saturate(1.4) brightness(1.05) contrast(1.05);
-}
 [data-theme="dark"] .gallery-tile img,
 [data-theme="dark"] .gallery-tile video,
 [data-theme="dark"] .hero-preview img,
