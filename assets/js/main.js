@@ -13,6 +13,42 @@
     }
   });
 
+  // Custom Cursor Logic
+  const cursor = document.querySelector('.custom-cursor');
+  const cursorDot = document.querySelector('.cursor-dot');
+  
+  if (cursor && cursorDot) {
+    document.addEventListener('mousemove', (e) => {
+      cursor.style.left = e.clientX + 'px';
+      cursor.style.top = e.clientY + 'px';
+      cursorDot.style.left = e.clientX + 'px';
+      cursorDot.style.top = e.clientY + 'px';
+    });
+
+    document.addEventListener('mousedown', () => {
+      cursor.style.transform = 'translate(-50%, -50%) scale(0.8)';
+    });
+
+    document.addEventListener('mouseup', () => {
+      cursor.style.transform = 'translate(-50%, -50%) scale(1)';
+    });
+
+    // Add hover effect to interactive elements
+    const addHoverListeners = () => {
+        const hoverElements = document.querySelectorAll('a, button, .cursor-pointer, input, textarea, summary, .gallery-tile');
+        hoverElements.forEach(el => {
+        el.addEventListener('mouseenter', () => {
+            document.body.classList.add('hovering');
+        });
+        el.addEventListener('mouseleave', () => {
+            document.body.classList.remove('hovering');
+        });
+        });
+    };
+    addHoverListeners();
+    // Re-run listeners if DOM changes (optional, but good for dynamic content)
+  }
+
   // Theme initialization + toggle
   const root = document.documentElement;
   const savedTheme = localStorage.getItem('theme');

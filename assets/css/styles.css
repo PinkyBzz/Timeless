@@ -64,6 +64,89 @@ img{max-width:100%; display:block}
     50% { transform: translateY(-10px); }
 }
 
+/* Custom Cursor */
+@media (hover: hover) and (pointer: fine) {
+    body {
+        cursor: none;
+    }
+    a, button, .cursor-pointer, input, textarea, summary {
+        cursor: none;
+    }
+    .custom-cursor {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 30px;
+        height: 30px;
+        border: 2px solid var(--accent);
+        border-radius: 50%;
+        pointer-events: none;
+        z-index: 9999;
+        transform: translate(-50%, -50%);
+        transition: width 0.3s var(--ease), height 0.3s var(--ease), background-color 0.3s var(--ease), opacity 0.3s var(--ease);
+        background: transparent;
+    }
+    .cursor-dot {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 8px;
+        height: 8px;
+        background-color: var(--accent);
+        border-radius: 50%;
+        pointer-events: none;
+        z-index: 10000;
+        transform: translate(-50%, -50%);
+    }
+    /* Hover state */
+    body.hovering .custom-cursor {
+        width: 50px;
+        height: 50px;
+        background-color: rgba(187, 8, 11, 0.1);
+        border-color: var(--accent);
+    }
+    /* Hide cursor when leaving window */
+    body:not(:hover) .custom-cursor,
+    body:not(:hover) .cursor-dot {
+        opacity: 0;
+    }
+}
+
+/* Infinite Marquee */
+.marquee-container {
+    width: 100%;
+    overflow: hidden;
+    background: var(--text);
+    color: var(--bg);
+    padding: 1.2rem 0;
+    white-space: nowrap;
+    position: relative;
+    border-bottom: 1px solid var(--border);
+}
+.marquee-content {
+    display: inline-block;
+    animation: scroll 25s linear infinite;
+}
+.marquee-item {
+    display: inline-block;
+    font-size: 1.1rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    padding: 0 3rem;
+    position: relative;
+}
+.marquee-item::after {
+    content: "•";
+    position: absolute;
+    right: 1.2rem;
+    color: var(--accent);
+}
+@keyframes scroll {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+}
+
 /* Header & Navigation */
 .site-header{position:sticky; top:0; z-index:200; backdrop-filter:saturate(1.2) blur(10px); background:rgba(255,255,255,.7); border-bottom:1px solid var(--border)}
 .nav{display:flex; align-items:center; justify-content:space-between; gap:1rem; padding:.75rem 0}
