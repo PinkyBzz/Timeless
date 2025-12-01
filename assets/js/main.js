@@ -3,6 +3,16 @@
   const $ = s => document.querySelector(s);
   const $$ = s => Array.from(document.querySelectorAll(s));
 
+  // Page Loader
+  window.addEventListener('load', () => {
+    const loader = document.getElementById('page-loader');
+    if(loader){
+      setTimeout(() => {
+        loader.classList.add('hidden');
+      }, 800); // Minimum display time
+    }
+  });
+
   // Theme initialization + toggle
   const root = document.documentElement;
   const savedTheme = localStorage.getItem('theme');
