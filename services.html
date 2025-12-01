@@ -12,6 +12,9 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <script src="https://unpkg.com/lucide@latest"></script>
 
+    <!-- AOS Animation CSS -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
     <!-- Original CSS Link (Preserved) -->
     <link rel="stylesheet" href="assets/css/styles.css" />
 
@@ -96,7 +99,7 @@
     <main class="pt-24 lg:pt-32 pb-20">
         
         <!-- Page Header -->
-        <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-16 text-center reveal animate-fade-in">
+        <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-16 text-center" data-aos="fade-up">
             <h1 class="text-4xl lg:text-5xl font-bold tracking-tight text-neutral-900 dark:text-white mb-4">Layanan Kami</h1>
             <p class="text-lg text-neutral-500 dark:text-neutral-400 max-w-2xl mx-auto">
                 Kami menawarkan solusi visual lengkap untuk kebutuhan personal maupun bisnis.
@@ -107,9 +110,9 @@
         <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-24">
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
                 
-                <!-- Fotografi -->
-                <article id="fotografi" class="group p-8 bg-white dark:bg-neutral-950 rounded-2xl border border-neutral-200 dark:border-neutral-800 hover:border-red-200 dark:hover:border-red-900 transition-all hover:shadow-lg hover:-translate-y-1 reveal">
-                    <div class="w-14 h-14 bg-red-50 dark:bg-red-900/20 rounded-xl flex items-center justify-center text-red-600 mb-6">
+                <!-- Fotografi (Tilt Effect) -->
+                <article id="fotografi" class="group p-8 bg-white dark:bg-neutral-950 rounded-2xl border border-neutral-200 dark:border-neutral-800 hover:border-red-200 dark:hover:border-red-900 transition-all hover:shadow-lg" data-aos="fade-up" data-aos-delay="100" data-tilt data-tilt-max="5" data-tilt-speed="400" data-tilt-glare data-tilt-max-glare="0.1">
+                    <div class="w-14 h-14 bg-red-50 dark:bg-red-900/20 rounded-xl flex items-center justify-center text-red-600 mb-6 transform transition-transform group-hover:scale-110 duration-300">
                         <i data-lucide="camera" class="h-7 w-7"></i>
                     </div>
                     <h2 class="text-2xl font-semibold text-neutral-900 dark:text-white mb-4">Fotografi</h2>
@@ -134,9 +137,9 @@
                     </ul>
                 </article>
 
-                <!-- Videografi -->
-                <article id="videografi" class="group p-8 bg-white dark:bg-neutral-950 rounded-2xl border border-neutral-200 dark:border-neutral-800 hover:border-red-200 dark:hover:border-red-900 transition-all hover:shadow-lg hover:-translate-y-1 reveal">
-                    <div class="w-14 h-14 bg-red-50 dark:bg-red-900/20 rounded-xl flex items-center justify-center text-red-600 mb-6">
+                <!-- Videografi (Tilt Effect) -->
+                <article id="videografi" class="group p-8 bg-white dark:bg-neutral-950 rounded-2xl border border-neutral-200 dark:border-neutral-800 hover:border-red-200 dark:hover:border-red-900 transition-all hover:shadow-lg" data-aos="fade-up" data-aos-delay="200" data-tilt data-tilt-max="5" data-tilt-speed="400" data-tilt-glare data-tilt-max-glare="0.1">
+                    <div class="w-14 h-14 bg-red-50 dark:bg-red-900/20 rounded-xl flex items-center justify-center text-red-600 mb-6 transform transition-transform group-hover:scale-110 duration-300">
                         <i data-lucide="video" class="h-7 w-7"></i>
                     </div>
                     <h2 class="text-2xl font-semibold text-neutral-900 dark:text-white mb-4">Videografi</h2>
@@ -161,9 +164,9 @@
                     </ul>
                 </article>
 
-                <!-- Desain Logo -->
-                <article id="logo" class="group p-8 bg-white dark:bg-neutral-950 rounded-2xl border border-neutral-200 dark:border-neutral-800 hover:border-red-200 dark:hover:border-red-900 transition-all hover:shadow-lg hover:-translate-y-1 reveal">
-                    <div class="w-14 h-14 bg-red-50 dark:bg-red-900/20 rounded-xl flex items-center justify-center text-red-600 mb-6">
+                <!-- Desain Logo (Tilt Effect) -->
+                <article id="logo" class="group p-8 bg-white dark:bg-neutral-950 rounded-2xl border border-neutral-200 dark:border-neutral-800 hover:border-red-200 dark:hover:border-red-900 transition-all hover:shadow-lg" data-aos="fade-up" data-aos-delay="300" data-tilt data-tilt-max="5" data-tilt-speed="400" data-tilt-glare data-tilt-max-glare="0.1">
+                    <div class="w-14 h-14 bg-red-50 dark:bg-red-900/20 rounded-xl flex items-center justify-center text-red-600 mb-6 transform transition-transform group-hover:scale-110 duration-300">
                         <i data-lucide="pen-tool" class="h-7 w-7"></i>
                     </div>
                     <h2 class="text-2xl font-semibold text-neutral-900 dark:text-white mb-4">Desain Logo</h2>
@@ -194,35 +197,35 @@
         <!-- Process Section -->
         <section class="bg-neutral-50 dark:bg-neutral-900/50 py-24">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div class="text-center mb-16 reveal">
+                <div class="text-center mb-16" data-aos="fade-up">
                     <h2 class="text-3xl font-bold text-neutral-900 dark:text-white mb-4">Proses Kerja</h2>
                     <p class="text-neutral-500 dark:text-neutral-400">Bagaimana kami mewujudkan ide Anda menjadi kenyataan.</p>
                 </div>
 
                 <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
                     <!-- Step 1 -->
-                    <div class="relative p-6 bg-white dark:bg-neutral-950 rounded-xl border border-neutral-200 dark:border-neutral-800 reveal">
+                    <div class="relative p-6 bg-white dark:bg-neutral-950 rounded-xl border border-neutral-200 dark:border-neutral-800" data-aos="fade-up" data-aos-delay="100">
                         <div class="absolute -top-4 -left-4 w-10 h-10 bg-red-600 text-white rounded-full flex items-center justify-center font-bold text-lg shadow-lg">1</div>
                         <h3 class="text-xl font-semibold text-neutral-900 dark:text-white mb-2 mt-2">Konsultasi</h3>
                         <p class="text-sm text-neutral-500 dark:text-neutral-400">Ceritakan kebutuhan, ide, dan referensi yang Anda inginkan.</p>
                     </div>
 
                     <!-- Step 2 -->
-                    <div class="relative p-6 bg-white dark:bg-neutral-950 rounded-xl border border-neutral-200 dark:border-neutral-800 reveal">
+                    <div class="relative p-6 bg-white dark:bg-neutral-950 rounded-xl border border-neutral-200 dark:border-neutral-800" data-aos="fade-up" data-aos-delay="200">
                         <div class="absolute -top-4 -left-4 w-10 h-10 bg-red-600 text-white rounded-full flex items-center justify-center font-bold text-lg shadow-lg">2</div>
                         <h3 class="text-xl font-semibold text-neutral-900 dark:text-white mb-2 mt-2">Konsep</h3>
                         <p class="text-sm text-neutral-500 dark:text-neutral-400">Kami buatkan moodboard, sketsa, atau rencana produksi untuk disepakati.</p>
                     </div>
 
                     <!-- Step 3 -->
-                    <div class="relative p-6 bg-white dark:bg-neutral-950 rounded-xl border border-neutral-200 dark:border-neutral-800 reveal">
+                    <div class="relative p-6 bg-white dark:bg-neutral-950 rounded-xl border border-neutral-200 dark:border-neutral-800" data-aos="fade-up" data-aos-delay="300">
                         <div class="absolute -top-4 -left-4 w-10 h-10 bg-red-600 text-white rounded-full flex items-center justify-center font-bold text-lg shadow-lg">3</div>
                         <h3 class="text-xl font-semibold text-neutral-900 dark:text-white mb-2 mt-2">Produksi</h3>
                         <p class="text-sm text-neutral-500 dark:text-neutral-400">Eksekusi pemotretan, syuting, atau proses desain grafis.</p>
                     </div>
 
                     <!-- Step 4 -->
-                    <div class="relative p-6 bg-white dark:bg-neutral-950 rounded-xl border border-neutral-200 dark:border-neutral-800 reveal">
+                    <div class="relative p-6 bg-white dark:bg-neutral-950 rounded-xl border border-neutral-200 dark:border-neutral-800" data-aos="fade-up" data-aos-delay="400">
                         <div class="absolute -top-4 -left-4 w-10 h-10 bg-red-600 text-white rounded-full flex items-center justify-center font-bold text-lg shadow-lg">4</div>
                         <h3 class="text-xl font-semibold text-neutral-900 dark:text-white mb-2 mt-2">Revisi & Final</h3>
                         <p class="text-sm text-neutral-500 dark:text-neutral-400">Review hasil, revisi jika diperlukan, dan penyerahan file final.</p>
@@ -233,12 +236,12 @@
 
         <!-- FAQ Section -->
         <section class="py-24 max-w-3xl mx-auto px-4">
-            <div class="text-center mb-12 reveal">
+            <div class="text-center mb-12" data-aos="fade-up">
                 <h2 class="text-3xl font-bold text-neutral-900 dark:text-white mb-4">Pertanyaan Umum (FAQ)</h2>
                 <p class="text-neutral-500 dark:text-neutral-400">Jawaban untuk pertanyaan yang sering diajukan.</p>
             </div>
 
-            <div class="space-y-4 reveal">
+            <div class="space-y-4" data-aos="fade-up" data-aos-delay="100">
                 <!-- FAQ 1 -->
                 <details class="group bg-white dark:bg-neutral-950 border border-neutral-200 dark:border-neutral-800 rounded-xl overflow-hidden transition-all duration-300 open:ring-1 open:ring-red-600/20">
                     <summary class="flex items-center justify-between p-6 cursor-pointer font-medium text-neutral-900 dark:text-white hover:bg-neutral-50 dark:hover:bg-neutral-900 transition-colors">
@@ -294,7 +297,7 @@
         </section>
 
         <!-- CTA -->
-        <section class="py-24 max-w-4xl mx-auto px-4 text-center reveal">
+        <section class="py-24 max-w-4xl mx-auto px-4 text-center" data-aos="fade-up">
             <h3 class="text-3xl font-bold text-neutral-900 dark:text-white mb-6">Siap Memulai Project?</h3>
             <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
                 <a class="w-full sm:w-auto px-8 py-3 bg-red-600 hover:bg-red-700 text-white rounded-full font-medium transition-colors" href="contact.html">
@@ -365,9 +368,29 @@
     </footer>
 
     <script defer src="assets/js/main.js"></script>
+    
+    <!-- Animation Scripts -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.7.0/vanilla-tilt.min.js"></script>
+    
     <script>
         lucide.createIcons();
         document.getElementById('year').textContent = new Date().getFullYear();
+
+        // Initialize AOS
+        AOS.init({
+            duration: 800,
+            once: true,
+            offset: 100,
+        });
+
+        // Initialize Vanilla Tilt for Service Cards
+        VanillaTilt.init(document.querySelectorAll("[data-tilt]"), {
+            max: 15,
+            speed: 400,
+            glare: true,
+            "max-glare": 0.2,
+        });
 
         const navToggle = document.getElementById('nav-toggle');
         const mobileMenu = document.getElementById('mobile-menu-dropdown');
@@ -377,22 +400,7 @@
             });
         }
 
-        const html = document.documentElement;
-        if (localStorage.getItem('theme') === 'dark' || html.getAttribute('data-theme') === 'dark') {
-            html.classList.add('dark');
-        }
-        const observer = new MutationObserver((mutations) => {
-            mutations.forEach((mutation) => {
-                if (mutation.attributeName === 'data-theme') {
-                    if (html.getAttribute('data-theme') === 'dark') {
-                        html.classList.add('dark');
-                    } else {
-                        html.classList.remove('dark');
-                    }
-                }
-            });
-        });
-        observer.observe(html, { attributes: true, attributeFilter: ['data-theme'] });
+
     </script>
 </body>
 </html>

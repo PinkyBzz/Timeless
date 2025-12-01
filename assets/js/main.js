@@ -8,13 +8,19 @@
   const savedTheme = localStorage.getItem('theme');
   if(savedTheme === 'dark' || savedTheme === 'light'){
     root.setAttribute('data-theme', savedTheme);
+    if(savedTheme === 'dark') root.classList.add('dark');
   } else {
     // Default to light mode, ignore system preference unless user chooses
     root.setAttribute('data-theme','light');
+    root.classList.remove('dark');
   }
   const themeBtn = document.getElementById('theme-toggle') || document.querySelector('.theme-fab');
   function currentTheme(){ return root.getAttribute('data-theme') === 'dark' ? 'dark' : 'light'; }
-  function setTheme(t){ root.setAttribute('data-theme', t); localStorage.setItem('theme', t); }
+  function setTheme(t){ 
+    root.setAttribute('data-theme', t); 
+    localStorage.setItem('theme', t);
+    root.classList.toggle('dark', t === 'dark');
+  }
   if(themeBtn){
     themeBtn.addEventListener('click', ()=>{
       // Add a temporary class to animate theme-related properties

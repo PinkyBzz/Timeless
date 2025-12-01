@@ -227,22 +227,7 @@
             });
         }
 
-        const html = document.documentElement;
-        if (localStorage.getItem('theme') === 'dark' || html.getAttribute('data-theme') === 'dark') {
-            html.classList.add('dark');
-        }
-        const observer = new MutationObserver((mutations) => {
-            mutations.forEach((mutation) => {
-                if (mutation.attributeName === 'data-theme') {
-                    if (html.getAttribute('data-theme') === 'dark') {
-                        html.classList.add('dark');
-                    } else {
-                        html.classList.remove('dark');
-                    }
-                }
-            });
-        });
-        observer.observe(html, { attributes: true, attributeFilter: ['data-theme'] });
+
 
         // WhatsApp Link Builder
         (function(){

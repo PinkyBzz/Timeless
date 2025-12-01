@@ -12,6 +12,9 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <script src="https://unpkg.com/lucide@latest"></script>
 
+    <!-- AOS Animation CSS -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
     <!-- Original CSS Link (Preserved) -->
     <link rel="stylesheet" href="assets/css/styles.css" />
 
@@ -31,11 +34,16 @@
                     },
                     animation: {
                         'fade-in': 'fadeIn 0.5s ease-out forwards',
+                        'float': 'float 6s ease-in-out infinite',
                     },
                     keyframes: {
                         fadeIn: {
                             '0%': { opacity: '0', transform: 'translateY(10px)' },
                             '100%': { opacity: '1', transform: 'translateY(0)' },
+                        },
+                        float: {
+                            '0%, 100%': { transform: 'translateY(0)' },
+                            '50%': { transform: 'translateY(-20px)' },
                         }
                     }
                 }
@@ -51,7 +59,6 @@
             
             <!-- Brand -->
             <a class="flex items-center gap-3 group" href="index.html" aria-label="Beranda Timeless">
-                <!-- Added ! classes to override legacy styles.css conflicts -->
                 <img id="brand-logo" class="brand-logo !w-10 !h-10 !p-0 !border-0 !shadow-none object-cover rounded-full border border-neutral-200 dark:border-neutral-800" src="timelessbackground.jpeg" alt="Logo Timeless" />
                 <img class="brand-type h-5 w-auto object-contain dark:brightness-0 dark:invert" src="timelesstype.png" alt="TIMELESS" />
             </a>
@@ -73,7 +80,7 @@
             </div>
         </div>
         
-        <!-- Mobile Menu Dropdown (Hidden by default) -->
+        <!-- Mobile Menu Dropdown -->
         <div id="mobile-menu-dropdown" class="hidden md:hidden absolute top-16 left-0 w-full bg-white dark:bg-neutral-950 border-b border-neutral-200 dark:border-neutral-800 p-4 shadow-lg">
             <nav class="flex flex-col space-y-4">
                 <a href="index.html" class="block text-sm font-medium text-neutral-900 dark:text-white">Beranda</a>
@@ -93,7 +100,7 @@
                 <div class="flex flex-col lg:flex-row items-center gap-12 lg:gap-20">
                     
                     <!-- Copy -->
-                    <div class="flex-1 text-center lg:text-left reveal animate-fade-in">
+                    <div class="flex-1 text-center lg:text-left" data-aos="fade-right" data-aos-duration="1000">
                         <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-neutral-100 dark:bg-neutral-900 border border-neutral-200 dark:border-neutral-800 mb-6">
                             <span class="flex h-2 w-2 rounded-full bg-red-600 animate-pulse"></span>
                             <span class="text-xs font-medium text-neutral-600 dark:text-neutral-300 uppercase tracking-wide">Studio Kreatif</span>
@@ -120,8 +127,8 @@
                         </div>
                     </div>
 
-                    <!-- Media -->
-                    <div class="flex-1 w-full max-w-lg lg:max-w-none reveal">
+                    <!-- Media (Floating Animation) -->
+                    <div class="flex-1 w-full max-w-lg lg:max-w-none animate-float" data-aos="fade-left" data-aos-duration="1000" data-aos-delay="200">
                         <a class="block relative group rounded-2xl overflow-hidden shadow-2xl shadow-neutral-200 dark:shadow-none hero-preview" href="gallery.html" aria-label="Lihat galeri">
                             <div class="aspect-[4/3] relative bg-neutral-100 dark:bg-neutral-900">
                                 <video autoplay muted loop playsinline preload="auto" class="w-full h-full object-cover opacity-90 group-hover:scale-105 transition-transform duration-700">
@@ -156,15 +163,15 @@
         <!-- Services Section -->
         <section class="py-24 bg-neutral-50 dark:bg-neutral-900/50">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <header class="text-center max-w-2xl mx-auto mb-16 reveal">
+                <header class="text-center max-w-2xl mx-auto mb-16" data-aos="fade-up">
                     <h2 class="text-3xl lg:text-4xl font-semibold tracking-tight text-neutral-900 dark:text-white mb-4">Apa yang Kami Kerjakan</h2>
                     <p class="text-lg text-neutral-500 dark:text-neutral-400">Solusi visual untuk kebutuhan personal dan bisnis Anda.</p>
                 </header>
 
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                    <!-- Fotografi -->
-                    <article class="group p-8 bg-white dark:bg-neutral-950 rounded-2xl border border-neutral-200 dark:border-neutral-800 hover:border-red-200 dark:hover:border-red-900 transition-all hover:shadow-lg hover:-translate-y-1 reveal">
-                        <div class="w-12 h-12 bg-red-50 dark:bg-red-900/20 rounded-lg flex items-center justify-center text-red-600 mb-6">
+                    <!-- Fotografi (Tilt Effect) -->
+                    <article class="group p-8 bg-white dark:bg-neutral-950 rounded-2xl border border-neutral-200 dark:border-neutral-800 hover:border-red-200 dark:hover:border-red-900 transition-all hover:shadow-lg" data-aos="fade-up" data-aos-delay="100" data-tilt data-tilt-max="5" data-tilt-speed="400" data-tilt-glare data-tilt-max-glare="0.1">
+                        <div class="w-12 h-12 bg-red-50 dark:bg-red-900/20 rounded-lg flex items-center justify-center text-red-600 mb-6 transform transition-transform group-hover:scale-110 duration-300">
                             <i data-lucide="camera" class="h-6 w-6"></i>
                         </div>
                         <h3 class="text-xl font-semibold text-neutral-900 dark:text-white mb-3">Fotografi</h3>
@@ -174,9 +181,9 @@
                         </a>
                     </article>
 
-                    <!-- Videografi -->
-                    <article class="group p-8 bg-white dark:bg-neutral-950 rounded-2xl border border-neutral-200 dark:border-neutral-800 hover:border-red-200 dark:hover:border-red-900 transition-all hover:shadow-lg hover:-translate-y-1 reveal">
-                         <div class="w-12 h-12 bg-red-50 dark:bg-red-900/20 rounded-lg flex items-center justify-center text-red-600 mb-6">
+                    <!-- Videografi (Tilt Effect) -->
+                    <article class="group p-8 bg-white dark:bg-neutral-950 rounded-2xl border border-neutral-200 dark:border-neutral-800 hover:border-red-200 dark:hover:border-red-900 transition-all hover:shadow-lg" data-aos="fade-up" data-aos-delay="200" data-tilt data-tilt-max="5" data-tilt-speed="400" data-tilt-glare data-tilt-max-glare="0.1">
+                         <div class="w-12 h-12 bg-red-50 dark:bg-red-900/20 rounded-lg flex items-center justify-center text-red-600 mb-6 transform transition-transform group-hover:scale-110 duration-300">
                             <i data-lucide="video" class="h-6 w-6"></i>
                         </div>
                         <h3 class="text-xl font-semibold text-neutral-900 dark:text-white mb-3">Videografi</h3>
@@ -186,9 +193,9 @@
                         </a>
                     </article>
 
-                    <!-- Logo -->
-                    <article class="group p-8 bg-white dark:bg-neutral-950 rounded-2xl border border-neutral-200 dark:border-neutral-800 hover:border-red-200 dark:hover:border-red-900 transition-all hover:shadow-lg hover:-translate-y-1 reveal">
-                         <div class="w-12 h-12 bg-red-50 dark:bg-red-900/20 rounded-lg flex items-center justify-center text-red-600 mb-6">
+                    <!-- Logo (Tilt Effect) -->
+                    <article class="group p-8 bg-white dark:bg-neutral-950 rounded-2xl border border-neutral-200 dark:border-neutral-800 hover:border-red-200 dark:hover:border-red-900 transition-all hover:shadow-lg" data-aos="fade-up" data-aos-delay="300" data-tilt data-tilt-max="5" data-tilt-speed="400" data-tilt-glare data-tilt-max-glare="0.1">
+                         <div class="w-12 h-12 bg-red-50 dark:bg-red-900/20 rounded-lg flex items-center justify-center text-red-600 mb-6 transform transition-transform group-hover:scale-110 duration-300">
                             <i data-lucide="pen-tool" class="h-6 w-6"></i>
                         </div>
                         <h3 class="text-xl font-semibold text-neutral-900 dark:text-white mb-3">Desain Logo</h3>
@@ -204,7 +211,7 @@
         <!-- Gallery Section -->
         <section class="py-24">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <header class="flex justify-between items-end mb-12 reveal">
+                <header class="flex justify-between items-end mb-12" data-aos="fade-up">
                     <div>
                         <h2 class="text-3xl lg:text-4xl font-semibold tracking-tight text-neutral-900 dark:text-white">Cuplikan Galeri</h2>
                         <p class="mt-2 text-neutral-500 dark:text-neutral-400">Beberapa highlight karya kami.</p>
@@ -216,27 +223,27 @@
 
                 <div class="grid grid-cols-2 md:grid-cols-3 gap-4">
                     <!-- Gallery Item 1 -->
-                    <a class="group relative aspect-square overflow-hidden rounded-xl bg-neutral-100 dark:bg-neutral-800 reveal" href="gallery.html#work-1">
+                    <a class="group relative aspect-square overflow-hidden rounded-xl bg-neutral-100 dark:bg-neutral-800" href="gallery.html#work-1" data-aos="zoom-in" data-aos-delay="100">
                         <img src="assets/gallery/timelessgallery (1).jpg" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" alt="Karya 1" />
                         <div class="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors"></div>
                     </a>
                     <!-- Gallery Item 2 -->
-                    <a class="group relative aspect-square overflow-hidden rounded-xl bg-neutral-100 dark:bg-neutral-800 reveal" href="gallery.html#work-2">
+                    <a class="group relative aspect-square overflow-hidden rounded-xl bg-neutral-100 dark:bg-neutral-800" href="gallery.html#work-2" data-aos="zoom-in" data-aos-delay="200">
                         <img src="assets/gallery/timelessgallery (2).jpg" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" alt="Karya 2" />
                          <div class="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors"></div>
                     </a>
                     <!-- Gallery Item 3 -->
-                    <a class="group relative aspect-square overflow-hidden rounded-xl bg-neutral-100 dark:bg-neutral-800 reveal" href="gallery.html#work-3">
+                    <a class="group relative aspect-square overflow-hidden rounded-xl bg-neutral-100 dark:bg-neutral-800" href="gallery.html#work-3" data-aos="zoom-in" data-aos-delay="300">
                         <img src="assets/gallery/timelessgallery(7).png" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" alt="Karya 3" />
                          <div class="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors"></div>
                     </a>
                     <!-- Gallery Item 4 -->
-                    <a class="group relative aspect-square overflow-hidden rounded-xl bg-neutral-100 dark:bg-neutral-800 reveal" href="gallery.html#work-4">
+                    <a class="group relative aspect-square overflow-hidden rounded-xl bg-neutral-100 dark:bg-neutral-800" href="gallery.html#work-4" data-aos="zoom-in" data-aos-delay="400">
                         <img src="assets/gallery/timelessgallery (4).jpg" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" alt="Karya 4" />
                          <div class="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors"></div>
                     </a>
                     <!-- Gallery Item Video -->
-                    <a class="group relative aspect-square overflow-hidden rounded-xl bg-neutral-100 dark:bg-neutral-800 reveal video" href="gallery.html#video-1">
+                    <a class="group relative aspect-square overflow-hidden rounded-xl bg-neutral-100 dark:bg-neutral-800 video" href="gallery.html#video-1" data-aos="zoom-in" data-aos-delay="500">
                         <video autoplay muted loop playsinline preload="metadata" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105">
                             <source src="assets/gallery/timelessvideo (2).MP4" type="video/mp4" />
                         </video>
@@ -247,7 +254,7 @@
                         </div>
                     </a>
                     <!-- Gallery Item 5 -->
-                    <a class="group relative aspect-square overflow-hidden rounded-xl bg-neutral-100 dark:bg-neutral-800 reveal" href="gallery.html#work-5">
+                    <a class="group relative aspect-square overflow-hidden rounded-xl bg-neutral-100 dark:bg-neutral-800" href="gallery.html#work-5" data-aos="zoom-in" data-aos-delay="600">
                         <img src="assets/gallery/timelessgallery (5).jpg" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" alt="Karya 5" />
                          <div class="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors"></div>
                     </a>
@@ -266,7 +273,7 @@
             <div class="absolute top-0 right-0 p-32 bg-red-600/20 blur-[100px] rounded-full pointer-events-none"></div>
             <div class="absolute bottom-0 left-0 p-32 bg-blue-600/10 blur-[100px] rounded-full pointer-events-none"></div>
             
-            <div class="max-w-4xl mx-auto px-4 text-center relative z-10 reveal">
+            <div class="max-w-4xl mx-auto px-4 text-center relative z-10" data-aos="fade-up">
                 <h3 class="text-3xl md:text-5xl font-semibold tracking-tighter mb-6">Siap membuat visual yang berkesan?</h3>
                 <p class="text-xl text-neutral-400 mb-10 max-w-2xl mx-auto font-light">Kami siap berdiskusi. Konsultasi singkat via WhatsApp atau DM Instagram.</p>
                 <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
@@ -341,9 +348,29 @@
     </footer>
 
     <script defer src="assets/js/main.js"></script>
+    
+    <!-- Animation Scripts -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.7.0/vanilla-tilt.min.js"></script>
+    
     <script>
         // Initialize Lucide Icons
         lucide.createIcons();
+
+        // Initialize AOS
+        AOS.init({
+            duration: 800,
+            once: true,
+            offset: 100,
+        });
+
+        // Initialize Vanilla Tilt for Service Cards
+        VanillaTilt.init(document.querySelectorAll("[data-tilt]"), {
+            max: 15,
+            speed: 400,
+            glare: true,
+            "max-glare": 0.2,
+        });
 
         // Update Year
         document.getElementById('year').textContent = new Date().getFullYear();
@@ -358,29 +385,6 @@
             });
         }
 
-        // Dark Mode Sync with main.js (which uses data-theme)
-        // main.js handles the toggle click and sets data-theme attribute.
-        // We observe that attribute to toggle Tailwind's 'dark' class.
-        const html = document.documentElement;
-        
-        // Initial check
-        if (localStorage.getItem('theme') === 'dark' || html.getAttribute('data-theme') === 'dark') {
-            html.classList.add('dark');
-        }
 
-        // Observer for changes from main.js
-        const observer = new MutationObserver((mutations) => {
-            mutations.forEach((mutation) => {
-                if (mutation.attributeName === 'data-theme') {
-                    if (html.getAttribute('data-theme') === 'dark') {
-                        html.classList.add('dark');
-                    } else {
-                        html.classList.remove('dark');
-                    }
-                }
-            });
-        });
-        observer.observe(html, { attributes: true, attributeFilter: ['data-theme'] });
-    </script>
 </body>
 </html>
