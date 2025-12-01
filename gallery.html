@@ -48,6 +48,15 @@
             overflow: hidden;
         }
     </style>
+    <script>
+        if (localStorage.getItem('theme') === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+            document.documentElement.classList.add('dark');
+            document.documentElement.setAttribute('data-theme', 'dark');
+        } else {
+            document.documentElement.classList.remove('dark');
+            document.documentElement.setAttribute('data-theme', 'light');
+        }
+    </script>
 </head>
 <body class="bg-white text-neutral-900 font-sans antialiased selection:bg-red-100 selection:text-red-900 dark:bg-neutral-950 dark:text-white transition-colors duration-300">
 
@@ -56,9 +65,9 @@
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex justify-between items-center">
             
             <!-- Brand -->
-            <a class="flex items-center gap-3 group" href="index.html" aria-label="Beranda Timeless">
-                <img id="brand-logo" class="brand-logo !w-10 !h-10 !p-0 !border-0 !shadow-none object-cover rounded-full border border-neutral-200 dark:border-neutral-800" src="timelessbackground.jpeg" alt="Logo Timeless" />
-                <img class="brand-type h-5 w-auto object-contain dark:brightness-0 dark:invert" src="timelesstype.png" alt="TIMELESS" />
+            <a class="flex items-center gap-2.5 group" href="index.html" aria-label="Beranda Timeless">
+                <img class="w-10 h-10 rounded-full border border-neutral-200 dark:border-neutral-800 object-cover transition-transform group-hover:scale-105 brand-logo" src="timelessbackground.jpeg" alt="Logo Timeless" />
+                <img class="h-6 w-auto object-contain dark:brightness-0 dark:invert brand-type" src="timelesstype.png" alt="TIMELESS" />
             </a>
 
             <!-- Desktop Menu -->
@@ -72,8 +81,12 @@
 
             <!-- Mobile Toggle -->
             <div class="md:hidden">
-                <button class="p-2 text-neutral-600 dark:text-neutral-300 hover:text-neutral-900" aria-label="Buka menu" id="nav-toggle">
-                    <i data-lucide="menu" class="w-6 h-6"></i>
+                <button class="group p-2 text-neutral-600 dark:text-neutral-300 hover:text-neutral-900 focus:outline-none" aria-label="Buka menu" id="nav-toggle">
+                    <div class="w-6 h-5 relative flex flex-col justify-between">
+                        <span class="w-full h-0.5 bg-current rounded-full transition-all duration-300 origin-center group-[.active]:rotate-45 group-[.active]:translate-y-[9px]"></span>
+                        <span class="w-full h-0.5 bg-current rounded-full transition-all duration-300 group-[.active]:opacity-0"></span>
+                        <span class="w-full h-0.5 bg-current rounded-full transition-all duration-300 origin-center group-[.active]:-rotate-45 group-[.active]:-translate-y-[9px]"></span>
+                    </div>
                 </button>
             </div>
         </div>
@@ -237,9 +250,9 @@
             <div class="grid grid-cols-1 md:grid-cols-4 gap-12 mb-16">
                 <!-- Brand Mini -->
                 <div class="col-span-1 md:col-span-2">
-                    <div class="flex items-center gap-2 mb-4">
-                        <div class="w-6 h-6 bg-black dark:bg-white rounded flex items-center justify-center text-white dark:text-black font-bold text-xs tracking-tighter">T</div>
-                        <span class="font-bold tracking-tight text-neutral-900 dark:text-white">TIMELESS.</span>
+                    <div class="flex items-center gap-3 mb-4">
+                        <img class="w-10 h-10 rounded-full border border-neutral-200 dark:border-neutral-800 object-cover brand-logo" src="timelessbackground.jpeg" alt="Logo Timeless" />
+                        <img class="h-5 w-auto object-contain dark:brightness-0 dark:invert brand-type" src="timelesstype.png" alt="TIMELESS" />
                     </div>
                     <p class="text-sm text-neutral-500 dark:text-neutral-400 max-w-xs">
                         Mengabadikan momen terbaik dan membangun identitas visual yang kuat untuk masa depan.
@@ -291,6 +304,7 @@
         if(navToggle && mobileMenu) {
             navToggle.addEventListener('click', () => {
                 mobileMenu.classList.toggle('hidden');
+                navToggle.classList.toggle('active');
             });
         }
 
