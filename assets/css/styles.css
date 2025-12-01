@@ -470,3 +470,12 @@ textarea{min-height:120px}
 [data-theme="dark"] ::-webkit-scrollbar-thumb:hover {
     background: var(--muted);
 }
+
+/* Hide scrollbar for carousel */
+.no-scrollbar::-webkit-scrollbar {
+    display: none;
+}
+.no-scrollbar {
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+}
