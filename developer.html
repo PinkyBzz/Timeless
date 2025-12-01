@@ -72,8 +72,8 @@
             <!-- Brand -->
             <a class="flex items-center gap-2.5 group" href="index.html" aria-label="Beranda Timeless">
                 <img class="w-10 h-10 rounded-full border border-neutral-200 dark:border-neutral-800 object-cover transition-transform group-hover:scale-105 brand-logo" src="timelessbackground.jpeg" alt="Logo Timeless" />
-                <img class="h-6 w-auto object-contain brand-type dark:hidden" src="timelesstype.png" alt="TIMELESS" />
-                <img class="h-6 w-auto object-contain brand-type hidden dark:block" src="timelesstype-white.png" alt="TIMELESS" />
+                <img class="h-7 w-auto object-contain brand-type dark:hidden" src="timelesstype.png" alt="TIMELESS" />
+                <img class="h-9 w-auto object-contain brand-type hidden dark:block" src="timelesstype-white.png" alt="TIMELESS" />
             </a>
 
             <!-- Desktop Menu -->
@@ -140,11 +140,20 @@
             </div>
 
             <!-- Hidden Team Grid -->
-            <div id="team-grid-container" class="overflow-hidden max-h-0 opacity-0 transition-all duration-1000 ease-in-out">
-                <div class="flex w-full overflow-x-auto snap-x snap-mandatory gap-4 pb-8 sm:pb-0 sm:grid sm:grid-cols-2 lg:grid-cols-4 sm:gap-8 pt-12 no-scrollbar">
+            <div id="team-grid-container" class="overflow-hidden max-h-0 opacity-0 transition-all duration-700 ease-in-out">
+                <div class="relative">
+                    <!-- Mobile Navigation Arrows -->
+                    <button id="slide-prev" class="absolute left-2 top-[45%] -translate-y-1/2 z-20 bg-white/90 dark:bg-neutral-800/90 p-2 rounded-full shadow-lg border border-neutral-200 dark:border-neutral-700 text-neutral-900 dark:text-white sm:hidden opacity-0 transition-opacity duration-300 hover:bg-neutral-100 dark:hover:bg-neutral-700 disabled:opacity-0">
+                        <i data-lucide="chevron-left" class="w-6 h-6"></i>
+                    </button>
+                    <button id="slide-next" class="absolute right-2 top-[45%] -translate-y-1/2 z-20 bg-white/90 dark:bg-neutral-800/90 p-2 rounded-full shadow-lg border border-neutral-200 dark:border-neutral-700 text-neutral-900 dark:text-white sm:hidden opacity-0 transition-opacity duration-300 hover:bg-neutral-100 dark:hover:bg-neutral-700 disabled:opacity-0">
+                        <i data-lucide="chevron-right" class="w-6 h-6"></i>
+                    </button>
+
+                    <div id="team-scroll-area" class="flex w-full overflow-x-auto snap-x snap-mandatory gap-4 pb-8 pt-12 px-4 sm:px-0 sm:grid sm:grid-cols-2 lg:grid-cols-4 sm:gap-8 no-scrollbar touch-pan-x overscroll-x-contain" style="-webkit-overflow-scrolling: touch;">
                     
                     <!-- Member 1 -->
-                    <div class="min-w-[85%] sm:min-w-0 shrink-0 snap-center group relative overflow-hidden rounded-2xl bg-neutral-100 dark:bg-neutral-900">
+                    <div class="snap-center shrink-0 w-[70vw] max-w-[260px] sm:w-auto sm:max-w-none sm:min-w-0 group relative overflow-hidden rounded-2xl bg-neutral-100 dark:bg-neutral-900">
                         <div class="aspect-[3/4] overflow-hidden">
                             <img src="assets/gallery/Mahes satya ramadhan.jpg" alt="Mahes Satya Ramadhan" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" loading="lazy" />
                         </div>
@@ -167,7 +176,7 @@
                     </div>
 
                     <!-- Member 2 -->
-                    <div class="min-w-[85%] sm:min-w-0 shrink-0 snap-center group relative overflow-hidden rounded-2xl bg-neutral-100 dark:bg-neutral-900">
+                    <div class="snap-center shrink-0 w-[70vw] max-w-[260px] sm:w-auto sm:max-w-none sm:min-w-0 group relative overflow-hidden rounded-2xl bg-neutral-100 dark:bg-neutral-900">
                         <div class="aspect-[3/4] overflow-hidden">
                             <img src="assets/gallery/M. Firmansyah.jpg" alt="Rachmat Firmansyah" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" loading="lazy" />
                         </div>
@@ -190,7 +199,7 @@
                     </div>
 
                     <!-- Member 3 -->
-                    <div class="min-w-[85%] sm:min-w-0 shrink-0 snap-center group relative overflow-hidden rounded-2xl bg-neutral-100 dark:bg-neutral-900">
+                    <div class="snap-center shrink-0 w-[70vw] max-w-[260px] sm:w-auto sm:max-w-none sm:min-w-0 group relative overflow-hidden rounded-2xl bg-neutral-100 dark:bg-neutral-900">
                         <div class="aspect-[3/4] overflow-hidden">
                             <img src="assets/gallery/Zaky sefriano.jpg" alt="Zaky Sefriano" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" loading="lazy" />
                         </div>
@@ -213,7 +222,7 @@
                     </div>
 
                     <!-- Member 4 -->
-                    <div class="min-w-[85%] sm:min-w-0 shrink-0 snap-center group relative overflow-hidden rounded-2xl bg-neutral-100 dark:bg-neutral-900">
+                    <div class="snap-center shrink-0 w-[70vw] max-w-[260px] sm:w-auto sm:max-w-none sm:min-w-0 group relative overflow-hidden rounded-2xl bg-neutral-100 dark:bg-neutral-900">
                         <div class="aspect-[3/4] overflow-hidden">
                             <img src="assets/gallery/M. Rakha.jpg" alt="Muhammad Rakha" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" loading="lazy" />
                         </div>
@@ -235,6 +244,8 @@
                         </div>
                     </div>
 
+                </div>
+                    </div>
                 </div>
             </div>
         </section>
@@ -280,7 +291,7 @@
                     <div class="flex items-center gap-3 mb-4">
                         <img class="w-10 h-10 rounded-full border border-neutral-200 dark:border-neutral-800 object-cover brand-logo" src="timelessbackground.jpeg" alt="Logo Timeless" />
                         <img class="h-5 w-auto object-contain brand-type dark:hidden" src="timelesstype.png" alt="TIMELESS" />
-                        <img class="h-5 w-auto object-contain brand-type hidden dark:block" src="timelesstype-white.png" alt="TIMELESS" />
+                        <img class="h-7 w-auto object-contain brand-type hidden dark:block" src="timelesstype-white.png" alt="TIMELESS" />
                     </div>
                     <p class="text-sm text-neutral-500 dark:text-neutral-400 max-w-xs">
                         Mengabadikan momen terbaik dan membangun identitas visual yang kuat untuk masa depan.
@@ -372,8 +383,53 @@
                     // 3. Hide trigger completely after animation
                     setTimeout(() => {
                         revealTrigger.style.display = 'none';
-                    }, 500);
+                        container.classList.remove('overflow-hidden');
+                        container.style.overflow = 'visible'; // Force visible
+                        
+                        // Show arrows
+                        const prevBtn = document.getElementById('slide-prev');
+                        const nextBtn = document.getElementById('slide-next');
+                        if(prevBtn) prevBtn.classList.remove('opacity-0');
+                        if(nextBtn) nextBtn.classList.remove('opacity-0');
+                    }, 700);
                 });
+            }
+
+            // Carousel Navigation Logic
+            const scrollArea = document.getElementById('team-scroll-area');
+            const prevBtn = document.getElementById('slide-prev');
+            const nextBtn = document.getElementById('slide-next');
+
+            if(scrollArea && prevBtn && nextBtn) {
+                const scrollAmount = () => window.innerWidth * 0.75; // Scroll by 75% of screen width
+
+                prevBtn.addEventListener('click', () => {
+                    scrollArea.scrollBy({ left: -scrollAmount(), behavior: 'smooth' });
+                });
+
+                nextBtn.addEventListener('click', () => {
+                    scrollArea.scrollBy({ left: scrollAmount(), behavior: 'smooth' });
+                });
+                
+                // Optional: Hide arrows at boundaries
+                const checkScroll = () => {
+                    const tolerance = 10;
+                    if(scrollArea.scrollLeft <= tolerance) {
+                        prevBtn.classList.add('opacity-50', 'pointer-events-none');
+                    } else {
+                        prevBtn.classList.remove('opacity-50', 'pointer-events-none');
+                    }
+                    
+                    if(scrollArea.scrollLeft + scrollArea.clientWidth >= scrollArea.scrollWidth - tolerance) {
+                        nextBtn.classList.add('opacity-50', 'pointer-events-none');
+                    } else {
+                        nextBtn.classList.remove('opacity-50', 'pointer-events-none');
+                    }
+                };
+                
+                scrollArea.addEventListener('scroll', checkScroll);
+                // Initial check
+                setTimeout(checkScroll, 800);
             }
         });
     </script>
