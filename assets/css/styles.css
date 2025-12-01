@@ -153,8 +153,8 @@ img{max-width:100%; display:block}
 .brand{display:flex; align-items:center; gap:.6rem; color:var(--text); text-decoration:none; font-weight:700; letter-spacing:.12em}
 .brand img{width:34px; height:34px; object-fit:contain}
 .brand-logo{width:34px; height:34px; border-radius:50%; object-fit:cover; background:#fff; padding:2px; box-shadow:0 0 0 1px var(--border) inset}
-.brand-type{height:28px; width:auto; display:block}
-.site-header .brand-type{height:28px; max-height:28px; width:auto}
+.brand-type{width:auto; display:block}
+.site-header .brand-type{width:auto}
 @media (max-width: 480px){
   .site-header .brand-type{height:24px; max-height:24px}
 }
@@ -363,7 +363,7 @@ body.nav-open{overflow:hidden}
 .reveal.is-visible{opacity:1; transform:translateY(0)}
 
 /* Utilities */
-.hidden{display:none!important}
+.hidden{display:none}
 
 /* Simple gallery page */
 .gallery-grid{display:grid; grid-template-columns:repeat(3,1fr); gap:1rem}
