@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Kontak — TIMELESS</title>
+    <meta name="description" content="Hubungi Timeless untuk konsultasi project fotografi, videografi, atau desain logo." />
+    <link rel="icon" type="image/jpeg" href="timelessbackground.jpeg" />
+    
+    <!-- Tailwind & Fonts -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <!-- Original CSS Link (Preserved) -->
+    <link rel="stylesheet" href="assets/css/styles.css" />
+
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        brand: {
+                            red: '#DC2626', // red-600
+                            black: '#171717', // neutral-900
+                        }
+                    },
+                    animation: {
+                        'fade-in': 'fadeIn 0.5s ease-out forwards',
+                    },
+                    keyframes: {
+                        fadeIn: {
+                            '0%': { opacity: '0', transform: 'translateY(10px)' },
+                            '100%': { opacity: '1', transform: 'translateY(0)' },
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-white text-neutral-900 font-sans antialiased selection:bg-red-100 selection:text-red-900 dark:bg-neutral-950 dark:text-white transition-colors duration-300">
+
+    <!-- Header -->
+    <header class="fixed w-full !z-[999] top-0 bg-white/90 dark:bg-neutral-950/90 backdrop-blur-md border-b border-neutral-200 dark:border-neutral-800 transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex justify-between items-center">
+            
+            <!-- Brand -->
+            <a class="flex items-center gap-3 group" href="index.html" aria-label="Beranda Timeless">
+                <img id="brand-logo" class="brand-logo !w-10 !h-10 !p-0 !border-0 !shadow-none object-cover rounded-full border border-neutral-200 dark:border-neutral-800" src="timelessbackground.jpeg" alt="Logo Timeless" />
+                <img class="brand-type h-5 w-auto object-contain dark:brightness-0 dark:invert" src="timelesstype.png" alt="TIMELESS" />
+            </a>
+
+            <!-- Desktop Menu -->
+            <nav class="flex max-md:hidden items-center space-x-8" id="menu-desktop">
+                <a href="index.html" class="text-sm font-medium text-neutral-500 dark:text-neutral-400 hover:text-red-600 transition-colors">Beranda</a>
+                <a href="services.html" class="text-sm font-medium text-neutral-500 dark:text-neutral-400 hover:text-red-600 transition-colors">Layanan</a>
+                <a href="gallery.html" class="text-sm font-medium text-neutral-500 dark:text-neutral-400 hover:text-red-600 transition-colors">Galeri</a>
+                <a href="contact.html" class="text-sm font-medium text-red-600 dark:text-red-500 hover:text-red-700 transition-colors">Kontak</a>
+                <a href="developer.html" class="text-sm font-medium text-neutral-500 dark:text-neutral-400 hover:text-red-600 transition-colors">Tentang</a>
+            </nav>
+
+            <!-- Mobile Toggle -->
+            <div class="md:hidden">
+                <button class="p-2 text-neutral-600 dark:text-neutral-300 hover:text-neutral-900" aria-label="Buka menu" id="nav-toggle">
+                    <i data-lucide="menu" class="w-6 h-6"></i>
+                </button>
+            </div>
+        </div>
+        
+        <!-- Mobile Menu Dropdown -->
+        <div id="mobile-menu-dropdown" class="hidden md:hidden absolute top-16 left-0 w-full bg-white dark:bg-neutral-950 border-b border-neutral-200 dark:border-neutral-800 p-4 shadow-lg">
+            <nav class="flex flex-col space-y-4">
+                <a href="index.html" class="block text-sm font-medium text-neutral-500 dark:text-neutral-400">Beranda</a>
+                <a href="services.html" class="block text-sm font-medium text-neutral-500 dark:text-neutral-400">Layanan</a>
+                <a href="gallery.html" class="block text-sm font-medium text-neutral-500 dark:text-neutral-400">Galeri</a>
+                <a href="contact.html" class="block text-sm font-medium text-red-600 dark:text-red-500">Kontak</a>
+            </nav>
+        </div>
+    </header>
+
+    <div class="fixed inset-0 bg-black/50 z-40 hidden" id="nav-backdrop"></div>
+
+    <main class="pt-24 lg:pt-32 pb-20">
+        
+        <!-- Page Header -->
+        <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-16 text-center reveal animate-fade-in">
+            <h1 class="text-4xl lg:text-5xl font-bold tracking-tight text-neutral-900 dark:text-white mb-4">Hubungi Kami</h1>
+            <p class="text-lg text-neutral-500 dark:text-neutral-400 max-w-2xl mx-auto">
+                Konsultasi cepat dan gratis. Kami akan membalas secepatnya.
+            </p>
+        </section>
+
+        <!-- Contact Grid -->
+        <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-24">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+                
+                <!-- Direct Contact -->
+                <div class="bg-white dark:bg-neutral-950 p-8 rounded-2xl border border-neutral-200 dark:border-neutral-800 reveal">
+                    <h2 class="text-2xl font-semibold text-neutral-900 dark:text-white mb-4">Hubungi Langsung</h2>
+                    <p class="text-neutral-500 dark:text-neutral-400 mb-8">Lebih suka chat langsung? Silakan hubungi kami melalui platform berikut.</p>
+                    
+                    <div class="flex flex-col gap-4">
+                        <a id="wa-contact" href="#" class="flex items-center justify-center gap-3 w-full px-6 py-4 bg-green-600 hover:bg-green-700 text-white rounded-xl font-medium transition-colors">
+                            <i data-lucide="message-circle" class="w-5 h-5"></i>
+                            Konsultasi via WhatsApp
+                        </a>
+                        <a id="ig-contact" href="#" class="flex items-center justify-center gap-3 w-full px-6 py-4 border border-neutral-200 dark:border-neutral-700 hover:bg-neutral-50 dark:hover:bg-neutral-800 text-neutral-900 dark:text-white rounded-xl font-medium transition-colors">
+                            <i data-lucide="instagram" class="w-5 h-5"></i>
+                            Instagram
+                        </a>
+                        <a id="email-direct" href="#" class="flex items-center justify-center gap-3 w-full px-6 py-4 border border-neutral-200 dark:border-neutral-700 hover:bg-neutral-50 dark:hover:bg-neutral-800 text-neutral-900 dark:text-white rounded-xl font-medium transition-colors">
+                            <i data-lucide="mail" class="w-5 h-5"></i>
+                            Email
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Form -->
+                <div class="bg-white dark:bg-neutral-950 p-8 rounded-2xl border border-neutral-200 dark:border-neutral-800 reveal">
+                    <h2 class="text-2xl font-semibold text-neutral-900 dark:text-white mb-4">Kirim Brief Singkat</h2>
+                    <p class="text-neutral-500 dark:text-neutral-400 mb-8">Isi form di bawah ini untuk langsung terhubung ke WhatsApp kami dengan detail kebutuhan Anda.</p>
+                    
+                    <form class="space-y-4" onsubmit="event.preventDefault(); window.open(document.getElementById('waLink').href, '_blank');">
+                        <div>
+                            <label for="name" class="sr-only">Nama</label>
+                            <input type="text" id="name" placeholder="Nama" required class="w-full px-4 py-3 rounded-xl bg-neutral-50 dark:bg-neutral-900 border border-neutral-200 dark:border-neutral-800 focus:border-red-600 focus:ring-1 focus:ring-red-600 outline-none transition-all text-neutral-900 dark:text-white placeholder-neutral-400" />
+                        </div>
+                        <div>
+                            <label for="email" class="sr-only">Email</label>
+                            <input type="email" id="email" placeholder="Email" required class="w-full px-4 py-3 rounded-xl bg-neutral-50 dark:bg-neutral-900 border border-neutral-200 dark:border-neutral-800 focus:border-red-600 focus:ring-1 focus:ring-red-600 outline-none transition-all text-neutral-900 dark:text-white placeholder-neutral-400" />
+                        </div>
+                        <div>
+                            <label for="service" class="sr-only">Layanan</label>
+                            <select id="service" required class="w-full px-4 py-3 rounded-xl bg-neutral-50 dark:bg-neutral-900 border border-neutral-200 dark:border-neutral-800 focus:border-red-600 focus:ring-1 focus:ring-red-600 outline-none transition-all text-neutral-900 dark:text-white">
+                                <option value="Fotografi">Fotografi</option>
+                                <option value="Videografi">Videografi</option>
+                                <option value="Desain Logo">Desain Logo</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label for="message" class="sr-only">Pesan</label>
+                            <textarea id="message" rows="4" placeholder="Ceritakan singkat kebutuhan Anda" class="w-full px-4 py-3 rounded-xl bg-neutral-50 dark:bg-neutral-900 border border-neutral-200 dark:border-neutral-800 focus:border-red-600 focus:ring-1 focus:ring-red-600 outline-none transition-all text-neutral-900 dark:text-white placeholder-neutral-400"></textarea>
+                        </div>
+                        
+                        <a id="waLink" href="#" class="flex items-center justify-center w-full px-6 py-4 bg-red-600 hover:bg-red-700 text-white rounded-xl font-medium transition-colors shadow-lg shadow-red-600/20">
+                            Kirim ke WhatsApp <i data-lucide="send" class="ml-2 w-4 h-4"></i>
+                        </a>
+                    </form>
+                </div>
+
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Theme Toggle -->
+    <button class="fixed !bottom-6 !right-6 !z-[999] !w-12 !h-12 !p-0 flex items-center justify-center bg-white dark:bg-neutral-800 rounded-full shadow-xl border border-neutral-200 dark:border-neutral-700 hover:scale-110 transition-transform" id="theme-toggle" aria-label="Ganti tema">
+        <i data-lucide="sun" class="h-5 w-5 text-neutral-900 dark:!block" style="display:none"></i>
+        <i data-lucide="moon" class="h-5 w-5 text-neutral-900 block dark:hidden"></i>
+    </button>
+
+    <!-- Footer -->
+    <footer class="bg-white dark:bg-neutral-950 border-t border-neutral-100 dark:border-neutral-800 pt-16 pb-8">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-12 mb-16">
+                <!-- Brand Mini -->
+                <div class="col-span-1 md:col-span-2">
+                    <div class="flex items-center gap-2 mb-4">
+                        <div class="w-6 h-6 bg-black dark:bg-white rounded flex items-center justify-center text-white dark:text-black font-bold text-xs tracking-tighter">T</div>
+                        <span class="font-bold tracking-tight text-neutral-900 dark:text-white">TIMELESS.</span>
+                    </div>
+                    <p class="text-sm text-neutral-500 dark:text-neutral-400 max-w-xs">
+                        Mengabadikan momen terbaik dan membangun identitas visual yang kuat untuk masa depan.
+                    </p>
+                </div>
+
+                <!-- Links -->
+                <div class="flex flex-col space-y-3">
+                    <h4 class="font-medium text-neutral-900 dark:text-white text-sm mb-1">Menu</h4>
+                    <a href="index.html" class="text-sm text-neutral-500 dark:text-neutral-400 hover:text-red-600 transition-colors">Beranda</a>
+                    <a href="services.html" class="text-sm text-neutral-500 dark:text-neutral-400 hover:text-red-600 transition-colors">Layanan</a>
+                    <a href="gallery.html" class="text-sm text-neutral-500 dark:text-neutral-400 hover:text-red-600 transition-colors">Galeri</a>
+                    <a href="developer.html" class="text-sm text-neutral-500 dark:text-neutral-400 hover:text-red-600 transition-colors">Tentang</a>
+                </div>
+
+                <!-- Socials -->
+                <div class="flex flex-col space-y-4">
+                     <h4 class="font-medium text-neutral-900 dark:text-white text-sm mb-1">Hubungi Kami</h4>
+                    <div class="flex gap-4">
+                        <a id="footer-wa" href="#" aria-label="WhatsApp" class="text-neutral-400 hover:text-green-500 transition-colors">
+                            <i data-lucide="message-circle" class="h-5 w-5"></i>
+                        </a>
+                        <a id="footer-email" href="#" aria-label="Email" class="text-neutral-400 hover:text-blue-500 transition-colors">
+                             <i data-lucide="mail" class="h-5 w-5"></i>
+                        </a>
+                        <a id="footer-ig" href="#" aria-label="Instagram" class="text-neutral-400 hover:text-pink-500 transition-colors">
+                             <i data-lucide="instagram" class="h-5 w-5"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pt-8 border-t border-neutral-100 dark:border-neutral-800 flex flex-col md:flex-row justify-between items-center gap-4">
+                <small class="text-xs text-neutral-400">© <span id="year"></span> Timeless Creative Studio.</small>
+                <span class="text-xs text-neutral-400 text-center md:text-right">
+                    Mahes Satya Ramadhan • Rachmat Firmansyah <br class="md:hidden"> • Zaky Sefriano • Muhammad Rakha
+                </span>
+            </div>
+        </div>
+    </footer>
+
+    <script defer src="assets/js/main.js"></script>
+    <script>
+        lucide.createIcons();
+        document.getElementById('year').textContent = new Date().getFullYear();
+
+        const navToggle = document.getElementById('nav-toggle');
+        const mobileMenu = document.getElementById('mobile-menu-dropdown');
+        if(navToggle && mobileMenu) {
+            navToggle.addEventListener('click', () => {
+                mobileMenu.classList.toggle('hidden');
+            });
+        }
+
+        const html = document.documentElement;
+        if (localStorage.getItem('theme') === 'dark' || html.getAttribute('data-theme') === 'dark') {
+            html.classList.add('dark');
+        }
+        const observer = new MutationObserver((mutations) => {
+            mutations.forEach((mutation) => {
+                if (mutation.attributeName === 'data-theme') {
+                    if (html.getAttribute('data-theme') === 'dark') {
+                        html.classList.add('dark');
+                    } else {
+                        html.classList.remove('dark');
+                    }
+                }
+            });
+        });
+        observer.observe(html, { attributes: true, attributeFilter: ['data-theme'] });
+
+        // WhatsApp Link Builder
+        (function(){
+            const phone = '6285183565910'; // Nomor WhatsApp tujuan
+            function build(){
+            const n=document.getElementById('name').value||'-';
+            const e=document.getElementById('email').value||'-';
+            const s=document.getElementById('service').value||'-';
+            const m=document.getElementById('message').value||'-';
+            const text = `Halo Timeless,%0A%0ANama: ${encodeURIComponent(n)}%0AEmail: ${encodeURIComponent(e)}%0ALayanan: ${encodeURIComponent(s)}%0APesan: ${encodeURIComponent(m)}`;
+            const ua = navigator.userAgent || '';
+            const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(ua);
+            return isMobile
+                ? `https://wa.me/${phone}?text=${text}&app_absent=0`
+                : `https://web.whatsapp.com/send?phone=${phone}&text=${text}&app_absent=0`;
+            }
+            const link=document.getElementById('waLink');
+            const inputs=['name','email','service','message'].map(id=>document.getElementById(id));
+            function update(){ link.href = build(); }
+            inputs.forEach(i=> i.addEventListener('input', update));
+            update();
+        })();
+    </script>
+</body>
+</html>

@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>TIMELESS — Fotografi, Videografi, Desain Logo</title>
+    <meta name="description" content="Timeless: Jasa fotografi, videografi, dan pembuatan logo profesional." />
+    <link rel="icon" type="image/jpeg" href="timelessbackground.jpeg" />
+    
+    <!-- Tailwind & Fonts -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <!-- Original CSS Link (Preserved) -->
+    <link rel="stylesheet" href="assets/css/styles.css" />
+
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        brand: {
+                            red: '#DC2626', // red-600
+                            black: '#171717', // neutral-900
+                        }
+                    },
+                    animation: {
+                        'fade-in': 'fadeIn 0.5s ease-out forwards',
+                    },
+                    keyframes: {
+                        fadeIn: {
+                            '0%': { opacity: '0', transform: 'translateY(10px)' },
+                            '100%': { opacity: '1', transform: 'translateY(0)' },
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-white text-neutral-900 font-sans antialiased selection:bg-red-100 selection:text-red-900 dark:bg-neutral-950 dark:text-white transition-colors duration-300">
+
+    <!-- Header -->
+    <header class="fixed w-full !z-[999] top-0 bg-white/90 dark:bg-neutral-950/90 backdrop-blur-md border-b border-neutral-200 dark:border-neutral-800 transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex justify-between items-center">
+            
+            <!-- Brand -->
+            <a class="flex items-center gap-3 group" href="index.html" aria-label="Beranda Timeless">
+                <!-- Added ! classes to override legacy styles.css conflicts -->
+                <img id="brand-logo" class="brand-logo !w-10 !h-10 !p-0 !border-0 !shadow-none object-cover rounded-full border border-neutral-200 dark:border-neutral-800" src="timelessbackground.jpeg" alt="Logo Timeless" />
+                <img class="brand-type h-5 w-auto object-contain dark:brightness-0 dark:invert" src="timelesstype.png" alt="TIMELESS" />
+            </a>
+
+            <!-- Desktop Menu -->
+            <nav class="flex max-md:hidden items-center space-x-8" id="menu-desktop">
+                <a href="index.html" class="text-sm font-medium text-neutral-900 dark:text-white hover:text-red-600 transition-colors">Beranda</a>
+                <a href="services.html" class="text-sm font-medium text-neutral-500 dark:text-neutral-400 hover:text-red-600 transition-colors">Layanan</a>
+                <a href="gallery.html" class="text-sm font-medium text-neutral-500 dark:text-neutral-400 hover:text-red-600 transition-colors">Galeri</a>
+                <a href="contact.html" class="text-sm font-medium text-neutral-500 dark:text-neutral-400 hover:text-red-600 transition-colors">Kontak</a>
+                <a href="developer.html" class="text-sm font-medium text-neutral-500 dark:text-neutral-400 hover:text-red-600 transition-colors">Tentang</a>
+            </nav>
+
+            <!-- Mobile Toggle -->
+            <div class="md:hidden">
+                <button class="p-2 text-neutral-600 dark:text-neutral-300 hover:text-neutral-900" aria-label="Buka menu" id="nav-toggle">
+                    <i data-lucide="menu" class="w-6 h-6"></i>
+                </button>
+            </div>
+        </div>
+        
+        <!-- Mobile Menu Dropdown (Hidden by default) -->
+        <div id="mobile-menu-dropdown" class="hidden md:hidden absolute top-16 left-0 w-full bg-white dark:bg-neutral-950 border-b border-neutral-200 dark:border-neutral-800 p-4 shadow-lg">
+            <nav class="flex flex-col space-y-4">
+                <a href="index.html" class="block text-sm font-medium text-neutral-900 dark:text-white">Beranda</a>
+                <a href="services.html" class="block text-sm font-medium text-neutral-500 dark:text-neutral-400">Layanan</a>
+                <a href="gallery.html" class="block text-sm font-medium text-neutral-500 dark:text-neutral-400">Galeri</a>
+                <a href="contact.html" class="block text-sm font-medium text-neutral-500 dark:text-neutral-400">Kontak</a>
+            </nav>
+        </div>
+    </header>
+
+    <div class="fixed inset-0 bg-black/50 z-40 hidden" id="nav-backdrop"></div>
+
+    <main class="pt-24 lg:pt-32">
+        <!-- Hero Section -->
+        <section class="relative pb-20 lg:pb-32 overflow-hidden">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="flex flex-col lg:flex-row items-center gap-12 lg:gap-20">
+                    
+                    <!-- Copy -->
+                    <div class="flex-1 text-center lg:text-left reveal animate-fade-in">
+                        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-neutral-100 dark:bg-neutral-900 border border-neutral-200 dark:border-neutral-800 mb-6">
+                            <span class="flex h-2 w-2 rounded-full bg-red-600 animate-pulse"></span>
+                            <span class="text-xs font-medium text-neutral-600 dark:text-neutral-300 uppercase tracking-wide">Studio Kreatif</span>
+                        </div>
+                        
+                        <h1 class="text-5xl lg:text-7xl font-semibold tracking-tighter text-neutral-900 dark:text-white mb-6 leading-[1.1]">
+                            Mengabadikan Momen, <br>
+                            <span class="text-transparent bg-clip-text bg-gradient-to-r from-red-600 to-red-500">Menguatkan Brand.</span>
+                        </h1>
+                        
+                        <p class="text-lg text-neutral-500 dark:text-neutral-400 mb-8 max-w-2xl mx-auto lg:mx-0 leading-relaxed">
+                            Timeless adalah studio kreatif yang berfokus pada
+                            <strong class="text-neutral-900 dark:text-white font-medium">fotografi</strong>, <strong class="text-neutral-900 dark:text-white font-medium">videografi</strong>, dan
+                            <strong class="text-neutral-900 dark:text-white font-medium">desain logo</strong>. Kami membantu bisnis dan individu tampil berkesan—tanpa lekang oleh waktu.
+                        </p>
+                        
+                        <div class="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4">
+                            <a class="w-full sm:w-auto inline-flex items-center justify-center px-6 py-3 border border-neutral-200 dark:border-neutral-700 hover:border-red-200 text-sm font-medium rounded-full text-neutral-700 dark:text-white bg-white dark:bg-neutral-800 hover:bg-neutral-50 dark:hover:bg-neutral-700 transition-all" href="services.html">
+                                Lihat Layanan
+                            </a>
+                            <a class="w-full sm:w-auto inline-flex items-center justify-center px-6 py-3 border border-transparent text-sm font-medium rounded-full text-white bg-red-600 hover:bg-red-700 shadow-lg shadow-red-600/20 transition-all" id="cta-wa" href="#">
+                                Konsultasi via WhatsApp <i data-lucide="arrow-right" class="ml-2 h-4 w-4"></i>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Media -->
+                    <div class="flex-1 w-full max-w-lg lg:max-w-none reveal">
+                        <a class="block relative group rounded-2xl overflow-hidden shadow-2xl shadow-neutral-200 dark:shadow-none hero-preview" href="gallery.html" aria-label="Lihat galeri">
+                            <div class="aspect-[4/3] relative bg-neutral-100 dark:bg-neutral-900">
+                                <video autoplay muted loop playsinline preload="auto" class="w-full h-full object-cover opacity-90 group-hover:scale-105 transition-transform duration-700">
+                                    <source src="assets/gallery/timelessvideo.MP4" type="video/mp4" />
+                                    <source src="assets/gallery/timelessvideo.MOV" type="video/quicktime" />
+                                    <img src="timelessbackground.jpeg" alt="Cuplikan karya Timeless" />
+                                </video>
+                                
+                                <div class="absolute inset-0 bg-black/40 group-hover:bg-black/20 transition-colors">
+                                    <div class="absolute top-4 left-4 flex flex-wrap gap-2">
+                                        <span class="px-3 py-1 bg-white/20 backdrop-blur-md border border-white/10 rounded-full text-xs font-medium text-white">Fotografi</span>
+                                        <span class="px-3 py-1 bg-white/20 backdrop-blur-md border border-white/10 rounded-full text-xs font-medium text-white">Videografi</span>
+                                    </div>
+                                    
+                                    <div class="absolute inset-0 flex items-center justify-center">
+                                        <div class="w-16 h-16 bg-white/10 backdrop-blur-md rounded-full flex items-center justify-center border border-white/20 group-hover:scale-110 transition-transform">
+                                            <i data-lucide="play" class="h-6 w-6 text-white ml-1 fill-white"></i>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="absolute bottom-6 left-6 right-6">
+                                         <span class="inline-block px-4 py-2 bg-black text-white text-sm font-medium rounded-full">Lihat Galeri</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Services Section -->
+        <section class="py-24 bg-neutral-50 dark:bg-neutral-900/50">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <header class="text-center max-w-2xl mx-auto mb-16 reveal">
+                    <h2 class="text-3xl lg:text-4xl font-semibold tracking-tight text-neutral-900 dark:text-white mb-4">Apa yang Kami Kerjakan</h2>
+                    <p class="text-lg text-neutral-500 dark:text-neutral-400">Solusi visual untuk kebutuhan personal dan bisnis Anda.</p>
+                </header>
+
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <!-- Fotografi -->
+                    <article class="group p-8 bg-white dark:bg-neutral-950 rounded-2xl border border-neutral-200 dark:border-neutral-800 hover:border-red-200 dark:hover:border-red-900 transition-all hover:shadow-lg hover:-translate-y-1 reveal">
+                        <div class="w-12 h-12 bg-red-50 dark:bg-red-900/20 rounded-lg flex items-center justify-center text-red-600 mb-6">
+                            <i data-lucide="camera" class="h-6 w-6"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold text-neutral-900 dark:text-white mb-3">Fotografi</h3>
+                        <p class="text-neutral-500 dark:text-neutral-400 mb-6 leading-relaxed">Produk, profil, event, hingga kampanye. Tajam, bersih, berkarakter.</p>
+                        <a class="inline-flex items-center text-sm font-medium text-neutral-900 dark:text-white hover:text-red-600 transition-colors" href="services.html#fotografi">
+                            Selengkapnya <i data-lucide="arrow-right" class="ml-1 h-4 w-4"></i>
+                        </a>
+                    </article>
+
+                    <!-- Videografi -->
+                    <article class="group p-8 bg-white dark:bg-neutral-950 rounded-2xl border border-neutral-200 dark:border-neutral-800 hover:border-red-200 dark:hover:border-red-900 transition-all hover:shadow-lg hover:-translate-y-1 reveal">
+                         <div class="w-12 h-12 bg-red-50 dark:bg-red-900/20 rounded-lg flex items-center justify-center text-red-600 mb-6">
+                            <i data-lucide="video" class="h-6 w-6"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold text-neutral-900 dark:text-white mb-3">Videografi</h3>
+                        <p class="text-neutral-500 dark:text-neutral-400 mb-6 leading-relaxed">Video promosi, dokumentasi, dan konten sosial yang bercerita.</p>
+                        <a class="inline-flex items-center text-sm font-medium text-neutral-900 dark:text-white hover:text-red-600 transition-colors" href="services.html#videografi">
+                            Selengkapnya <i data-lucide="arrow-right" class="ml-1 h-4 w-4"></i>
+                        </a>
+                    </article>
+
+                    <!-- Logo -->
+                    <article class="group p-8 bg-white dark:bg-neutral-950 rounded-2xl border border-neutral-200 dark:border-neutral-800 hover:border-red-200 dark:hover:border-red-900 transition-all hover:shadow-lg hover:-translate-y-1 reveal">
+                         <div class="w-12 h-12 bg-red-50 dark:bg-red-900/20 rounded-lg flex items-center justify-center text-red-600 mb-6">
+                            <i data-lucide="pen-tool" class="h-6 w-6"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold text-neutral-900 dark:text-white mb-3">Desain Logo</h3>
+                        <p class="text-neutral-500 dark:text-neutral-400 mb-6 leading-relaxed">Identitas visual yang relevan, sederhana, dan mudah diingat.</p>
+                        <a class="inline-flex items-center text-sm font-medium text-neutral-900 dark:text-white hover:text-red-600 transition-colors" href="services.html#logo">
+                            Selengkapnya <i data-lucide="arrow-right" class="ml-1 h-4 w-4"></i>
+                        </a>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- Gallery Section -->
+        <section class="py-24">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <header class="flex justify-between items-end mb-12 reveal">
+                    <div>
+                        <h2 class="text-3xl lg:text-4xl font-semibold tracking-tight text-neutral-900 dark:text-white">Cuplikan Galeri</h2>
+                        <p class="mt-2 text-neutral-500 dark:text-neutral-400">Beberapa highlight karya kami.</p>
+                    </div>
+                    <a class="hidden md:flex items-center text-sm font-medium text-red-600 hover:text-red-700" href="gallery.html">
+                        Lihat Semua <i data-lucide="arrow-up-right" class="ml-1 h-4 w-4"></i>
+                    </a>
+                </header>
+
+                <div class="grid grid-cols-2 md:grid-cols-3 gap-4">
+                    <!-- Gallery Item 1 -->
+                    <a class="group relative aspect-square overflow-hidden rounded-xl bg-neutral-100 dark:bg-neutral-800 reveal" href="gallery.html#work-1">
+                        <img src="assets/gallery/timelessgallery (1).jpg" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" alt="Karya 1" />
+                        <div class="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors"></div>
+                    </a>
+                    <!-- Gallery Item 2 -->
+                    <a class="group relative aspect-square overflow-hidden rounded-xl bg-neutral-100 dark:bg-neutral-800 reveal" href="gallery.html#work-2">
+                        <img src="assets/gallery/timelessgallery (2).jpg" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" alt="Karya 2" />
+                         <div class="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors"></div>
+                    </a>
+                    <!-- Gallery Item 3 -->
+                    <a class="group relative aspect-square overflow-hidden rounded-xl bg-neutral-100 dark:bg-neutral-800 reveal" href="gallery.html#work-3">
+                        <img src="assets/gallery/timelessgallery(7).png" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" alt="Karya 3" />
+                         <div class="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors"></div>
+                    </a>
+                    <!-- Gallery Item 4 -->
+                    <a class="group relative aspect-square overflow-hidden rounded-xl bg-neutral-100 dark:bg-neutral-800 reveal" href="gallery.html#work-4">
+                        <img src="assets/gallery/timelessgallery (4).jpg" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" alt="Karya 4" />
+                         <div class="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors"></div>
+                    </a>
+                    <!-- Gallery Item Video -->
+                    <a class="group relative aspect-square overflow-hidden rounded-xl bg-neutral-100 dark:bg-neutral-800 reveal video" href="gallery.html#video-1">
+                        <video autoplay muted loop playsinline preload="metadata" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105">
+                            <source src="assets/gallery/timelessvideo (2).MP4" type="video/mp4" />
+                        </video>
+                        <div class="absolute inset-0 flex items-center justify-center bg-black/20">
+                            <div class="w-10 h-10 rounded-full bg-white/30 backdrop-blur-sm flex items-center justify-center">
+                                <i data-lucide="play" class="h-4 w-4 text-white fill-white ml-0.5"></i>
+                            </div>
+                        </div>
+                    </a>
+                    <!-- Gallery Item 5 -->
+                    <a class="group relative aspect-square overflow-hidden rounded-xl bg-neutral-100 dark:bg-neutral-800 reveal" href="gallery.html#work-5">
+                        <img src="assets/gallery/timelessgallery (5).jpg" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" alt="Karya 5" />
+                         <div class="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors"></div>
+                    </a>
+                </div>
+                
+                <div class="mt-8 flex justify-center md:hidden">
+                    <a class="inline-flex items-center justify-center px-6 py-3 bg-red-600 hover:bg-red-700 text-white rounded-full text-sm font-medium transition-colors" href="gallery.html">
+                        Lihat Semua
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA Section -->
+        <section class="py-32 bg-neutral-900 text-white relative overflow-hidden">
+            <div class="absolute top-0 right-0 p-32 bg-red-600/20 blur-[100px] rounded-full pointer-events-none"></div>
+            <div class="absolute bottom-0 left-0 p-32 bg-blue-600/10 blur-[100px] rounded-full pointer-events-none"></div>
+            
+            <div class="max-w-4xl mx-auto px-4 text-center relative z-10 reveal">
+                <h3 class="text-3xl md:text-5xl font-semibold tracking-tighter mb-6">Siap membuat visual yang berkesan?</h3>
+                <p class="text-xl text-neutral-400 mb-10 max-w-2xl mx-auto font-light">Kami siap berdiskusi. Konsultasi singkat via WhatsApp atau DM Instagram.</p>
+                <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+                    <a class="w-full sm:w-auto px-8 py-3.5 bg-red-600 hover:bg-red-500 text-white rounded-full font-medium text-sm transition-all shadow-lg shadow-red-900/50" id="cta-wa-2" href="#">
+                        Konsultasi via WhatsApp
+                    </a>
+                    <a class="w-full sm:w-auto px-8 py-3.5 border border-neutral-700 hover:border-neutral-500 hover:bg-neutral-800 text-white rounded-full font-medium text-sm transition-all" id="cta-ig" href="#">
+                        Instagram
+                    </a>
+                    <a class="w-full sm:w-auto px-8 py-3.5 border border-neutral-700 hover:border-neutral-500 hover:bg-neutral-800 text-white rounded-full font-medium text-sm transition-all" id="email-direct" href="#">
+                        Email
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Theme Toggle -->
+    <button class="fixed !bottom-6 !right-6 !z-[999] !w-12 !h-12 !p-0 flex items-center justify-center bg-white dark:bg-neutral-800 rounded-full shadow-xl border border-neutral-200 dark:border-neutral-700 hover:scale-110 transition-transform" id="theme-toggle" aria-label="Ganti tema">
+        <i data-lucide="sun" class="h-5 w-5 text-neutral-900 dark:!block" style="display:none"></i>
+        <i data-lucide="moon" class="h-5 w-5 text-neutral-900 block dark:hidden"></i>
+    </button>
+
+    <!-- Footer -->
+    <footer class="bg-white dark:bg-neutral-950 border-t border-neutral-100 dark:border-neutral-800 pt-16 pb-8">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-12 mb-16">
+                <!-- Brand Mini -->
+                <div class="col-span-1 md:col-span-2">
+                    <div class="flex items-center gap-2 mb-4">
+                        <div class="w-6 h-6 bg-black dark:bg-white rounded flex items-center justify-center text-white dark:text-black font-bold text-xs tracking-tighter">T</div>
+                        <span class="font-bold tracking-tight text-neutral-900 dark:text-white">TIMELESS.</span>
+                    </div>
+                    <p class="text-sm text-neutral-500 dark:text-neutral-400 max-w-xs">
+                        Mengabadikan momen terbaik dan membangun identitas visual yang kuat untuk masa depan.
+                    </p>
+                </div>
+
+                <!-- Links -->
+                <div class="flex flex-col space-y-3">
+                    <h4 class="font-medium text-neutral-900 dark:text-white text-sm mb-1">Menu</h4>
+                    <a href="index.html" class="text-sm text-neutral-500 dark:text-neutral-400 hover:text-red-600 transition-colors">Beranda</a>
+                    <a href="services.html" class="text-sm text-neutral-500 dark:text-neutral-400 hover:text-red-600 transition-colors">Layanan</a>
+                    <a href="gallery.html" class="text-sm text-neutral-500 dark:text-neutral-400 hover:text-red-600 transition-colors">Galeri</a>
+                    <a href="developer.html" class="text-sm text-neutral-500 dark:text-neutral-400 hover:text-red-600 transition-colors">Tentang</a>
+                </div>
+
+                <!-- Socials -->
+                <div class="flex flex-col space-y-4">
+                     <h4 class="font-medium text-neutral-900 dark:text-white text-sm mb-1">Hubungi Kami</h4>
+                    <div class="flex gap-4">
+                        <a id="footer-wa" href="#" aria-label="WhatsApp" class="text-neutral-400 hover:text-green-500 transition-colors">
+                            <i data-lucide="message-circle" class="h-5 w-5"></i>
+                        </a>
+                        <a id="footer-email" href="#" aria-label="Email" class="text-neutral-400 hover:text-blue-500 transition-colors">
+                             <i data-lucide="mail" class="h-5 w-5"></i>
+                        </a>
+                        <a id="footer-ig" href="#" aria-label="Instagram" class="text-neutral-400 hover:text-pink-500 transition-colors">
+                             <i data-lucide="instagram" class="h-5 w-5"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pt-8 border-t border-neutral-100 dark:border-neutral-800 flex flex-col md:flex-row justify-between items-center gap-4">
+                <small class="text-xs text-neutral-400">© <span id="year"></span> Timeless Creative Studio.</small>
+                <span class="text-xs text-neutral-400 text-center md:text-right">
+                    Mahes Satya Ramadhan • Rachmat Firmansyah <br class="md:hidden"> • Zaky Sefriano • Muhammad Rakha
+                </span>
+            </div>
+        </div>
+    </footer>
+
+    <script defer src="assets/js/main.js"></script>
+    <script>
+        // Initialize Lucide Icons
+        lucide.createIcons();
+
+        // Update Year
+        document.getElementById('year').textContent = new Date().getFullYear();
+
+        // Simple Mobile Menu Logic
+        const navToggle = document.getElementById('nav-toggle');
+        const mobileMenu = document.getElementById('mobile-menu-dropdown');
+        
+        if(navToggle && mobileMenu) {
+            navToggle.addEventListener('click', () => {
+                mobileMenu.classList.toggle('hidden');
+            });
+        }
+
+        // Dark Mode Sync with main.js (which uses data-theme)
+        // main.js handles the toggle click and sets data-theme attribute.
+        // We observe that attribute to toggle Tailwind's 'dark' class.
+        const html = document.documentElement;
+        
+        // Initial check
+        if (localStorage.getItem('theme') === 'dark' || html.getAttribute('data-theme') === 'dark') {
+            html.classList.add('dark');
+        }
+
+        // Observer for changes from main.js
+        const observer = new MutationObserver((mutations) => {
+            mutations.forEach((mutation) => {
+                if (mutation.attributeName === 'data-theme') {
+                    if (html.getAttribute('data-theme') === 'dark') {
+                        html.classList.add('dark');
+                    } else {
+                        html.classList.remove('dark');
+                    }
+                }
+            });
+        });
+        observer.observe(html, { attributes: true, attributeFilter: ['data-theme'] });
+    </script>
+</body>
+</html>

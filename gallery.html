@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Galeri — TIMELESS</title>
+    <meta name="description" content="Galeri karya fotografi dan videografi Timeless." />
+    <link rel="icon" type="image/jpeg" href="timelessbackground.jpeg" />
+    
+    <!-- Tailwind & Fonts -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <!-- Original CSS Link (Preserved) -->
+    <link rel="stylesheet" href="assets/css/styles.css" />
+
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        brand: {
+                            red: '#DC2626', // red-600
+                            black: '#171717', // neutral-900
+                        }
+                    },
+                    animation: {
+                        'fade-in': 'fadeIn 0.5s ease-out forwards',
+                    },
+                    keyframes: {
+                        fadeIn: {
+                            '0%': { opacity: '0', transform: 'translateY(10px)' },
+                            '100%': { opacity: '1', transform: 'translateY(0)' },
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        /* Hide scrollbar when modal is open */
+        body.modal-open {
+            overflow: hidden;
+        }
+    </style>
+</head>
+<body class="bg-white text-neutral-900 font-sans antialiased selection:bg-red-100 selection:text-red-900 dark:bg-neutral-950 dark:text-white transition-colors duration-300">
+
+    <!-- Header -->
+    <header class="fixed w-full !z-[999] top-0 bg-white/90 dark:bg-neutral-950/90 backdrop-blur-md border-b border-neutral-200 dark:border-neutral-800 transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex justify-between items-center">
+            
+            <!-- Brand -->
+            <a class="flex items-center gap-3 group" href="index.html" aria-label="Beranda Timeless">
+                <img id="brand-logo" class="brand-logo !w-10 !h-10 !p-0 !border-0 !shadow-none object-cover rounded-full border border-neutral-200 dark:border-neutral-800" src="timelessbackground.jpeg" alt="Logo Timeless" />
+                <img class="brand-type h-5 w-auto object-contain dark:brightness-0 dark:invert" src="timelesstype.png" alt="TIMELESS" />
+            </a>
+
+            <!-- Desktop Menu -->
+            <nav class="flex max-md:hidden items-center space-x-8" id="menu-desktop">
+                <a href="index.html" class="text-sm font-medium text-neutral-500 dark:text-neutral-400 hover:text-red-600 transition-colors">Beranda</a>
+                <a href="services.html" class="text-sm font-medium text-neutral-500 dark:text-neutral-400 hover:text-red-600 transition-colors">Layanan</a>
+                <a href="gallery.html" class="text-sm font-medium text-red-600 dark:text-red-500 hover:text-red-700 transition-colors">Galeri</a>
+                <a href="contact.html" class="text-sm font-medium text-neutral-500 dark:text-neutral-400 hover:text-red-600 transition-colors">Kontak</a>
+                <a href="developer.html" class="text-sm font-medium text-neutral-500 dark:text-neutral-400 hover:text-red-600 transition-colors">Tentang</a>
+            </nav>
+
+            <!-- Mobile Toggle -->
+            <div class="md:hidden">
+                <button class="p-2 text-neutral-600 dark:text-neutral-300 hover:text-neutral-900" aria-label="Buka menu" id="nav-toggle">
+                    <i data-lucide="menu" class="w-6 h-6"></i>
+                </button>
+            </div>
+        </div>
+        
+        <!-- Mobile Menu Dropdown -->
+        <div id="mobile-menu-dropdown" class="hidden md:hidden absolute top-16 left-0 w-full bg-white dark:bg-neutral-950 border-b border-neutral-200 dark:border-neutral-800 p-4 shadow-lg">
+            <nav class="flex flex-col space-y-4">
+                <a href="index.html" class="block text-sm font-medium text-neutral-500 dark:text-neutral-400">Beranda</a>
+                <a href="services.html" class="block text-sm font-medium text-neutral-500 dark:text-neutral-400">Layanan</a>
+                <a href="gallery.html" class="block text-sm font-medium text-red-600 dark:text-red-500">Galeri</a>
+                <a href="contact.html" class="block text-sm font-medium text-neutral-500 dark:text-neutral-400">Kontak</a>
+            </nav>
+        </div>
+    </header>
+
+    <div class="fixed inset-0 bg-black/50 z-40 hidden" id="nav-backdrop"></div>
+
+    <main class="pt-24 lg:pt-32 pb-20">
+        
+        <!-- Page Header -->
+        <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-16 text-center reveal animate-fade-in">
+            <h1 class="text-4xl lg:text-5xl font-bold tracking-tight text-neutral-900 dark:text-white mb-4">Galeri Karya</h1>
+            <p class="text-lg text-neutral-500 dark:text-neutral-400 max-w-2xl mx-auto">
+                Kumpulan karya terbaik kami yang telah membantu klien mencapai tujuan mereka.
+            </p>
+        </section>
+
+        <!-- Gallery Grid -->
+        <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-24">
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6" id="gallery-grid">
+                
+                <!-- Foto 1 -->
+                <a href="assets/gallery/timelessgallery (1).jpg" class="gallery-item group relative aspect-square overflow-hidden rounded-xl bg-neutral-100 dark:bg-neutral-800 reveal block cursor-zoom-in" data-type="image">
+                    <img src="assets/gallery/timelessgallery (1).jpg" alt="Karya 1" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" loading="lazy" />
+                    <div class="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors duration-300 flex items-center justify-center opacity-0 group-hover:opacity-100">
+                        <div class="bg-white/90 dark:bg-neutral-900/90 backdrop-blur px-4 py-2 rounded-full text-sm font-medium text-neutral-900 dark:text-white shadow-lg transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300">
+                            Lihat Full
+                        </div>
+                    </div>
+                </a>
+
+                <!-- Foto 2 -->
+                <a href="assets/gallery/timelessgallery (2).jpg" class="gallery-item group relative aspect-square overflow-hidden rounded-xl bg-neutral-100 dark:bg-neutral-800 reveal block cursor-zoom-in" data-type="image">
+                    <img src="assets/gallery/timelessgallery (2).jpg" alt="Karya 2" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" loading="lazy" />
+                    <div class="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors duration-300 flex items-center justify-center opacity-0 group-hover:opacity-100">
+                        <div class="bg-white/90 dark:bg-neutral-900/90 backdrop-blur px-4 py-2 rounded-full text-sm font-medium text-neutral-900 dark:text-white shadow-lg transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300">
+                            Lihat Full
+                        </div>
+                    </div>
+                </a>
+
+                <!-- Foto 3 -->
+                <a href="assets/gallery/timelessgallery(7).png" class="gallery-item group relative aspect-square overflow-hidden rounded-xl bg-neutral-100 dark:bg-neutral-800 reveal block cursor-zoom-in" data-type="image">
+                    <img src="assets/gallery/timelessgallery(7).png" alt="Karya 3" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" loading="lazy" />
+                    <div class="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors duration-300 flex items-center justify-center opacity-0 group-hover:opacity-100">
+                        <div class="bg-white/90 dark:bg-neutral-900/90 backdrop-blur px-4 py-2 rounded-full text-sm font-medium text-neutral-900 dark:text-white shadow-lg transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300">
+                            Lihat Full
+                        </div>
+                    </div>
+                </a>
+
+                <!-- Foto 4 -->
+                <a href="assets/gallery/timelessgallery (4).jpg" class="gallery-item group relative aspect-square overflow-hidden rounded-xl bg-neutral-100 dark:bg-neutral-800 reveal block cursor-zoom-in" data-type="image">
+                    <img src="assets/gallery/timelessgallery (4).jpg" alt="Karya 4" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" loading="lazy" />
+                    <div class="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors duration-300 flex items-center justify-center opacity-0 group-hover:opacity-100">
+                        <div class="bg-white/90 dark:bg-neutral-900/90 backdrop-blur px-4 py-2 rounded-full text-sm font-medium text-neutral-900 dark:text-white shadow-lg transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300">
+                            Lihat Full
+                        </div>
+                    </div>
+                </a>
+
+                <!-- Foto 5 -->
+                <a href="assets/gallery/timelessgallery (5).jpg" class="gallery-item group relative aspect-square overflow-hidden rounded-xl bg-neutral-100 dark:bg-neutral-800 reveal block cursor-zoom-in" data-type="image">
+                    <img src="assets/gallery/timelessgallery (5).jpg" alt="Karya 5" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" loading="lazy" />
+                    <div class="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors duration-300 flex items-center justify-center opacity-0 group-hover:opacity-100">
+                        <div class="bg-white/90 dark:bg-neutral-900/90 backdrop-blur px-4 py-2 rounded-full text-sm font-medium text-neutral-900 dark:text-white shadow-lg transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300">
+                            Lihat Full
+                        </div>
+                    </div>
+                </a>
+
+                <!-- Foto 6 -->
+                <a href="assets/gallery/timelessgallery (6).jpg" class="gallery-item group relative aspect-square overflow-hidden rounded-xl bg-neutral-100 dark:bg-neutral-800 reveal block cursor-zoom-in" data-type="image">
+                    <img src="assets/gallery/timelessgallery (6).jpg" alt="Karya 6" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" loading="lazy" />
+                    <div class="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors duration-300 flex items-center justify-center opacity-0 group-hover:opacity-100">
+                        <div class="bg-white/90 dark:bg-neutral-900/90 backdrop-blur px-4 py-2 rounded-full text-sm font-medium text-neutral-900 dark:text-white shadow-lg transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300">
+                            Lihat Full
+                        </div>
+                    </div>
+                </a>
+
+                <!-- Video 1 -->
+                <a href="assets/gallery/timelessvideo (2).MP4" class="gallery-item group relative aspect-square overflow-hidden rounded-xl bg-neutral-100 dark:bg-neutral-800 reveal block cursor-zoom-in" data-type="video">
+                    <video src="assets/gallery/timelessvideo (2).MP4" muted playsinline loop class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"></video>
+                    <div class="absolute inset-0 bg-black/20 group-hover:bg-black/40 transition-colors duration-300 flex items-center justify-center">
+                        <div class="w-12 h-12 bg-white/30 backdrop-blur rounded-full flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                            <i data-lucide="play" class="h-5 w-5 text-white fill-white ml-1"></i>
+                        </div>
+                    </div>
+                </a>
+
+                <!-- Video 2 -->
+                <a href="assets/gallery/timelessvideo.MP4" class="gallery-item group relative aspect-square overflow-hidden rounded-xl bg-neutral-100 dark:bg-neutral-800 reveal block cursor-zoom-in" data-type="video">
+                    <video src="assets/gallery/timelessvideo.MP4" muted playsinline loop class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"></video>
+                    <div class="absolute inset-0 bg-black/20 group-hover:bg-black/40 transition-colors duration-300 flex items-center justify-center">
+                        <div class="w-12 h-12 bg-white/30 backdrop-blur rounded-full flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                            <i data-lucide="play" class="h-5 w-5 text-white fill-white ml-1"></i>
+                        </div>
+                    </div>
+                </a>
+
+            </div>
+        </section>
+
+        <!-- CTA -->
+        <section class="py-24 max-w-4xl mx-auto px-4 text-center reveal">
+            <h3 class="text-3xl font-bold text-neutral-900 dark:text-white mb-6">Punya Ide Menarik?</h3>
+            <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+                <a class="w-full sm:w-auto px-8 py-3 bg-red-600 hover:bg-red-700 text-white rounded-full font-medium transition-colors" href="contact.html">
+                    Hubungi Kami
+                </a>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Lightbox Modal -->
+    <div id="lightbox" class="fixed inset-0 z-[1000] bg-black/95 hidden flex items-center justify-center opacity-0 transition-opacity duration-300">
+        <!-- Close Button -->
+        <button id="lightbox-close" class="absolute top-6 right-6 text-white/70 hover:text-white p-2 z-50">
+            <i data-lucide="x" class="w-8 h-8"></i>
+        </button>
+
+        <!-- Navigation -->
+        <button id="lightbox-prev" class="absolute left-4 md:left-8 text-white/70 hover:text-white p-4 z-50 hidden md:block">
+            <i data-lucide="chevron-left" class="w-10 h-10"></i>
+        </button>
+        <button id="lightbox-next" class="absolute right-4 md:right-8 text-white/70 hover:text-white p-4 z-50 hidden md:block">
+            <i data-lucide="chevron-right" class="w-10 h-10"></i>
+        </button>
+
+        <!-- Content Container -->
+        <div class="relative w-full h-full max-w-6xl max-h-screen p-4 md:p-12 flex items-center justify-center">
+            <img id="lightbox-img" src="" alt="Full view" class="max-w-full max-h-full object-contain shadow-2xl hidden" />
+            <video id="lightbox-video" controls playsinline class="max-w-full max-h-full shadow-2xl hidden">
+                <source src="" type="video/mp4">
+                Browser Anda tidak mendukung tag video.
+            </video>
+        </div>
+    </div>
+
+    <!-- Theme Toggle -->
+    <button class="fixed !bottom-6 !right-6 !z-[999] !w-12 !h-12 !p-0 flex items-center justify-center bg-white dark:bg-neutral-800 rounded-full shadow-xl border border-neutral-200 dark:border-neutral-700 hover:scale-110 transition-transform" id="theme-toggle" aria-label="Ganti tema">
+        <i data-lucide="sun" class="h-5 w-5 text-neutral-900 dark:!block" style="display:none"></i>
+        <i data-lucide="moon" class="h-5 w-5 text-neutral-900 block dark:hidden"></i>
+    </button>
+
+    <!-- Footer -->
+    <footer class="bg-white dark:bg-neutral-950 border-t border-neutral-100 dark:border-neutral-800 pt-16 pb-8">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-12 mb-16">
+                <!-- Brand Mini -->
+                <div class="col-span-1 md:col-span-2">
+                    <div class="flex items-center gap-2 mb-4">
+                        <div class="w-6 h-6 bg-black dark:bg-white rounded flex items-center justify-center text-white dark:text-black font-bold text-xs tracking-tighter">T</div>
+                        <span class="font-bold tracking-tight text-neutral-900 dark:text-white">TIMELESS.</span>
+                    </div>
+                    <p class="text-sm text-neutral-500 dark:text-neutral-400 max-w-xs">
+                        Mengabadikan momen terbaik dan membangun identitas visual yang kuat untuk masa depan.
+                    </p>
+                </div>
+
+                <!-- Links -->
+                <div class="flex flex-col space-y-3">
+                    <h4 class="font-medium text-neutral-900 dark:text-white text-sm mb-1">Menu</h4>
+                    <a href="index.html" class="text-sm text-neutral-500 dark:text-neutral-400 hover:text-red-600 transition-colors">Beranda</a>
+                    <a href="services.html" class="text-sm text-neutral-500 dark:text-neutral-400 hover:text-red-600 transition-colors">Layanan</a>
+                    <a href="gallery.html" class="text-sm text-neutral-500 dark:text-neutral-400 hover:text-red-600 transition-colors">Galeri</a>
+                    <a href="developer.html" class="text-sm text-neutral-500 dark:text-neutral-400 hover:text-red-600 transition-colors">Tentang</a>
+                </div>
+
+                <!-- Socials -->
+                <div class="flex flex-col space-y-4">
+                     <h4 class="font-medium text-neutral-900 dark:text-white text-sm mb-1">Hubungi Kami</h4>
+                    <div class="flex gap-4">
+                        <a id="footer-wa" href="#" aria-label="WhatsApp" class="text-neutral-400 hover:text-green-500 transition-colors">
+                            <i data-lucide="message-circle" class="h-5 w-5"></i>
+                        </a>
+                        <a id="footer-email" href="#" aria-label="Email" class="text-neutral-400 hover:text-blue-500 transition-colors">
+                             <i data-lucide="mail" class="h-5 w-5"></i>
+                        </a>
+                        <a id="footer-ig" href="#" aria-label="Instagram" class="text-neutral-400 hover:text-pink-500 transition-colors">
+                             <i data-lucide="instagram" class="h-5 w-5"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pt-8 border-t border-neutral-100 dark:border-neutral-800 flex flex-col md:flex-row justify-between items-center gap-4">
+                <small class="text-xs text-neutral-400">© <span id="year"></span> Timeless Creative Studio.</small>
+                <span class="text-xs text-neutral-400 text-center md:text-right">
+                    Mahes Satya Ramadhan • Rachmat Firmansyah <br class="md:hidden"> • Zaky Sefriano • Muhammad Rakha
+                </span>
+            </div>
+        </div>
+    </footer>
+
+    <script defer src="assets/js/main.js"></script>
+    <script>
+        lucide.createIcons();
+        document.getElementById('year').textContent = new Date().getFullYear();
+
+        const navToggle = document.getElementById('nav-toggle');
+        const mobileMenu = document.getElementById('mobile-menu-dropdown');
+        if(navToggle && mobileMenu) {
+            navToggle.addEventListener('click', () => {
+                mobileMenu.classList.toggle('hidden');
+            });
+        }
+
+        const html = document.documentElement;
+        if (localStorage.getItem('theme') === 'dark' || html.getAttribute('data-theme') === 'dark') {
+            html.classList.add('dark');
+        }
+        const observer = new MutationObserver((mutations) => {
+            mutations.forEach((mutation) => {
+                if (mutation.attributeName === 'data-theme') {
+                    if (html.getAttribute('data-theme') === 'dark') {
+                        html.classList.add('dark');
+                    } else {
+                        html.classList.remove('dark');
+                    }
+                }
+            });
+        });
+        observer.observe(html, { attributes: true, attributeFilter: ['data-theme'] });
+
+        // --- Lightbox Logic ---
+        const lightbox = document.getElementById('lightbox');
+        const lightboxImg = document.getElementById('lightbox-img');
+        const lightboxVideo = document.getElementById('lightbox-video');
+        const closeBtn = document.getElementById('lightbox-close');
+        const prevBtn = document.getElementById('lightbox-prev');
+        const nextBtn = document.getElementById('lightbox-next');
+        const items = Array.from(document.querySelectorAll('.gallery-item'));
+        
+        let currentIndex = 0;
+
+        function openLightbox(index) {
+            currentIndex = index;
+            const item = items[index];
+            const type = item.getAttribute('data-type');
+            const src = type === 'video' ? item.querySelector('video').getAttribute('src') : item.getAttribute('href');
+
+            if (type === 'video') {
+                lightboxImg.classList.add('hidden');
+                lightboxVideo.classList.remove('hidden');
+                lightboxVideo.src = src;
+                lightboxVideo.play();
+            } else {
+                lightboxVideo.classList.add('hidden');
+                lightboxVideo.pause();
+                lightboxImg.classList.remove('hidden');
+                lightboxImg.src = src;
+            }
+
+            lightbox.classList.remove('hidden');
+            // Small delay to allow display:block to apply before opacity transition
+            setTimeout(() => {
+                lightbox.classList.remove('opacity-0');
+            }, 10);
+            document.body.classList.add('modal-open');
+        }
+
+        function closeLightbox() {
+            lightbox.classList.add('opacity-0');
+            setTimeout(() => {
+                lightbox.classList.add('hidden');
+                lightboxVideo.pause();
+                lightboxVideo.src = "";
+                lightboxImg.src = "";
+            }, 300);
+            document.body.classList.remove('modal-open');
+        }
+
+        function showNext() {
+            currentIndex = (currentIndex + 1) % items.length;
+            openLightbox(currentIndex);
+        }
+
+        function showPrev() {
+            currentIndex = (currentIndex - 1 + items.length) % items.length;
+            openLightbox(currentIndex);
+        }
+
+        // Event Listeners
+        items.forEach((item, index) => {
+            item.addEventListener('click', (e) => {
+                e.preventDefault();
+                openLightbox(index);
+            });
+        });
+
+        closeBtn.addEventListener('click', closeLightbox);
+        nextBtn.addEventListener('click', (e) => { e.stopPropagation(); showNext(); });
+        prevBtn.addEventListener('click', (e) => { e.stopPropagation(); showPrev(); });
+
+        // Close on background click
+        lightbox.addEventListener('click', (e) => {
+            if (e.target === lightbox || e.target.closest('.relative') === null) {
+                // If clicked outside the content container (but checking closest relative wrapper)
+                // Actually simpler: if target is lightbox (the backdrop)
+                if(e.target === lightbox) closeLightbox();
+            }
+        });
+
+        // Keyboard navigation
+        document.addEventListener('keydown', (e) => {
+            if (lightbox.classList.contains('hidden')) return;
+            if (e.key === 'Escape') closeLightbox();
+            if (e.key === 'ArrowRight') showNext();
+            if (e.key === 'ArrowLeft') showPrev();
+        });
+
+    </script>
+</body>
+</html>
