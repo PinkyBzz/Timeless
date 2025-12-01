@@ -126,32 +126,16 @@
         <!-- Team Grid -->
         <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-24 relative">
             
-            <!-- The Monster & Zipper Trigger -->
-            <div id="zipper-trigger" class="relative z-20 flex flex-col items-center justify-center min-h-[400px] transition-all duration-700 ease-in-out">
-                <!-- Zipper Line (Background) -->
-                <div class="absolute top-0 bottom-0 w-1 bg-neutral-200 dark:bg-neutral-800 left-1/2 -translate-x-1/2 -z-10"></div>
-                
-                <!-- Monster SVG -->
-                <svg id="monster" width="120" height="120" viewBox="0 0 120 120" class="cursor-pointer transition-transform duration-300">
-                    <!-- Body -->
-                    <path d="M20,80 Q20,20 60,20 Q100,20 100,80 Q100,110 60,110 Q20,110 20,80" fill="#DC2626" />
-                    <!-- Eyes -->
-                    <g class="eyes">
-                        <circle cx="45" cy="50" r="12" fill="white" />
-                        <circle cx="75" cy="50" r="12" fill="white" />
-                        <!-- Pupils -->
-                        <circle class="pupil" cx="45" cy="50" r="4" fill="#171717" />
-                        <circle class="pupil" cx="75" cy="50" r="4" fill="#171717" />
-                    </g>
-                    <!-- Mouth -->
-                    <path id="mouth" d="M45,75 Q60,75 75,75" stroke="white" stroke-width="3" fill="none" stroke-linecap="round" style="transition: d 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);" />
-                </svg>
-
-                <!-- Button (Zipper Pull) -->
-                <button id="unzip-btn" class="mt-4 px-8 py-3 bg-neutral-900 dark:bg-white text-white dark:text-neutral-900 rounded-full font-bold shadow-lg hover:scale-105 transition-transform flex items-center gap-2 group">
-                    <i data-lucide="chevron-down" class="w-5 h-5 group-hover:animate-bounce"></i>
-                    Buka Tim
-                </button>
+            <!-- Reveal Trigger (Simple & Elegant) -->
+            <div id="reveal-trigger" class="flex flex-col items-center justify-center py-12 transition-all duration-500">
+                <div class="relative group cursor-pointer" id="reveal-btn">
+                    <div class="absolute -inset-1 bg-gradient-to-r from-red-600 to-red-400 rounded-full blur opacity-25 group-hover:opacity-75 transition duration-1000 group-hover:duration-200"></div>
+                    <button class="relative px-8 py-4 bg-white dark:bg-neutral-900 ring-1 ring-neutral-200 dark:ring-neutral-800 rounded-full flex items-center gap-3 text-neutral-900 dark:text-white font-medium group-hover:scale-105 transition-transform">
+                        <span>Kenalan dengan Tim</span>
+                        <i data-lucide="arrow-down" class="w-5 h-5 group-hover:translate-y-1 transition-transform"></i>
+                    </button>
+                </div>
+                <p class="mt-4 text-sm text-neutral-500 dark:text-neutral-400 animate-pulse">Klik untuk melihat</p>
             </div>
 
             <!-- Hidden Team Grid -->
@@ -367,45 +351,17 @@
             if(ig) ig.href = 'https://instagram.com/timeless.crv';
             if(em) em.href = 'mailto:timeless.crv@gmail.com';
 
-            // --- Monster & Zipper Logic ---
-            const monster = document.getElementById('monster');
-            const btn = document.getElementById('unzip-btn');
-            const mouth = document.getElementById('mouth');
+            // --- Reveal Team Logic ---
+            const revealBtn = document.getElementById('reveal-btn');
+            const revealTrigger = document.getElementById('reveal-trigger');
             const container = document.getElementById('team-grid-container');
-            const trigger = document.getElementById('zipper-trigger');
 
-            if(monster && btn && mouth && container && trigger) {
-                // Eye Tracking
-                document.addEventListener('mousemove', (e) => {
-                    const rect = monster.getBoundingClientRect();
-                    const centerX = rect.left + rect.width / 2;
-                    const centerY = rect.top + rect.height / 2;
-                    
-                    const angle = Math.atan2(e.clientY - centerY, e.clientX - centerX);
-                    const distance = Math.min(5, Math.hypot(e.clientX - centerX, e.clientY - centerY) / 10);
-                    
-                    const pupils = document.querySelectorAll('.pupil');
-                    pupils.forEach(pupil => {
-                        const x = Math.cos(angle) * distance;
-                        const y = Math.sin(angle) * distance;
-                        pupil.style.transform = `translate(${x}px, ${y}px)`;
-                    });
-                });
-
-                // Hover Expression
-                btn.addEventListener('mouseenter', () => {
-                    mouth.setAttribute('d', 'M45,75 Q60,90 75,75'); // Smile
-                });
-                btn.addEventListener('mouseleave', () => {
-                    mouth.setAttribute('d', 'M45,75 Q60,75 75,75'); // Neutral
-                });
-
-                // Click Unzip
-                btn.addEventListener('click', () => {
-                    // 1. Move trigger down (simulate unzipping)
-                    trigger.style.transform = 'translateY(100px)';
-                    trigger.style.opacity = '0';
-                    trigger.style.pointerEvents = 'none';
+            if(revealBtn && container && revealTrigger) {
+                revealBtn.addEventListener('click', () => {
+                    // 1. Fade out trigger
+                    revealTrigger.style.opacity = '0';
+                    revealTrigger.style.transform = 'translateY(20px)';
+                    revealTrigger.style.pointerEvents = 'none';
                     
                     // 2. Reveal container
                     container.style.maxHeight = '2000px';
@@ -413,8 +369,8 @@
                     
                     // 3. Hide trigger completely after animation
                     setTimeout(() => {
-                        trigger.style.display = 'none';
-                    }, 700);
+                        revealTrigger.style.display = 'none';
+                    }, 500);
                 });
             }
         });
