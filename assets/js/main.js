@@ -3,13 +3,13 @@
   const $ = s => document.querySelector(s);
   const $$ = s => Array.from(document.querySelectorAll(s));
 
-  // Page Loader
+  // Page Loader (Legacy - can be removed or kept as backup)
   window.addEventListener('load', () => {
     const loader = document.getElementById('page-loader');
     if(loader){
       setTimeout(() => {
         loader.classList.add('hidden');
-      }, 800); // Minimum display time
+      }, 800); 
     }
   });
 
@@ -148,12 +148,15 @@
   const observer = new IntersectionObserver((entries)=>{
     entries.forEach(e=>{
       if(e.isIntersecting){
-        e.target.classList.add('is-visible');
+        // Force a tiny delay to ensure the browser registers the initial state
+        requestAnimationFrame(() => {
+            e.target.classList.add('is-visible');
+        });
         observer.unobserve(e.target);
       }
     })
-  },{threshold: .12});
-  $$('.reveal').forEach(el=>observer.observe(el));
+  },{threshold: 0.1});
+  $$('.reveal, .text-reveal-wrap').forEach(el=>observer.observe(el));
 
   // Year footer
   const yearEl = document.getElementById('year');
@@ -264,4 +267,91 @@
       }
     });
   })();
+
+  // Initialize Lenis Smooth Scroll
+  if (typeof Lenis !== 'undefined') {
+    const lenis = new Lenis({
+        duration: 1.2,
+        easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+        direction: 'vertical',
+        gestureDirection: 'vertical',
+        smooth: true,
+        mouseMultiplier: 1,
+        smoothTouch: false,
+        touchMultiplier: 2,
+    });
+
+    function raf(time) {
+        lenis.raf(time);
+        requestAnimationFrame(raf);
+    }
+    requestAnimationFrame(raf);
+  }
+
+  // Image Hover Reveal Logic
+  const projectItems = document.querySelectorAll('.project-item');
+  const revealImgContainer = document.querySelector('.hover-reveal-img');
+  const revealImg = document.getElementById('reveal-image');
+
+  if (projectItems.length && revealImgContainer && revealImg) {
+      // Move image with cursor
+      document.addEventListener('mousemove', (e) => {
+          // Only move if active to save resources
+          if (revealImgContainer.classList.contains('active')) {
+              const x = e.clientX;
+              const y = e.clientY;
+              
+              // Center the image on cursor
+              // Using transform directly for performance
+              revealImgContainer.style.left = `${x}px`;
+              revealImgContainer.style.top = `${y}px`;
+              revealImgContainer.style.transform = `translate(-50%, -50%) scale(1) rotate(${ (x - window.innerWidth/2) * 0.01 }deg)`;
+          }
+      });
+
+      projectItems.forEach(item => {
+          item.addEventListener('mouseenter', () => {
+              const imgSrc = item.getAttribute('data-img');
+              if (imgSrc) {
+                  revealImg.src = imgSrc;
+                  revealImgContainer.classList.add('active');
+                  // Optional: Hide default custom cursor when hovering these items
+                  const cursor = document.querySelector('.custom-cursor');
+                  const dot = document.querySelector('.cursor-dot');
+                  if(cursor) cursor.style.opacity = '0';
+                  if(dot) dot.style.opacity = '0';
+              }
+          });
+
+          item.addEventListener('mouseleave', () => {
+              revealImgContainer.classList.remove('active');
+              revealImgContainer.style.transform = `translate(-50%, -50%) scale(0.8)`; // Reset scale for exit anim
+              
+              // Show custom cursor again
+              const cursor = document.querySelector('.custom-cursor');
+              const dot = document.querySelector('.cursor-dot');
+              if(cursor) cursor.style.opacity = '1';
+              if(dot) dot.style.opacity = '1';
+          });
+      });
+  }
+
+  // Parallax Footer Logic
+  const footer = document.querySelector('.site-footer');
+  const main = document.querySelector('main');
+  if(footer && main){
+      const updateFooter = () => {
+          if(window.innerWidth >= 1024){
+              main.style.marginBottom = `${footer.offsetHeight}px`;
+          } else {
+              main.style.marginBottom = '';
+          }
+      };
+      window.addEventListener('resize', updateFooter);
+      // Use ResizeObserver for robust height changes
+      new ResizeObserver(updateFooter).observe(footer);
+      // Initial call
+      updateFooter();
+  }
+
 })();
