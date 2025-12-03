@@ -296,6 +296,8 @@
   if (projectItems.length && revealImgContainer && revealImg) {
       // Move image with cursor
       document.addEventListener('mousemove', (e) => {
+          if (window.innerWidth < 768) return; // Disable on mobile
+
           // Only move if active to save resources
           if (revealImgContainer.classList.contains('active')) {
               const x = e.clientX;
@@ -311,6 +313,8 @@
 
       projectItems.forEach(item => {
           item.addEventListener('mouseenter', () => {
+              if (window.innerWidth < 768) return; // Disable on mobile
+
               const imgSrc = item.getAttribute('data-img');
               if (imgSrc) {
                   revealImg.src = imgSrc;
@@ -324,6 +328,8 @@
           });
 
           item.addEventListener('mouseleave', () => {
+              if (window.innerWidth < 768) return; // Disable on mobile
+
               revealImgContainer.classList.remove('active');
               revealImgContainer.style.transform = `translate(-50%, -50%) scale(0.8)`; // Reset scale for exit anim
               
