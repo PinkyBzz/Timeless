@@ -107,18 +107,40 @@
                 </button>
             </div>
         </div>
-        
-        <!-- Mobile Menu Dropdown -->
-        <div id="mobile-menu-dropdown" class="hidden md:hidden absolute top-16 left-0 w-full bg-white dark:bg-neutral-950 border-b border-neutral-200 dark:border-neutral-800 p-4 shadow-lg">
-            <nav class="flex flex-col space-y-4">
-                <a href="index.html" class="block text-sm font-medium text-neutral-500 dark:text-neutral-400">Beranda</a>
-                <a href="services.html" class="block text-sm font-medium text-red-600 dark:text-red-500">Layanan</a>
-                <a href="gallery.html" class="block text-sm font-medium text-neutral-500 dark:text-neutral-400">Galeri</a>
-                <a href="contact.html" class="block text-sm font-medium text-neutral-500 dark:text-neutral-400">Kontak</a>
-                <a href="developer.html" class="block text-sm font-medium text-neutral-500 dark:text-neutral-400">Tentang</a>
-            </nav>
-        </div>
     </header>
+
+    <!-- Mobile Menu Overlay (Strips Reveal) -->
+    <div id="mobile-menu-overlay" class="fixed inset-0 z-[9999] invisible md:hidden">
+        <!-- Strips Background -->
+        <div class="absolute inset-0 flex h-full w-full pointer-events-none">
+            <div class="menu-strip w-1/4 h-full"></div>
+            <div class="menu-strip w-1/4 h-full"></div>
+            <div class="menu-strip w-1/4 h-full"></div>
+            <div class="menu-strip w-1/4 h-full"></div>
+        </div>
+
+        <!-- Menu Content -->
+        <div class="relative z-10 flex flex-col justify-center items-center h-full menu-content">
+            <!-- Close Button -->
+            <button id="menu-close-btn" class="absolute top-6 right-6 p-2 text-neutral-900 dark:text-white hover:text-red-600 transition-colors">
+                <i data-lucide="x" class="w-8 h-8"></i>
+            </button>
+
+            <nav class="flex flex-col items-center space-y-8">
+                <a href="index.html" class="mobile-link text-5xl font-bold text-transparent bg-clip-text bg-gradient-to-b from-neutral-900 to-neutral-500 dark:from-white dark:to-neutral-400 hover:to-red-600 transition-all tracking-tight">Beranda</a>
+                <a href="services.html" class="mobile-link text-5xl font-bold text-transparent bg-clip-text bg-gradient-to-b from-neutral-900 to-neutral-500 dark:from-white dark:to-neutral-400 hover:to-red-600 transition-all tracking-tight">Layanan</a>
+                <a href="gallery.html" class="mobile-link text-5xl font-bold text-transparent bg-clip-text bg-gradient-to-b from-neutral-900 to-neutral-500 dark:from-white dark:to-neutral-400 hover:to-red-600 transition-all tracking-tight">Galeri</a>
+                <a href="contact.html" class="mobile-link text-5xl font-bold text-transparent bg-clip-text bg-gradient-to-b from-neutral-900 to-neutral-500 dark:from-white dark:to-neutral-400 hover:to-red-600 transition-all tracking-tight">Kontak</a>
+                <a href="developer.html" class="mobile-link text-5xl font-bold text-transparent bg-clip-text bg-gradient-to-b from-neutral-900 to-neutral-500 dark:from-white dark:to-neutral-400 hover:to-red-600 transition-all tracking-tight">Tentang</a>
+            </nav>
+
+            <div class="absolute bottom-12 flex gap-8">
+                <a href="https://www.instagram.com/timeless.projct/?utm_source=ig_web_button_share_sheet" target="_blank" rel="noopener" class="text-neutral-500 dark:text-neutral-400 hover:text-red-600 dark:hover:text-white transition-colors"><i data-lucide="instagram" class="w-6 h-6"></i></a>
+                <a href="https://wa.me/6285183565910?text=Halo%20Timeless%2C%20saya%20tertarik%20dengan%20layanan%20Anda." target="_blank" rel="noopener" class="text-neutral-500 dark:text-neutral-400 hover:text-red-600 dark:hover:text-white transition-colors"><i data-lucide="message-circle" class="w-6 h-6"></i></a>
+                <a href="mailto:timelessgacor25@gmail.com?subject=Brief%20Layanan%20Timeless&body=Halo%20Timeless%2C%20saya%20ingin%20mendiskusikan%20kebutuhan%20saya." class="text-neutral-500 dark:text-neutral-400 hover:text-red-600 dark:hover:text-white transition-colors"><i data-lucide="mail" class="w-6 h-6"></i></a>
+            </div>
+        </div>
+    </div>
 
     <div class="fixed inset-0 bg-black/50 z-40 hidden" id="nav-backdrop"></div>
 
@@ -456,12 +478,36 @@
             "max-glare": 0.2,
         });
 
+        // Simple Mobile Menu Logic
         const navToggle = document.getElementById('nav-toggle');
-        const mobileMenu = document.getElementById('mobile-menu-dropdown');
+        const mobileMenu = document.getElementById('mobile-menu-overlay');
+        const closeBtn = document.getElementById('menu-close-btn');
+        
         if(navToggle && mobileMenu) {
-            navToggle.addEventListener('click', () => {
-                mobileMenu.classList.toggle('hidden');
-                navToggle.classList.toggle('active');
+            const toggleMenu = () => {
+                const isOpen = mobileMenu.classList.contains('open');
+                if (isOpen) {
+                    mobileMenu.classList.remove('open');
+                    navToggle.classList.remove('active');
+                    document.body.style.overflow = ''; 
+                } else {
+                    mobileMenu.classList.add('open');
+                    navToggle.classList.add('active');
+                    document.body.style.overflow = 'hidden'; 
+                }
+            };
+
+            navToggle.addEventListener('click', toggleMenu);
+            if(closeBtn) closeBtn.addEventListener('click', toggleMenu);
+            
+            // Close menu when clicking a link
+            const mobileLinks = mobileMenu.querySelectorAll('a');
+            mobileLinks.forEach(link => {
+                link.addEventListener('click', () => {
+                    mobileMenu.classList.remove('open');
+                    navToggle.classList.remove('active');
+                    document.body.style.overflow = '';
+                });
             });
         }
 
