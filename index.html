@@ -561,10 +561,19 @@
             // Close menu when clicking a link
             const mobileLinks = mobileMenu.querySelectorAll('a');
             mobileLinks.forEach(link => {
-                link.addEventListener('click', () => {
+                link.addEventListener('click', (e) => {
+                    e.preventDefault(); // Prevent immediate navigation
+                    const targetUrl = link.getAttribute('href');
+                    
+                    // Close the menu
                     mobileMenu.classList.remove('open');
                     navToggle.classList.remove('active');
                     document.body.style.overflow = '';
+                    
+                    // Wait for animation to finish (1000ms)
+                    setTimeout(() => {
+                        window.location.href = targetUrl;
+                    }, 1000);
                 });
             });
         }
