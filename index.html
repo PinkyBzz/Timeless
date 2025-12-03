@@ -445,11 +445,16 @@
         </section>
     </main>
 
-    <!-- Theme Toggle -->
-    <button class="fixed !bottom-6 !right-6 !z-[999] !w-12 !h-12 !p-0 flex items-center justify-center bg-white dark:bg-neutral-800 rounded-full shadow-xl border border-neutral-200 dark:border-neutral-700 hover:scale-110 transition-transform" id="theme-toggle" aria-label="Ganti tema">
-        <i data-lucide="sun" class="h-5 w-5 text-neutral-900 dark:!block" style="display:none"></i>
-        <i data-lucide="moon" class="h-5 w-5 text-neutral-900 block dark:hidden"></i>
-    </button>
+    <!-- Theme Toggle Switch -->
+    <div class="fixed !bottom-6 !right-6 !z-[999]">
+        <label class="theme-switch">
+            <input type="checkbox" id="theme-toggle-checkbox">
+            <span class="slider">
+                <i data-lucide="sun" class="icon-sun"></i>
+                <i data-lucide="moon" class="icon-moon"></i>
+            </span>
+        </label>
+    </div>
 
     <!-- Footer -->
     <footer class="bg-white dark:bg-neutral-950 border-t border-neutral-100 dark:border-neutral-800 pt-16 pb-8">
@@ -624,9 +629,9 @@
         });
 
         // Listen for theme changes
-        const themeToggleBtn = document.getElementById('theme-toggle');
-        if(themeToggleBtn) {
-            themeToggleBtn.addEventListener('click', () => {
+        const themeCheckbox = document.getElementById('theme-toggle-checkbox');
+        if(themeCheckbox) {
+            themeCheckbox.addEventListener('change', () => {
                 // Small delay to let the class toggle happen
                 setTimeout(initVanta, 50);
             });

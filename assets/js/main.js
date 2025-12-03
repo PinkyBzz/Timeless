@@ -66,6 +66,10 @@
     root.setAttribute('data-theme', t); 
     localStorage.setItem('theme', t);
     root.classList.toggle('dark', t === 'dark');
+    
+    // Sync checkbox if exists
+    const checkbox = document.getElementById('theme-toggle-checkbox');
+    if(checkbox) checkbox.checked = (t === 'dark');
   }
   if(themeBtn){
     themeBtn.addEventListener('click', ()=>{
@@ -73,6 +77,19 @@
       document.body.classList.add('theme-anim');
       setTheme(currentTheme()==='dark' ? 'light' : 'dark');
       // Remove the animation class after the transition ends
+      setTimeout(()=> document.body.classList.remove('theme-anim'), 320);
+    });
+  }
+
+  // Handle Checkbox Change (New Saklar)
+  const themeCheckbox = document.getElementById('theme-toggle-checkbox');
+  if(themeCheckbox){
+    // Set initial state
+    themeCheckbox.checked = (currentTheme() === 'dark');
+    
+    themeCheckbox.addEventListener('change', (e)=>{
+      document.body.classList.add('theme-anim');
+      setTheme(e.target.checked ? 'dark' : 'light');
       setTimeout(()=> document.body.classList.remove('theme-anim'), 320);
     });
   }

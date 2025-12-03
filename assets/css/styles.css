@@ -676,3 +676,89 @@ html.lenis {
     width: 100%;
     left: 0;
 }
+
+/* Theme Switch "Saklar" */
+.theme-switch {
+  display: inline-block;
+  height: 34px;
+  position: relative;
+  width: 64px;
+}
+
+.theme-switch input {
+  display: none;
+}
+
+.slider {
+  background-color: #e4e4e7; /* neutral-200 */
+  bottom: 0;
+  cursor: pointer;
+  left: 0;
+  position: absolute;
+  right: 0;
+  top: 0;
+  transition: .4s;
+  border-radius: 34px;
+  border: 2px solid var(--border);
+  box-shadow: inset 0 2px 4px rgba(0,0,0,0.06);
+}
+
+.slider:before {
+  background-color: #fff;
+  bottom: 3px;
+  content: "";
+  height: 24px;
+  left: 4px;
+  position: absolute;
+  transition: .4s cubic-bezier(0.4, 0.0, 0.2, 1);
+  width: 24px;
+  border-radius: 50%;
+  z-index: 2;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+}
+
+/* Icons on the track */
+.slider .icon-sun, .slider .icon-moon {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 16px;
+    height: 16px;
+    transition: opacity 0.3s;
+    z-index: 1;
+}
+
+.slider .icon-sun {
+    right: 8px;
+    opacity: 1;
+    color: #f59e0b; /* Amber */
+}
+
+.slider .icon-moon {
+    left: 8px;
+    opacity: 0;
+    color: #fbbf24; /* Moon */
+}
+
+input:checked + .slider {
+  background-color: #171717; /* Dark bg */
+  border-color: #404040;
+}
+
+input:checked + .slider:before {
+  transform: translateX(30px);
+  background-color: #fff;
+}
+
+input:checked + .slider .icon-sun {
+    opacity: 0;
+}
+
+input:checked + .slider .icon-moon {
+    opacity: 1;
+}
+
+/* Dark mode overrides for the switch itself */
+[data-theme="dark"] .slider {
+    background-color: #262626;
+}
