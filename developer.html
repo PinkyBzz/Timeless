@@ -66,8 +66,8 @@
     <div class="cursor-dot"></div>
 
     <!-- Header -->
-    <header class="fixed w-full !z-[999] top-0 bg-white/90 dark:bg-neutral-950/90 backdrop-blur-md border-b border-neutral-200 dark:border-neutral-800 transition-all duration-300">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex justify-between items-center">
+    <header class="fixed top-4 left-1/2 -translate-x-1/2 w-[95%] max-w-7xl !z-[999] rounded-full bg-white/70 dark:bg-neutral-950/70 backdrop-blur-xl border border-white/20 dark:border-neutral-800 shadow-lg transition-all duration-300">
+        <div class="px-6 h-16 flex justify-between items-center">
             
             <!-- Brand -->
             <a class="flex items-center gap-2.5 group" href="index.html" aria-label="Beranda Timeless">
@@ -309,54 +309,63 @@
         </label>
     </div>
 
-    <!-- Footer -->
-    <footer class="bg-white dark:bg-neutral-950 border-t border-neutral-100 dark:border-neutral-800 pt-16 pb-8 mt-20">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="grid grid-cols-1 md:grid-cols-4 gap-12 mb-16">
-                <!-- Brand Mini -->
-                <div class="col-span-1 md:col-span-2">
-                    <div class="flex items-center gap-3 mb-4">
-                        <img class="w-10 h-10 rounded-full border border-neutral-200 dark:border-neutral-800 object-cover brand-logo" src="timelessbackground.jpeg" alt="Logo Timeless" />
-                        <img class="h-5 w-auto object-contain brand-type dark:hidden" src="timelesstype.png" alt="TIMELESS" />
-                        <img class="h-7 w-auto object-contain brand-type hidden dark:block" src="timelesstype-white.png" alt="TIMELESS" />
-                    </div>
-                    <p class="text-sm text-neutral-500 dark:text-neutral-400 max-w-xs">
-                        Mengabadikan momen terbaik dan membangun identitas visual yang kuat untuk masa depan.
+    <!-- Footer Jitter Style -->
+    <footer class="relative bg-white dark:bg-neutral-950 pt-24 pb-0 overflow-hidden border-t border-neutral-200 dark:border-neutral-800 mt-20">
+        <div class="max-w-7xl mx-auto px-6 lg:px-8 relative z-10">
+            
+            <!-- Top CTA Section -->
+            <div class="flex flex-col md:flex-row justify-between items-start md:items-end gap-10 mb-20 border-b border-neutral-200 dark:border-neutral-800 pb-10">
+                <div class="max-w-2xl">
+                    <h2 class="text-5xl md:text-7xl font-bold tracking-tighter text-neutral-900 dark:text-white mb-6">
+                        Siap mengabadikan <br> <span class="text-neutral-400">momen anda?</span>
+                    </h2>
+                    <p class="text-lg text-neutral-500 dark:text-neutral-400 max-w-md">
+                        Kami membantu anda menciptakan visual yang tak lekang oleh waktu. Hubungi kami untuk konsultasi gratis.
                     </p>
                 </div>
-
-                <!-- Links -->
-                <div class="flex flex-col space-y-3">
-                    <h4 class="font-medium text-neutral-900 dark:text-white text-sm mb-1">Menu</h4>
-                    <a href="index.html" class="text-sm text-neutral-500 dark:text-neutral-400 hover:text-red-600 transition-colors">Beranda</a>
-                    <a href="services.html" class="text-sm text-neutral-500 dark:text-neutral-400 hover:text-red-600 transition-colors">Layanan</a>
-                    <a href="gallery.html" class="text-sm text-neutral-500 dark:text-neutral-400 hover:text-red-600 transition-colors">Galeri</a>
-                    <a href="developer.html" class="text-sm text-neutral-500 dark:text-neutral-400 hover:text-red-600 transition-colors">Tentang</a>
+                <div>
+                    <a href="contact.html" class="inline-flex items-center justify-center px-8 py-4 text-base font-medium text-white bg-neutral-900 dark:bg-white dark:text-neutral-900 rounded-full hover:bg-red-600 dark:hover:bg-red-600 dark:hover:text-white transition-all duration-300 group">
+                        Mulai Sekarang
+                        <i data-lucide="arrow-right" class="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform"></i>
+                    </a>
                 </div>
+            </div>
 
-                <!-- Socials -->
+            <!-- Links Grid -->
+            <div class="grid grid-cols-2 md:grid-cols-3 gap-10 mb-20">
+                <!-- Column 1 -->
                 <div class="flex flex-col space-y-4">
-                     <h4 class="font-medium text-neutral-900 dark:text-white text-sm mb-1">Hubungi Kami</h4>
-                    <div class="flex gap-4">
-                        <a id="footer-wa" href="#" aria-label="WhatsApp" class="text-neutral-400 hover:text-green-500 transition-colors">
-                            <i data-lucide="message-circle" class="h-5 w-5"></i>
-                        </a>
-                        <a id="footer-email" href="#" aria-label="Email" class="text-neutral-400 hover:text-blue-500 transition-colors">
-                             <i data-lucide="mail" class="h-5 w-5"></i>
-                        </a>
-                        <a id="footer-ig" href="#" aria-label="Instagram" class="text-neutral-400 hover:text-pink-500 transition-colors">
-                             <i data-lucide="instagram" class="h-5 w-5"></i>
-                        </a>
-                    </div>
+                    <h4 class="font-semibold text-neutral-900 dark:text-white">Menu</h4>
+                    <a href="index.html" class="text-neutral-500 dark:text-neutral-400 hover:text-red-600 transition-colors">Beranda</a>
+                    <a href="services.html" class="text-neutral-500 dark:text-neutral-400 hover:text-red-600 transition-colors">Layanan</a>
+                    <a href="gallery.html" class="text-neutral-500 dark:text-neutral-400 hover:text-red-600 transition-colors">Galeri</a>
+                </div>
+
+                <!-- Column 2 -->
+                <div class="flex flex-col space-y-4">
+                    <h4 class="font-semibold text-neutral-900 dark:text-white">Perusahaan</h4>
+                    <a href="developer.html" class="text-neutral-500 dark:text-neutral-400 hover:text-red-600 transition-colors">Tentang Kami</a>
+                    <a href="contact.html" class="text-neutral-500 dark:text-neutral-400 hover:text-red-600 transition-colors">Karir</a>
+                </div>
+
+                <!-- Column 3 -->
+                <div class="flex flex-col space-y-4">
+                    <h4 class="font-semibold text-neutral-900 dark:text-white">Sosial</h4>
+                    <a href="https://instagram.com/timeless.projct" target="_blank" class="text-neutral-500 dark:text-neutral-400 hover:text-red-600 transition-colors">Instagram</a>
                 </div>
             </div>
 
-            <div class="pt-8 border-t border-neutral-100 dark:border-neutral-800 flex flex-col md:flex-row justify-between items-center gap-4">
-                <small class="text-xs text-neutral-400">© <span id="year"></span> Timeless Creative Studio.</small>
-                <span class="text-xs text-neutral-400 text-center md:text-right">
-                    Mahes Satya Ramadhan • Rachmat Firmansyah <br class="md:hidden"> • Zaky Sefriano • Muhammad Rakha
-                </span>
+            <!-- Bottom Bar -->
+            <div class="flex flex-col md:flex-row justify-between items-center pt-8 border-t border-neutral-200 dark:border-neutral-800 pb-24">
+                <p class="text-sm text-neutral-500">© <span id="year"></span> Timeless Agency. All rights reserved.</p>
             </div>
+        </div>
+
+        <!-- Giant Text Background -->
+        <div class="absolute bottom-0 left-0 w-full select-none pointer-events-none overflow-hidden leading-none">
+            <h1 class="text-[18vw] font-bold text-center text-neutral-100 dark:text-neutral-900/50 tracking-tighter translate-y-[20%]">
+                TIMELESS
+            </h1>
         </div>
     </footer>
 

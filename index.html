@@ -17,6 +17,7 @@
 
     <!-- Original CSS Link (Preserved) -->
     <link rel="stylesheet" href="assets/css/styles.css" />
+    <link rel="stylesheet" href="assets/css/horizontal-scroll.css" />
     
     <noscript>
         <style>
@@ -81,8 +82,8 @@
     <div class="cursor-dot"></div>
 
     <!-- Header -->
-    <header class="fixed w-full !z-[999] top-0 bg-white/90 dark:bg-neutral-950/90 backdrop-blur-md border-b border-neutral-200 dark:border-neutral-800 transition-all duration-300">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex justify-between items-center">
+    <header class="fixed top-4 left-1/2 -translate-x-1/2 w-[95%] max-w-7xl !z-[999] rounded-full bg-white/70 dark:bg-neutral-950/70 backdrop-blur-xl border border-white/20 dark:border-neutral-800 shadow-lg transition-all duration-300">
+        <div class="px-6 h-16 flex justify-between items-center">
             
             <!-- Brand -->
             <a class="flex items-center gap-2.5 group" href="index.html" aria-label="Beranda Timeless">
@@ -282,71 +283,71 @@
             </div>
         </section>
 
-        <!-- Selected Works (Image Hover Reveal) -->
-        <section class="py-24 overflow-hidden">
-            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <h2 class="text-sm font-medium text-red-600 uppercase tracking-wider mb-12" data-aos="fade-up">Karya Pilihan</h2>
-                
-                <div class="project-list">
-                    <!-- Item 1 -->
-                    <a href="gallery.html" class="project-item group" data-img="assets/gallery/timelessgallery (1).jpg">
-                        <!-- Mobile Card (Photo Only style) -->
-                        <div class="w-full aspect-[4/3] md:hidden rounded-xl overflow-hidden relative">
-                            <img src="assets/gallery/timelessgallery (1).jpg" class="w-full h-full object-cover" alt="Acara istimewa">
-                            <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent flex flex-col justify-end p-5">
-                                <span class="text-white text-xl font-bold leading-tight">Acara istimewa</span>
-                                <span class="text-neutral-300 text-xs uppercase tracking-wider mt-1">Photography</span>
-                            </div>
-                        </div>
-                        <!-- Desktop Text -->
-                        <span class="project-title hidden md:block">Acara istimewa</span>
-                        <span class="project-cat hidden md:block">Photography</span>
-                    </a>
-                    
-                    <!-- Item 2 -->
-                    <a href="gallery.html" class="project-item group" data-img="assets/gallery/timelessgallery (2).jpg">
-                        <div class="w-full aspect-[4/3] md:hidden rounded-xl overflow-hidden relative">
-                            <img src="assets/gallery/timelessgallery (2).jpg" class="w-full h-full object-cover" alt="Moment Keagamaan">
-                            <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent flex flex-col justify-end p-5">
-                                <span class="text-white text-xl font-bold leading-tight">Moment Keagamaan</span>
-                                <span class="text-neutral-300 text-xs uppercase tracking-wider mt-1">Photography</span>
-                            </div>
-                        </div>
-                        <span class="project-title hidden md:block">Moment Keagamaan</span>
-                        <span class="project-cat hidden md:block">Photography</span>
-                    </a>
-
-                    <!-- Item 3 -->
-                    <a href="gallery.html" class="project-item group" data-img="assets/gallery/timelessgallery(7).png">
-                        <div class="w-full aspect-[4/3] md:hidden rounded-xl overflow-hidden relative">
-                            <img src="assets/gallery/timelessgallery(7).png" class="w-full h-full object-cover" alt="Product Campaign">
-                            <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent flex flex-col justify-end p-5">
-                                <span class="text-white text-xl font-bold leading-tight">Product Campaign</span>
-                                <span class="text-neutral-300 text-xs uppercase tracking-wider mt-1">Brand Logo</span>
-                            </div>
-                        </div>
-                        <span class="project-title hidden md:block">Product Campaign</span>
-                        <span class="project-cat hidden md:block">Brand Logo</span>
-                    </a>
-
-                    <!-- Item 4 -->
-                    <a href="gallery.html" class="project-item group" data-img="assets/gallery/timelessgallery (5).jpg">
-                        <div class="w-full aspect-[4/3] md:hidden rounded-xl overflow-hidden relative">
-                            <img src="assets/gallery/timelessgallery (5).jpg" class="w-full h-full object-cover" alt="Mencetak Kenangan">
-                            <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent flex flex-col justify-end p-5">
-                                <span class="text-white text-xl font-bold leading-tight">Mencetak Kenangan</span>
-                                <span class="text-neutral-300 text-xs uppercase tracking-wider mt-1">Photography</span>
-                            </div>
-                        </div>
-                        <span class="project-title hidden md:block">Mencetak Kenangan</span>
-                        <span class="project-cat hidden md:block">Photography</span>
+        <!-- Horizontal Scroll Section (Jitter Style) -->
+        <section id="horizontal-scroll-section" class="overflow-hidden bg-neutral-50 dark:bg-neutral-900/50 relative">
+            <div class="pin-wrap-container h-screen w-full relative overflow-hidden">
+                <div class="pin-wrap h-full flex items-center px-4 sm:px-12 lg:px-24">
+                <!-- Text Block with Glassmorphism -->
+                <div class="flex-shrink-0 mr-8 lg:mr-16 max-w-sm z-20 relative bg-white/80 dark:bg-neutral-900/80 backdrop-blur-xl p-8 rounded-3xl border border-neutral-200 dark:border-neutral-800 shadow-2xl">
+                    <h2 class="text-4xl lg:text-5xl font-bold tracking-tighter text-neutral-900 dark:text-white mb-6">
+                        Karya <br> <span class="text-red-600">Pilihan.</span>
+                    </h2>
+                    <p class="text-base text-neutral-600 dark:text-neutral-300 mb-8 leading-relaxed">
+                        Beberapa proyek favorit kami yang menampilkan dedikasi pada detail dan estetika.
+                    </p>
+                    <a href="gallery.html" class="inline-flex items-center text-sm font-bold text-red-600 hover:text-red-700 transition-colors">
+                        Lihat Semua Galeri <i data-lucide="arrow-right" class="ml-2 h-4 w-4"></i>
                     </a>
                 </div>
-            </div>
-            <!-- Floating Image Container -->
-            <div class="hover-reveal-img">
-                <div class="hover-reveal-inner">
-                    <img src="" alt="Project Preview" id="reveal-image">
+                
+                <div class="animation-wrap flex gap-8 h-[60vh] items-center">
+                        <!-- Card 1 -->
+                        <a href="gallery.html" class="horizontal-item group relative h-full aspect-[3/4] rounded-2xl overflow-hidden bg-neutral-200 dark:bg-neutral-800 flex-shrink-0 shadow-xl">
+                            <img src="assets/gallery/timelessgallery (1).jpg" class="w-full h-full object-cover" alt="Work 1">
+                            <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent flex flex-col justify-end p-8">
+                                <span class="text-white text-2xl font-bold">Acara Istimewa</span>
+                                <span class="text-red-400 text-sm font-medium uppercase tracking-wider mt-1">Photography</span>
+                            </div>
+                        </a>
+                        
+                        <!-- Card 2 -->
+                        <a href="gallery.html" class="horizontal-item group relative h-full aspect-[3/4] rounded-2xl overflow-hidden bg-neutral-200 dark:bg-neutral-800 flex-shrink-0 shadow-xl">
+                            <img src="assets/gallery/timelessgallery (2).jpg" class="w-full h-full object-cover" alt="Work 2">
+                            <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent flex flex-col justify-end p-8">
+                                <span class="text-white text-2xl font-bold">Moment Keagamaan</span>
+                                <span class="text-red-400 text-sm font-medium uppercase tracking-wider mt-1">Photography</span>
+                            </div>
+                        </a>
+
+                        <!-- Card 3 -->
+                        <a href="gallery.html" class="horizontal-item group relative h-full aspect-[3/4] rounded-2xl overflow-hidden bg-neutral-200 dark:bg-neutral-800 flex-shrink-0 shadow-xl">
+                            <img src="assets/gallery/timelessgallery(7).png" class="w-full h-full object-cover" alt="Work 3">
+                            <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent flex flex-col justify-end p-8">
+                                <span class="text-white text-2xl font-bold">Product Campaign</span>
+                                <span class="text-red-400 text-sm font-medium uppercase tracking-wider mt-1">Brand Logo</span>
+                            </div>
+                        </a>
+
+                        <!-- Card 4 -->
+                        <a href="gallery.html" class="horizontal-item group relative h-full aspect-[3/4] rounded-2xl overflow-hidden bg-neutral-200 dark:bg-neutral-800 flex-shrink-0 shadow-xl">
+                            <img src="assets/gallery/timelessgallery (5).jpg" class="w-full h-full object-cover" alt="Work 4">
+                            <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent flex flex-col justify-end p-8">
+                                <span class="text-white text-2xl font-bold">Mencetak Kenangan</span>
+                                <span class="text-red-400 text-sm font-medium uppercase tracking-wider mt-1">Photography</span>
+                            </div>
+                        </a>
+                        
+                        <!-- Card 5 (Video) -->
+                        <a href="gallery.html" class="horizontal-item group relative h-full aspect-[3/4] rounded-2xl overflow-hidden bg-neutral-200 dark:bg-neutral-800 flex-shrink-0 shadow-xl">
+                            <video autoplay muted loop playsinline class="w-full h-full object-cover">
+                                <source src="assets/gallery/timelessvideo (2).mp4" type="video/mp4">
+                            </video>
+                            <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent flex flex-col justify-end p-8">
+                                <span class="text-white text-2xl font-bold">Cinematic Video</span>
+                                <span class="text-red-400 text-sm font-medium uppercase tracking-wider mt-1">Videography</span>
+                            </div>
+                        </a>
+                    </div>
                 </div>
             </div>
         </section>
@@ -456,54 +457,63 @@
         </label>
     </div>
 
-    <!-- Footer -->
-    <footer class="bg-white dark:bg-neutral-950 border-t border-neutral-100 dark:border-neutral-800 pt-16 pb-8">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="grid grid-cols-1 md:grid-cols-4 gap-12 mb-16">
-                <!-- Brand Mini -->
-                <div class="col-span-1 md:col-span-2">
-                    <div class="flex items-center gap-3 mb-4">
-                        <img class="w-10 h-10 rounded-full border border-neutral-200 dark:border-neutral-800 object-cover brand-logo" src="timelessbackground.jpeg" alt="Logo Timeless" />
-                        <img class="h-5 w-auto object-contain brand-type dark:hidden" src="timelesstype.png" alt="TIMELESS" />
-                        <img class="h-7 w-auto object-contain brand-type hidden dark:block" src="timelesstype-white.png" alt="TIMELESS" />
-                    </div>
-                    <p class="text-sm text-neutral-500 dark:text-neutral-400 max-w-xs">
-                        Mengabadikan momen terbaik dan membangun identitas visual yang kuat untuk masa depan.
+    <!-- Footer Jitter Style -->
+    <footer class="relative bg-white dark:bg-neutral-950 pt-24 pb-0 overflow-hidden border-t border-neutral-200 dark:border-neutral-800">
+        <div class="max-w-7xl mx-auto px-6 lg:px-8 relative z-10">
+            
+            <!-- Top CTA Section -->
+            <div class="flex flex-col md:flex-row justify-between items-start md:items-end gap-10 mb-20 border-b border-neutral-200 dark:border-neutral-800 pb-10">
+                <div class="max-w-2xl">
+                    <h2 class="text-5xl md:text-7xl font-bold tracking-tighter text-neutral-900 dark:text-white mb-6">
+                        Siap mengabadikan <br> <span class="text-neutral-400">momen anda?</span>
+                    </h2>
+                    <p class="text-lg text-neutral-500 dark:text-neutral-400 max-w-md">
+                        Kami membantu anda menciptakan visual yang tak lekang oleh waktu. Hubungi kami untuk konsultasi gratis.
                     </p>
                 </div>
-
-                <!-- Links -->
-                <div class="flex flex-col space-y-3">
-                    <h4 class="font-medium text-neutral-900 dark:text-white text-sm mb-1">Menu</h4>
-                    <a href="index.html" class="text-sm text-neutral-500 dark:text-neutral-400 hover:text-red-600 transition-colors">Beranda</a>
-                    <a href="services.html" class="text-sm text-neutral-500 dark:text-neutral-400 hover:text-red-600 transition-colors">Layanan</a>
-                    <a href="gallery.html" class="text-sm text-neutral-500 dark:text-neutral-400 hover:text-red-600 transition-colors">Galeri</a>
-                    <a href="developer.html" class="text-sm text-neutral-500 dark:text-neutral-400 hover:text-red-600 transition-colors">Tentang</a>
+                <div>
+                    <a href="contact.html" class="inline-flex items-center justify-center px-8 py-4 text-base font-medium text-white bg-neutral-900 dark:bg-white dark:text-neutral-900 rounded-full hover:bg-red-600 dark:hover:bg-red-600 dark:hover:text-white transition-all duration-300 group">
+                        Mulai Sekarang
+                        <i data-lucide="arrow-right" class="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform"></i>
+                    </a>
                 </div>
+            </div>
 
-                <!-- Socials -->
+            <!-- Links Grid -->
+            <div class="grid grid-cols-2 md:grid-cols-3 gap-10 mb-20">
+                <!-- Column 1 -->
                 <div class="flex flex-col space-y-4">
-                     <h4 class="font-medium text-neutral-900 dark:text-white text-sm mb-1">Hubungi Kami</h4>
-                    <div class="flex gap-4">
-                        <a id="footer-wa" href="#" aria-label="WhatsApp" class="text-neutral-400 hover:text-green-500 transition-colors">
-                            <i data-lucide="message-circle" class="h-5 w-5"></i>
-                        </a>
-                        <a id="footer-email" href="#" aria-label="Email" class="text-neutral-400 hover:text-blue-500 transition-colors">
-                             <i data-lucide="mail" class="h-5 w-5"></i>
-                        </a>
-                        <a id="footer-ig" href="#" aria-label="Instagram" class="text-neutral-400 hover:text-pink-500 transition-colors">
-                             <i data-lucide="instagram" class="h-5 w-5"></i>
-                        </a>
-                    </div>
+                    <h4 class="font-semibold text-neutral-900 dark:text-white">Menu</h4>
+                    <a href="index.html" class="text-neutral-500 dark:text-neutral-400 hover:text-red-600 transition-colors">Beranda</a>
+                    <a href="services.html" class="text-neutral-500 dark:text-neutral-400 hover:text-red-600 transition-colors">Layanan</a>
+                    <a href="gallery.html" class="text-neutral-500 dark:text-neutral-400 hover:text-red-600 transition-colors">Galeri</a>
+                </div>
+
+                <!-- Column 2 -->
+                <div class="flex flex-col space-y-4">
+                    <h4 class="font-semibold text-neutral-900 dark:text-white">Perusahaan</h4>
+                    <a href="developer.html" class="text-neutral-500 dark:text-neutral-400 hover:text-red-600 transition-colors">Tentang Kami</a>
+                    <a href="contact.html" class="text-neutral-500 dark:text-neutral-400 hover:text-red-600 transition-colors">Karir</a>
+                </div>
+
+                <!-- Column 3 -->
+                <div class="flex flex-col space-y-4">
+                    <h4 class="font-semibold text-neutral-900 dark:text-white">Sosial</h4>
+                    <a href="https://instagram.com/timeless.projct" target="_blank" class="text-neutral-500 dark:text-neutral-400 hover:text-red-600 transition-colors">Instagram</a>
                 </div>
             </div>
 
-            <div class="pt-8 border-t border-neutral-100 dark:border-neutral-800 flex flex-col md:flex-row justify-between items-center gap-4">
-                <small class="text-xs text-neutral-400">© <span id="year"></span> Timeless Creative Studio.</small>
-                <span class="text-xs text-neutral-400 text-center md:text-right">
-                    Mahes Satya Ramadhan • Rachmat Firmansyah <br class="md:hidden"> • Zaky Sefriano • Muhammad Rakha
-                </span>
+            <!-- Bottom Bar -->
+            <div class="flex flex-col md:flex-row justify-between items-center pt-8 border-t border-neutral-200 dark:border-neutral-800 pb-24">
+                <p class="text-sm text-neutral-500">© <span id="year"></span> Timeless Agency. All rights reserved.</p>
             </div>
+        </div>
+
+        <!-- Giant Text Background -->
+        <div class="absolute bottom-0 left-0 w-full select-none pointer-events-none overflow-hidden leading-none">
+            <h1 class="text-[18vw] font-bold text-center text-neutral-100 dark:text-neutral-900/50 tracking-tighter translate-y-[20%]">
+                TIMELESS
+            </h1>
         </div>
     </footer>
 
@@ -636,6 +646,71 @@
                 setTimeout(initVanta, 50);
             });
         }
+    </script>
+
+    <!-- GSAP & ScrollTrigger for Horizontal Scroll -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", (event) => {
+            gsap.registerPlugin(ScrollTrigger);
+
+            const section = document.getElementById("horizontal-scroll-section");
+            const pinWrap = document.querySelector(".pin-wrap");
+            const animWrap = document.querySelector(".animation-wrap");
+            const titleBlock = pinWrap.querySelector(".max-w-sm");
+
+            if (section && pinWrap && animWrap) {
+                
+                function getScrollAmount() {
+                    let animWidth = animWrap.scrollWidth;
+                    // Account for the title block width (~400px) and margins (~100px)
+                    // We add a buffer to ensure the last item is fully visible
+                    return -(animWidth - window.innerWidth + 800); 
+                }
+
+                const tl = gsap.timeline();
+
+                // Initial State: "Far away" and tilted
+                // Using transformOrigin: "left center" to prevent overlapping the text on the left
+                gsap.set(animWrap, { 
+                    z: -500,        // Less extreme depth to avoid clipping
+                    rotationY: 25,  // Rotate Y instead of X for a "side entry" feel that complements the text
+                    scale: 0.6,     
+                    opacity: 0,     
+                    transformOrigin: "left center", // Anchored to the left (near text)
+                    x: 100          // Start slightly pushed away
+                });
+
+                // Phase 1: "Enter Camera" (Zoom In + Untilt)
+                tl.to(animWrap, {
+                    z: 0,
+                    rotationY: 0,
+                    scale: 1,
+                    opacity: 1,
+                    x: 0,
+                    duration: 1.5,
+                    ease: "power3.out" 
+                });
+
+                // Phase 2: Horizontal Scroll
+                tl.to(animWrap, {
+                    x: getScrollAmount,
+                    ease: "none",
+                    duration: 4
+                });
+
+                ScrollTrigger.create({
+                    trigger: section,
+                    start: "top top",
+                    end: () => `+=${Math.abs(getScrollAmount()) + 3000}`,
+                    pin: true,
+                    animation: tl,
+                    scrub: 1,
+                    invalidateOnRefresh: true,
+                });
+            }
+        });
     </script>
 </body>
 </html>

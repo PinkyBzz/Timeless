@@ -377,4 +377,38 @@
       updateFooter();
   }
 
+  // Dynamic Navbar Logic (Hide on scroll down, show on scroll up)
+  const header = document.querySelector('header');
+  let lastScroll = 0;
+  
+  if (header) {
+      window.addEventListener('scroll', () => {
+          const currentScroll = window.pageYOffset;
+          
+          if (currentScroll <= 0) {
+              header.classList.remove('-translate-y-[150%]', 'opacity-0');
+              return;
+          }
+          
+          if (currentScroll > lastScroll && currentScroll > 50) {
+              // Scroll Down -> Hide
+              header.classList.add('-translate-y-[150%]', 'opacity-0');
+              
+              // Close mobile menu if open
+              const mobileMenu = document.getElementById('mobile-menu-overlay');
+              const navToggle = document.getElementById('nav-toggle');
+              if(mobileMenu && mobileMenu.classList.contains('open')) {
+                  mobileMenu.classList.remove('open');
+                  if(navToggle) navToggle.classList.remove('active');
+                  document.body.style.overflow = '';
+              }
+          } else {
+              // Scroll Up -> Show
+              header.classList.remove('-translate-y-[150%]', 'opacity-0');
+          }
+          
+          lastScroll = currentScroll;
+      });
+  }
+
 })();
