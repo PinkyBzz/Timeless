@@ -284,11 +284,11 @@
         </section>
 
         <!-- Horizontal Scroll Section (Jitter Style) -->
-        <section id="horizontal-scroll-section" class="overflow-hidden bg-neutral-50 dark:bg-neutral-900/50 relative">
-            <div class="pin-wrap-container h-screen w-full relative overflow-hidden">
-                <div class="pin-wrap h-full flex items-center px-4 sm:px-12 lg:px-24">
+        <section id="horizontal-scroll-section" class="bg-neutral-50 dark:bg-neutral-900/50 relative">
+            <div class="pin-wrap-container w-full relative lg:h-screen lg:overflow-hidden">
+                <div class="pin-wrap flex flex-col lg:flex-row items-start lg:items-center px-4 sm:px-12 lg:px-24 py-20 lg:py-0 gap-12 lg:gap-0 h-auto lg:h-full">
                 <!-- Text Block with Glassmorphism -->
-                <div class="flex-shrink-0 mr-8 lg:mr-16 max-w-sm z-20 relative bg-white/80 dark:bg-neutral-900/80 backdrop-blur-xl p-8 rounded-3xl border border-neutral-200 dark:border-neutral-800 shadow-2xl">
+                <div class="flex-shrink-0 lg:mr-16 max-w-sm z-20 relative bg-white/80 dark:bg-neutral-900/80 backdrop-blur-xl p-8 rounded-3xl border border-neutral-200 dark:border-neutral-800 shadow-2xl w-full lg:w-auto">
                     <h2 class="text-4xl lg:text-5xl font-bold tracking-tighter text-neutral-900 dark:text-white mb-6">
                         Karya <br> <span class="text-red-600">Pilihan.</span>
                     </h2>
@@ -300,9 +300,9 @@
                     </a>
                 </div>
                 
-                <div class="animation-wrap flex gap-8 h-[60vh] items-center">
+                <div class="animation-wrap flex flex-col lg:flex-row gap-8 w-full lg:w-auto h-auto lg:h-[60vh] items-center">
                         <!-- Card 1 -->
-                        <a href="gallery.html" class="horizontal-item group relative h-full aspect-[3/4] rounded-2xl overflow-hidden bg-neutral-200 dark:bg-neutral-800 flex-shrink-0 shadow-xl">
+                        <a href="gallery.html" class="horizontal-item group relative w-full lg:w-auto lg:h-full aspect-[3/4] rounded-2xl overflow-hidden bg-neutral-200 dark:bg-neutral-800 flex-shrink-0 shadow-xl">
                             <img src="assets/gallery/timelessgallery (1).jpg" class="w-full h-full object-cover" alt="Work 1">
                             <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent flex flex-col justify-end p-8">
                                 <span class="text-white text-2xl font-bold">Acara Istimewa</span>
@@ -311,7 +311,7 @@
                         </a>
                         
                         <!-- Card 2 -->
-                        <a href="gallery.html" class="horizontal-item group relative h-full aspect-[3/4] rounded-2xl overflow-hidden bg-neutral-200 dark:bg-neutral-800 flex-shrink-0 shadow-xl">
+                        <a href="gallery.html" class="horizontal-item group relative w-full lg:w-auto lg:h-full aspect-[3/4] rounded-2xl overflow-hidden bg-neutral-200 dark:bg-neutral-800 flex-shrink-0 shadow-xl">
                             <img src="assets/gallery/timelessgallery (2).jpg" class="w-full h-full object-cover" alt="Work 2">
                             <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent flex flex-col justify-end p-8">
                                 <span class="text-white text-2xl font-bold">Moment Keagamaan</span>
@@ -320,7 +320,7 @@
                         </a>
 
                         <!-- Card 3 -->
-                        <a href="gallery.html" class="horizontal-item group relative h-full aspect-[3/4] rounded-2xl overflow-hidden bg-neutral-200 dark:bg-neutral-800 flex-shrink-0 shadow-xl">
+                        <a href="gallery.html" class="horizontal-item group relative w-full lg:w-auto lg:h-full aspect-[3/4] rounded-2xl overflow-hidden bg-neutral-200 dark:bg-neutral-800 flex-shrink-0 shadow-xl">
                             <img src="assets/gallery/timelessgallery(7).png" class="w-full h-full object-cover" alt="Work 3">
                             <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent flex flex-col justify-end p-8">
                                 <span class="text-white text-2xl font-bold">Product Campaign</span>
@@ -329,7 +329,7 @@
                         </a>
 
                         <!-- Card 4 -->
-                        <a href="gallery.html" class="horizontal-item group relative h-full aspect-[3/4] rounded-2xl overflow-hidden bg-neutral-200 dark:bg-neutral-800 flex-shrink-0 shadow-xl">
+                        <a href="gallery.html" class="horizontal-item group relative w-full lg:w-auto lg:h-full aspect-[3/4] rounded-2xl overflow-hidden bg-neutral-200 dark:bg-neutral-800 flex-shrink-0 shadow-xl">
                             <img src="assets/gallery/timelessgallery (5).jpg" class="w-full h-full object-cover" alt="Work 4">
                             <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent flex flex-col justify-end p-8">
                                 <span class="text-white text-2xl font-bold">Mencetak Kenangan</span>
@@ -338,7 +338,7 @@
                         </a>
                         
                         <!-- Card 5 (Video) -->
-                        <a href="gallery.html" class="horizontal-item group relative h-full aspect-[3/4] rounded-2xl overflow-hidden bg-neutral-200 dark:bg-neutral-800 flex-shrink-0 shadow-xl">
+                        <a href="gallery.html" class="horizontal-item group relative w-full lg:w-auto lg:h-full aspect-[3/4] rounded-2xl overflow-hidden bg-neutral-200 dark:bg-neutral-800 flex-shrink-0 shadow-xl">
                             <video autoplay muted loop playsinline class="w-full h-full object-cover">
                                 <source src="assets/gallery/timelessvideo (2).mp4" type="video/mp4">
                             </video>
@@ -658,56 +658,69 @@
             const section = document.getElementById("horizontal-scroll-section");
             const pinWrap = document.querySelector(".pin-wrap");
             const animWrap = document.querySelector(".animation-wrap");
-            const titleBlock = pinWrap.querySelector(".max-w-sm");
 
             if (section && pinWrap && animWrap) {
                 
-                function getScrollAmount() {
-                    let animWidth = animWrap.scrollWidth;
-                    // Account for the title block width (~400px) and margins (~100px)
-                    // We add a buffer to ensure the last item is fully visible
-                    return -(animWidth - window.innerWidth + 800); 
-                }
+                ScrollTrigger.matchMedia({
+                    
+                    // Desktop Only (min-width: 1024px)
+                    "(min-width: 1024px)": function() {
+                        
+                        function getScrollAmount() {
+                            let animWidth = animWrap.scrollWidth;
+                            // Account for the title block width (~400px) and margins (~100px)
+                            // We add a buffer to ensure the last item is fully visible
+                            return -(animWidth - window.innerWidth + 800); 
+                        }
 
-                const tl = gsap.timeline();
+                        const tl = gsap.timeline();
 
-                // Initial State: "Far away" and tilted
-                // Using transformOrigin: "left center" to prevent overlapping the text on the left
-                gsap.set(animWrap, { 
-                    z: -500,        // Less extreme depth to avoid clipping
-                    rotationY: 25,  // Rotate Y instead of X for a "side entry" feel that complements the text
-                    scale: 0.6,     
-                    opacity: 0,     
-                    transformOrigin: "left center", // Anchored to the left (near text)
-                    x: 100          // Start slightly pushed away
-                });
+                        // Initial State: "Far away" and tilted
+                        gsap.set(animWrap, { 
+                            z: -500,        
+                            rotationY: 25,  
+                            scale: 0.6,     
+                            opacity: 0,     
+                            transformOrigin: "left center", 
+                            x: 100          
+                        });
 
-                // Phase 1: "Enter Camera" (Zoom In + Untilt)
-                tl.to(animWrap, {
-                    z: 0,
-                    rotationY: 0,
-                    scale: 1,
-                    opacity: 1,
-                    x: 0,
-                    duration: 1.5,
-                    ease: "power3.out" 
-                });
+                        // Phase 1: "Enter Camera" (Zoom In + Untilt)
+                        tl.to(animWrap, {
+                            z: 0,
+                            rotationY: 0,
+                            scale: 1,
+                            opacity: 1,
+                            x: 0,
+                            duration: 1.5,
+                            ease: "power3.out" 
+                        });
 
-                // Phase 2: Horizontal Scroll
-                tl.to(animWrap, {
-                    x: getScrollAmount,
-                    ease: "none",
-                    duration: 4
-                });
+                        // Phase 2: Horizontal Scroll
+                        tl.to(animWrap, {
+                            x: getScrollAmount,
+                            ease: "none",
+                            duration: 4
+                        });
 
-                ScrollTrigger.create({
-                    trigger: section,
-                    start: "top top",
-                    end: () => `+=${Math.abs(getScrollAmount()) + 3000}`,
-                    pin: true,
-                    animation: tl,
-                    scrub: 1,
-                    invalidateOnRefresh: true,
+                        ScrollTrigger.create({
+                            trigger: section,
+                            start: "top top",
+                            end: () => `+=${Math.abs(getScrollAmount()) + 3000}`,
+                            pin: true,
+                            animation: tl,
+                            scrub: 1,
+                            invalidateOnRefresh: true,
+                        });
+                    },
+
+                    // Mobile (max-width: 1023px) - Cleanup
+                    "(max-width: 1023px)": function() {
+                        // Kill any existing ScrollTriggers or animations if resizing from desktop
+                        // GSAP handles cleanup automatically for matchMedia, but we can ensure clean state
+                        gsap.set(animWrap, { clearProps: "all" });
+                        gsap.set(pinWrap, { clearProps: "all" });
+                    }
                 });
             }
         });
