@@ -1,0 +1,79 @@
+PANDUAN MENGGUNAKAN GOOGLE SHEETS + GOOGLE DRIVE (Web App)
+===========================================================
+
+Fitur ini memungkinkan Anda mengupload foto ke Google Drive, lalu cukup copy-paste link-nya ke Google Sheet, dan galeri website akan otomatis terupdate.
+
+LANGKAH 1: PERSIAPAN GOOGLE SHEET
+1. Buka Google Sheets (https://sheets.google.com).
+2. Buat Spreadsheet Kosong.
+3. Pada baris pertama (Header), ketik nama kolom persis seperti ini:
+   | Judul | Foto | Video | Design Logo | Thumbnail |
+   
+   Penjelasan Kolom:
+   - **Judul**: Nama proyek (misal: "Wedding Budi").
+   - **Foto**: Isi dengan Link Share Google Drive jika ini adalah FOTO.
+   - **Video**: Isi dengan Link Share Google Drive jika ini adalah VIDEO.
+   - **Design Logo**: Isi dengan Link Share Google Drive jika ini adalah LOGO.
+   - **Thumbnail**: (Opsional) Khusus untuk video, isi dengan link gambar cover.
+
+   *ATURAN PENGISIAN:*
+   - Setiap baris HANYA BOLEH DIISI SATU jenis file (Foto ATAU Video ATAU Design Logo).
+   - Jangan isi ketiganya dalam satu baris.
+
+LANGKAH 2: PASANG APPS SCRIPT
+1. Di Google Sheet tersebut, klik menu **Ekstensi (Extensions)** > **Apps Script**.
+2. Akan terbuka tab baru. Hapus semua kode yang ada disitu (`function myFunction...`).
+3. Copy dan Paste kode di bawah ini:
+
+   ```javascript
+   // PENTING: Jangan ubah nama 'doGet'. Ini adalah nama wajib dari Google agar bisa menjadi Web App.
+   function doGet() {
+     var sheet = SpreadsheetApp.getActiveSpreadsheet().getActiveSheet();
+     var data = sheet.getDataRange().getValues();
+     var headers = data[0];
+     var jsonData = [];
+     
+     // Mulai dari baris ke-2 (index 1) karena baris 1 adalah header
+     for (var i = 1; i < data.length; i++) {
+       var row = data[i];
+       var obj = {};
+       // Map data berdasarkan header
+       for (var j = 0; j < headers.length; j++) {
+         obj[headers[j]] = row[j];
+       }
+       if(obj['Judul']) { // Hanya ambil baris yang ada judulnya
+          jsonData.push(obj);
+       }
+     }
+     
+     return ContentService.createTextOutput(JSON.stringify(jsonData))
+       .setMimeType(ContentService.MimeType.JSON);
+   }
+   ```
+
+4. Simpan script (Ctrl + S) dan beri nama project bebas (misal: "API Galeri").
+
+LANGKAH 3: DEPLOY (TERBITKAN)
+1. Klik tombol biru **Terapkan (Deploy)** di pojok kanan atas -> pilih **Deployment Baru (New deployment)**.
+2. Klik ikon roda gigi (Select type) -> pilih **Aplikasi Web (Web app)**.
+3. Isi konfigurasi berikut:
+   - **Description**: (Bebas)
+   - **Execute as**: **Me (Saya)**.
+   - **Who has access**: **Anyone (Siapa saja)** (PENTING!).
+4. Klik **Terapkan (Deploy)**.
+5. Anda akan diminta **Authorize Access** (Izinkan Akses).
+   - Klik tombolnya -> Pilih Akun Google Anda -> Klik **Advanced (Lanjutan)** -> Klik **Go to API Galeri (unsafe)** -> Klik **Allow**.
+6. Setelah sukses, copy **Web App URL** yang muncul (Berakhiran `/exec`).
+
+LANGKAH 4: MASUKKAN LINK KE WEBSITE
+1. Buka file `gallery.html`.
+2. Cari variabel `GOOGLE_SHEET_URL` di bagian script bawah.
+3. Paste URL Web App tadi disana.
+   Contoh:
+   `const GOOGLE_SHEET_URL = "https://script.google.com/macros/s/.../exec";`
+
+CARA UNTUK UPDATE GALERI:
+1. Upload foto ke Google Drive Anda.
+2. Klik kanan foto -> Bagikan (Share) -> Ubah akses ke "Siapa saja yang memiliki link" -> Salin Link.
+3. Paste Link tersebut ke kolom **File** di Google Sheet.
+4. Website akan otomatis mengambil foto tersebut!
